@@ -1,0 +1,110 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+// Use theme colors from styles.scss
+$primary-color: mat.get-color-from-palette($instadrive-insurance-primary, 500);
+$background-color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+$form-background: white;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Main container
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  height: 100vh;
+}
+
+// Login form
+.login-form {
+  width: 400px;
+  background-color: $form-background;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px $shadow-color;
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500); // Use on-surface color
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .login-button {
+    background-color: $primary-color; // Primary color from the theme
+    color: white;
+
+    &:hover {
+      background-color: mat.get-color-from-palette($instadrive-insurance-primary, 700); // Darker primary color on hover
+    }
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .login-options {
+    text-align: center;
+    margin: 20px 0;
+
+    span {
+      display: block;
+      margin-bottom: 10px;
+      color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500); // On-surface color
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      button {
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .sign-up-link {
+    text-align: center;
+    margin-top: 20px;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Illustration container
+.login-illustration {
+  width: 50%;
+  text-align: center;
+
+  img {
+    width: 70%;
+    height: auto;
+  }
+}

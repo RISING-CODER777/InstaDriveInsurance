@@ -34,7 +34,7 @@ export class VehicleValidators {
     };
   }
 
-  // Engine number validator 
+  // Engine number validator
   static engineNumberValidator(vehicleType: string) {
     return (control: AbstractControl): ValidationErrors | null => {
       const engineNo = control.value;
@@ -55,4 +55,6 @@ export class VehicleValidators {
       return valid ? null : { engineNoInvalid: `Engine number must be ${vehicleType === 'Bike' ? '6-8 digits' : '7-10 digits'} long.` };
     };
   }
+
+  
 }

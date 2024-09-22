@@ -6,7 +6,7 @@ import { NewApprovalComponent } from './new-approval/new-approval.component';
 import { ClaimsApprovalComponent } from './claims-approval/claims-approval.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'new-approval', component: NewApprovalComponent},
   { path: 'claims-approval', component: ClaimsApprovalComponent},
 ];

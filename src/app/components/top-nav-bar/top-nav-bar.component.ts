@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { NavUtilities } from '../utilities/nav-utilities';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -17,4 +18,15 @@ export class TopNavBarComponent {
     this.isScrolled = scrollTop > 200;  // Adjust the threshold for when the navbar should animate up
     console.log(this.isScrolled);
   }
+
+  constructor(private router: Router) { }
+
+  navigateToLogin() {
+    this.router.navigate(['/authentication/user-login']);
+  }
+
+  navigateToSignUp(){
+    this.router.navigate(['/authentication/user-signup']);
+  }
+
 }
