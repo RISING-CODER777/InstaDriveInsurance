@@ -1,0 +1,146 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    .banner-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 200px;
+        width: 95%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: mat.get-color-from-palette($instadrive-insurance-primary, 900);
+        color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+        z-index: -1;
+    }
+
+    .profile-content {
+        display: flex;
+        width: 70%;
+        gap: 30px;
+        margin-top: 114px;
+
+        .profile-card {
+            flex: 1.2;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+
+        .policies-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+            .policy {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                border-radius: 10px;
+                // border: 1px solid mat.get-color-from-palette($instadrive-insurance-onsurface, 100, 0.5);
+                box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+                .policy-info {
+                    display: flex;
+                    flex: 1.5;
+                    flex-direction: column;
+                    margin: 10px;
+                    gap: 10px;
+
+                    .general-info {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .vehicle-info {
+                        display: flex;
+                        flex-direction: row;
+
+                        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 300);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.status-active {
+    background-color: mat.get-color-from-palette($instadrive-insurance-success, 200, 0.5);
+    color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: small;
+}
+
+.status-expired {
+    background-color: mat.get-color-from-palette($instadrive-insurance-warn, 200, 0.5);
+    color: mat.get-color-from-palette($instadrive-insurance-warn, 900);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: small;
+}
+
+.action-active-button {
+    display: flex;
+    flex: 0.6;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    background-color: mat.get-color-from-palette($instadrive-insurance-success, 500, 0.8);
+    color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+        color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+    }
+}
+
+.action-expired-button {
+    display: flex;
+    flex: 0.6;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    background-color: mat.get-color-from-palette($instadrive-insurance-warn, 500, 0.8);
+    color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: mat.get-color-from-palette($instadrive-insurance-warn, 500);
+        color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+    }
+}

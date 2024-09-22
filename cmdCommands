@@ -1,0 +1,209 @@
+## To-Create-New-Module
+
+npx ng g module creditcards --route creditcards --module app.module
+
+
+
+
+## To-Create-New-Component
+
+npx ng g c creditcards/add --module creditcards/creditcards.module.ts 
+
+
+
+
+## To-Create-Services
+
+npx ng g service services/creditcards
+npx ng g service /src/core/services/proposals
+
+## To-Create-Models
+
+npx ng g interface models/CreditCard
+
+
+npm install json-server
+npx json-server --watch db.json
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Users Table
+Captures user information.
+•	UserID (Primary Key, INT, Auto-increment)
+•	Username (VARCHAR, Unique)
+•	PasswordHash (VARCHAR)
+•	Email (VARCHAR, Unique)
+•	PhoneNumber (VARCHAR)
+•	FullName (VARCHAR)
+•	Address (TEXT)
+•	Role (ENUM: 'Admin', 'Customer')
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+2. Vehicles Table
+Captures vehicle details.
+•	VehicleID (Primary Key, INT, Auto-increment)
+•	UserID (Foreign Key to Users)
+•	VehicleType (VARCHAR, e.g., 'Car', 'Bike')
+•	Make (VARCHAR, e.g., 'Maruti Suzuki')
+•	Model (VARCHAR, e.g., 'TOUR S CNG')
+•	Year (YEAR, e.g., 2020)
+•	VIN (VARCHAR, Unique, e.g., 'MA3EJKD1S00C51332')
+•	ChassisNo (VARCHAR, Unique, e.g., 'MA3EJKD1S00C51332')
+•	EngineNo (VARCHAR, Unique, e.g., 'K12MN2392205')
+•	Color (VARCHAR, e.g., 'PEARL ARCTIC WHITE')
+•	FuelType (ENUM: 'Petrol', 'Diesel', 'CNG', 'Electric')
+•	VehicleClass (VARCHAR, e.g., 'Motor Cab')
+•	BodyType (VARCHAR, e.g., 'Saloon')
+•	CylinderCount (INT, e.g., 4)
+•	HorsePower (FLOAT, e.g., 83.08)
+•	SeatCapacity (INT, e.g., 5)
+•	GrossWeight (INT, e.g., 1480)
+•	RegistrationDate (DATE)
+•	PurchaseDate (DATE)
+•	RegistrationNumber (VARCHAR, Unique, e.g., 'GJ01JT0459')
+•	PermitType (VARCHAR, e.g., 'Contract Carriage Permit')
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+3. Policies Table
+Captures policy details, including selections for add-ons, deductibles, accessory covers, and accident covers.
+•	PolicyID (Primary Key, INT, Auto-increment)
+•	PolicyNumber (VARCHAR, Unique)
+•	UserID (Foreign Key to Users)
+•	VehicleID (Foreign Key to Vehicles)
+•	InsurancePlanID (Foreign Key to InsurancePlans)
+•	StartDate (DATE)
+•	EndDate (DATE)
+•	PremiumAmount (DECIMAL)
+•	Status (ENUM: 'Active', 'Expired', 'Cancelled')
+•	AddOnDetails (TEXT, or VARCHAR) // Stores selected add-ons details
+•	DeductibleDetails (TEXT, or VARCHAR) // Stores selected deductible details
+•	AccidentCoverDetails (TEXT, or VARCHAR) // Stores selected accident cover details
+•	AccessoryCoverDetails (TEXT, or VARCHAR) // Stores selected accessories cover details
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+4. Proposals Table
+Captures proposal details, reflecting the user's choices before finalizing a policy.
+•	ProposalID (Primary Key, INT, Auto-increment)
+•	PolicyID (Foreign Key to Policies)
+•	UserID (Foreign Key to Users)
+•	VehicleID (Foreign Key to Vehicles)
+•	InsurancePlanID (Foreign Key to InsurancePlans)
+•	AddOnSelection (TEXT, or VARCHAR) // Reflects selected add-ons
+•	DeductibleOption (TEXT, or VARCHAR) // Reflects selected deductible
+•	AccidentCover (TEXT, or VARCHAR) // Reflects selected accident cover
+•	AccessoriesCover (TEXT, or VARCHAR) // Reflects selected accessories cover
+•	Status (ENUM: 'Submitted', 'Under Review', 'Approved', 'Rejected')
+•	SubmittedAt (TIMESTAMP)
+•	ReviewedAt (TIMESTAMP)
+•	ApprovedBy (VARCHAR)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+5. Claims Table
+Captures claim details.
+•	ClaimID (Primary Key, INT, Auto-increment)
+•	PolicyID (Foreign Key to Policies)
+•	UserID (Foreign Key to Users)
+•	ClaimNumber (VARCHAR, Unique)
+•	DateOfIncident (DATE)
+•	Description (TEXT)
+•	ClaimAmount (DECIMAL)
+•	ClaimStatus (ENUM: 'Filed', 'Under Review', 'Approved', 'Rejected', 'Paid')
+•	ApprovedAmount (DECIMAL)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+6. Payments Table
+Captures payment details.
+•	PaymentID (Primary Key, INT, Auto-increment)
+•	PolicyID (Foreign Key to Policies)
+•	UserID (Foreign Key to Users)
+•	Amount (DECIMAL)
+•	PaymentDate (DATE)
+•	PaymentMethod (ENUM: 'Credit Card', 'Debit Card', 'Bank Transfer', 'Cash')
+•	TransactionID (VARCHAR, Unique)
+•	PaymentStatus (ENUM: 'Completed', 'Pending', 'Failed')
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+7. AddOns Table
+Captures available add-ons.
+•	AddOnID (Primary Key, INT, Auto-increment)
+•	AddOnName (VARCHAR)
+•	Description (TEXT)
+•	Price (DECIMAL)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+8. Deductibles Table
+Captures available deductibles.
+•	DeductibleID (Primary Key, INT, Auto-increment)
+•	DeductibleAmount (DECIMAL)
+•	Description (TEXT)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+9. AccidentCovers Table
+Captures accident cover options.
+•	AccidentCoverID (Primary Key, INT, Auto-increment)
+•	CoverType (VARCHAR)
+•	CoverageAmount (DECIMAL)
+•	Description (TEXT)
+•	Price (DECIMAL)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+10. AccessoriesCover Table
+Captures accessory cover options.
+•	AccessoryCoverID (Primary Key, INT, Auto-increment)
+•	CoverType (VARCHAR)
+•	CoverageAmount (DECIMAL)
+•	Description (TEXT)
+•	Price (DECIMAL)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+11. PolicyAddOns Table
+Maps policies to selected add-ons.
+•	PolicyID (Foreign Key to Policies)
+•	AddOnID (Foreign Key to AddOns)
+•	Price (DECIMAL)
+•	Selected (BOOLEAN)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+12. PolicyAccidentCovers Table
+Maps policies to selected accident covers.
+•	PolicyID (Foreign Key to Policies)
+•	AccidentCoverID (Foreign Key to AccidentCovers)
+•	Price (DECIMAL)
+•	Selected (BOOLEAN)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+13. PolicyAccessoriesCover Table
+Maps policies to selected accessories covers.
+•	PolicyID (Foreign Key to Policies)
+•	AccessoryCoverID (Foreign Key to AccessoriesCover)
+•	Price (DECIMAL)
+•	Selected (BOOLEAN)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+14. PolicyDeductibles Table
+Maps policies to selected deductibles.
+•	PolicyID (Foreign Key to Policies)
+•	DeductibleID (Foreign Key to Deductibles)
+•	Selected (BOOLEAN)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+15. InsurancePlans Table
+Captures insurance plan details.
+•	InsurancePlanID (Primary Key, INT, Auto-increment)
+•	PlanName (VARCHAR)
+•	Description (TEXT)
+•	BasePremium (DECIMAL)
+•	CoverageDetails (TEXT)
+•	CreatedAt (TIMESTAMP)
+•	UpdatedAt (TIMESTAMP)
+
+
+
+
+
+
+
+
+
+

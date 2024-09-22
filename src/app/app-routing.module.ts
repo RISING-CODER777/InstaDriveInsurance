@@ -9,6 +9,7 @@ const routes: Routes = [
 { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
 { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [adminGuard] }, 
 { path: 'error', loadChildren: () => import('./error/error.module').then(m => m.ErrorModule) },
+{ path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
 { path: '**', redirectTo: 'error/page-not-found' }
 ];
 
