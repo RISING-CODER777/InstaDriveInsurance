@@ -1,0 +1,104 @@
+@use 'src/styles' as *; 
+@use '@angular/material' as mat;
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 20px 20px;
+    padding: 10px;
+    background-color: mat.get-color-from-palette($instadrive-insurance-base, 500, 0.25);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; // Ensure it stays on top of other elements
+    transition: transform 0.3s ease-in-out; // Smooth transition for scrolling effect
+
+    &.scrolled {
+        transform: translateY(-100%); // Move the navbar up out of view
+    }
+}
+
+
+.company-group {
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    padding: 10px;
+    text-decoration: none;
+
+    .company-icon {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 26px;
+        color: mat.get-color-from-palette($instadrive-insurance-primary);
+    }
+
+    .company-name {
+        font-size: 20px;
+        margin-left: 2px;
+        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 600);
+    }
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        .nav-link {
+            position: relative;
+            font-size: 18px;
+            color: mat.get-color-from-palette($instadrive-insurance-onsurface, 600);
+            text-decoration: none;
+
+            &:hover {
+                color: mat.get-color-from-palette($instadrive-insurance-primary, 900);
+                transition: all 0.3s;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: mat.get-color-from-palette($instadrive-insurance-primary, 900);
+                width: 100%;
+                height: 2px;
+                bottom: -2px; 
+                left: 0;
+                transform: scaleX(0);  // Start with a scale of 0
+                transform-origin: left;
+                transition: transform 0.25s ease-out;  // Ensure the transition only applies to the transform
+            }
+
+            &:hover::after {
+                transform: scaleX(1);  // Scale to full width on hover
+            }
+        }
+    }
+}
+
+.nav-buttons-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    .nav-button {
+        font-size: 14px;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+}
+
+.nav-spacer {
+    flex: 1 1 auto;
+}

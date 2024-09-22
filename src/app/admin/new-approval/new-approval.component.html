@@ -1,0 +1,80 @@
+<div class="table-wrapper">
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" matSort class="table-container">
+            <!-- Column for Index -->
+            <ng-container matColumnDef="index">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>R.Id</th>
+                <td mat-cell *matCellDef="let element; let i = index" style="font-weight: 400;">{{ i + 1 }}</td>
+            </ng-container>
+
+            <!-- Column for UserID and Name -->
+            <ng-container matColumnDef="user">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>Name <br> User Id</th>
+                <td mat-cell *matCellDef="let element"><span style="font-weight: 400;">{{ element.name }}</span> <br> {{
+                    element.userId }}</td>
+            </ng-container>
+
+            <!-- Column for Policy Details -->
+            <ng-container matColumnDef="policyDetails">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>Policy Details</th>
+                <td mat-cell *matCellDef="let element">
+                    <p class="policy-details" style="white-space: pre-line;">{{ element.policyDetails }}</p>
+                </td>
+            </ng-container>
+            
+
+            <!-- Column for Status -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">
+                    <span [ngClass]="{
+                'status-submitted': element.status === 'Submitted',
+                'status-under-review': element.status === 'Under Review',
+                'status-approved': element.status === 'Approved',
+                'status-rejected': element.status === 'Rejected'
+              }">
+                        {{ element.status }}
+                    </span>
+                </td>
+            </ng-container>
+            <!-- Column for requestDate -->
+            <ng-container matColumnDef="requestDate">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>Request Date</th>
+                <td mat-cell *matCellDef="let element">{{ element.requestDate }}</td>
+            </ng-container>
+            <!-- Column for premium amount -->
+            <ng-container matColumnDef="premiumAmount">
+                <th mat-header-cell class="header-row" style="text-align: end;" *matHeaderCellDef>Premium Amount</th>
+                <td mat-cell *matCellDef="let element" style="
+        font-weight: 400;
+        text-align: end;
+        "> <span [ngClass]="{
+                'amt-approved': element.status === 'Approved',
+                'amt-rejected': element.status === 'Rejected'
+              }">
+                        {{ element.premiumAmount }}
+                    </span>
+                </td>
+            </ng-container>
+            <!-- Column for Admin Comments -->
+            <ng-container matColumnDef="adminComments">
+                <th mat-header-cell class="header-row" *matHeaderCellDef>Admin Comments</th>
+                <td mat-cell *matCellDef="let element">{{ element.adminComments }}</td>
+            </ng-container>
+
+
+       
+            <!-- Define Header Row -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row header"></tr>
+            <button mat-raised-button color="primary" class="new-approval-button">
+            
+            <!-- Define Data Rows -->
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row col" (click)="selectHandler(row)"></tr>
+        </button>
+        </table>
+        <div style="height: 76px;"></div>
+    </div>
+
+    <!-- Paginator -->
+    <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons class="paginator"></mat-paginator>
+</div>

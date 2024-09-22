@@ -1,0 +1,148 @@
+@use '@angular/material' as mat;
+@use 'src/styles' as *; // Import your styles file
+
+/* Vehicle Selection Section */
+.vehicle-selection {
+    padding: 30px;
+    text-align: center;
+    background-color: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Light grey from palette */
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: mat.get-color-from-palette($instadrive-insurance-onsurface, 900); /* Dark color from on-surface palette */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.insurance-card {
+    max-width: 320px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: mat.get-color-from-palette($instadrive-insurance-base, 50); /* Base color */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Abstract shapes as background */
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        z-index: -1;
+        filter: blur(50px);
+    }
+
+    &::before {
+        width: 150px;
+        height: 150px;
+        background: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Light base color */
+        top: -30px;
+        left: -30px;
+    }
+
+    &::after {
+        width: 250px;
+        height: 250px;
+        background: mat.get-color-from-palette($instadrive-insurance-base, 200); /* Darker base color */
+        bottom: -50px;
+        right: -50px;
+    }
+
+    .mat-card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    mat-card-header .mat-card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 900); /* Dark text color */
+    }
+
+    mat-card-content {
+        font-size: 1rem;
+        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 700); /* Medium dark color */
+        margin-bottom: 20px;
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: center;
+
+        button {
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: mat.get-color-from-palette($instadrive-insurance-primary, 500); /* Primary button color */
+            color: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Light base color for text */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                background-color: mat.get-color-from-palette($instadrive-insurance-primary, 600); /* Darker primary on hover */
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
+/* Car Insurance Card Background */
+.car-insurance {
+    background-color: mat.get-color-from-palette($instadrive-insurance-success, 100); /* Light green background */
+
+    &::before {
+        background-color: mat.get-color-from-palette($instadrive-insurance-success, 200); /* Light green */
+    }
+
+    &::after {
+        background-color: mat.get-color-from-palette($instadrive-insurance-success, 300); /* Darker green */
+    }
+}
+
+/* Bike Insurance Card Background */
+.bike-insurance {
+    background-color: mat.get-color-from-palette($instadrive-insurance-accent, 100); /* Light pink background */
+
+    &::before {
+        background-color: mat.get-color-from-palette($instadrive-insurance-accent, 200); /* Light pink */
+    }
+
+    &::after {
+        background-color: mat.get-color-from-palette($instadrive-insurance-accent, 300); /* Darker pink */
+    }
+}
+
+/* Truck Insurance Card Background */
+.truck-insurance {
+    background-color: mat.get-color-from-palette($instadrive-insurance-warn, 100); /* Light orange background */
+
+    &::before {
+        background-color: mat.get-color-from-palette($instadrive-insurance-warn, 200); /* Light orange */
+    }
+
+    &::after {
+        background-color: mat.get-color-from-palette($instadrive-insurance-warn, 300); /* Darker orange */
+    }
+}

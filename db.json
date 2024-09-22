@@ -1,0 +1,762 @@
+{
+  "users": [
+    {}
+  ],
+  "claims-approval": [
+    {
+      "userId": 1,
+      "claimNumber": "CLAIM000001",
+      "name": "Eleven Hopper",
+      "dateOfIncident": "2024-09-01T10:00:00.000",
+      "claimAmount": 25000,
+      "approvedAmount": 20000,
+      "status": "Approved",
+      "description": "Car damaged during a telekinetic incident near the Hawkins lab.",
+      "remarks": "Deduction for unusual circumstances.",
+      "createdAt": "2024-09-02T11:00:00.000",
+      "addOnDetails": [
+        "Zero Depreciation"
+      ],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 2,
+      "claimNumber": "CLAIM000002",
+      "name": "Mike Wheeler",
+      "dateOfIncident": "2024-08-15T14:00:00.000",
+      "claimAmount": 12000,
+      "approvedAmount": 10000,
+      "status": "Pending",
+      "description": "Bike damaged by an encounter with a Demogorgon.",
+      "remarks": "Pending verification of supernatural involvement.",
+      "createdAt": "2024-08-16T15:00:00.000",
+      "addOnDetails": [
+        "Engine Protection Cover"
+      ],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 3,
+      "claimNumber": "CLAIM000003",
+      "name": "Dustin Henderson",
+      "dateOfIncident": "2024-07-10T09:30:00.000",
+      "claimAmount": 8000,
+      "approvedAmount": 7000,
+      "status": "Approved",
+      "description": "Vehicle damage from a failed science experiment involving Cerebro.",
+      "remarks": "Minor deductions applied.",
+      "createdAt": "2024-07-11T10:00:00.000",
+      "addOnDetails": [],
+      "accidentCoverDetails": [
+        "Personal Accident Cover"
+      ],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 4,
+      "claimNumber": "CLAIM000004",
+      "name": "Lucas Sinclair",
+      "dateOfIncident": "2024-06-20T11:45:00.000",
+      "claimAmount": 15000,
+      "approvedAmount": 13000,
+      "status": "Pending",
+      "description": "Damage to vehicle during a skirmish in the Upside Down.",
+      "remarks": "Pending investigation.",
+      "createdAt": "2024-06-21T12:30:00.000",
+      "addOnDetails": [],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 5,
+      "claimNumber": "CLAIM000005",
+      "name": "Will Byers",
+      "dateOfIncident": "2024-05-05T16:00:00.000",
+      "claimAmount": 30000,
+      "approvedAmount": 25000,
+      "status": "Approved",
+      "description": "Car submerged in water while escaping from the Mind Flayer.",
+      "remarks": "Partial approval due to water damage.",
+      "createdAt": "2024-05-06T17:00:00.000",
+      "addOnDetails": [
+        "Zero Depreciation",
+        "Engine Protection Cover"
+      ],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 6,
+      "claimNumber": "CLAIM000006",
+      "name": "Max Mayfield",
+      "dateOfIncident": "2024-04-15T08:00:00.000",
+      "claimAmount": 18000,
+      "approvedAmount": 16000,
+      "status": "Approved",
+      "description": "Skateboard accident caused vehicle damage.",
+      "remarks": "Approved with minor deductions.",
+      "createdAt": "2024-04-16T09:00:00.000",
+      "addOnDetails": [],
+      "accidentCoverDetails": [
+        "Personal Accident Cover"
+      ],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 7,
+      "claimNumber": "CLAIM000007",
+      "name": "Steve Harrington",
+      "dateOfIncident": "2024-03-10T12:30:00.000",
+      "claimAmount": 22000,
+      "approvedAmount": 19000,
+      "status": "Pending",
+      "description": "Damage from fighting off Demodogs.",
+      "remarks": "Awaiting further evaluation.",
+      "createdAt": "2024-03-11T13:30:00.000",
+      "addOnDetails": [
+        "Zero Depreciation"
+      ],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 8,
+      "claimNumber": "CLAIM000008",
+      "name": "Nancy Wheeler",
+      "dateOfIncident": "2024-02-01T15:15:00.000",
+      "claimAmount": 14000,
+      "approvedAmount": 12000,
+      "status": "Approved",
+      "description": "Car damaged while investigating the Hawkins Lab.",
+      "remarks": "Approval with standard deductions.",
+      "createdAt": "2024-02-02T16:00:00.000",
+      "addOnDetails": [],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 9,
+      "claimNumber": "CLAIM000009",
+      "name": "Jonathan Byers",
+      "dateOfIncident": "2024-01-25T18:00:00.000",
+      "claimAmount": 10000,
+      "approvedAmount": 8000,
+      "status": "Pending",
+      "description": "Vehicle scratched during an altercation with Billy.",
+      "remarks": "Pending inspection.",
+      "createdAt": "2024-01-26T19:00:00.000",
+      "addOnDetails": [],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    },
+    {
+      "userId": 10,
+      "claimNumber": "CLAIM000010",
+      "name": "Jim Hopper",
+      "dateOfIncident": "2024-09-18T10:30:00.000",
+      "claimAmount": 35000,
+      "approvedAmount": 30000,
+      "status": "Approved",
+      "description": "Police vehicle damaged in pursuit of a Demogorgon.",
+      "remarks": "Approved with police discount.",
+      "createdAt": "2024-09-19T11:30:00.000",
+      "addOnDetails": [
+        "Engine Protection Cover"
+      ],
+      "accidentCoverDetails": [],
+      "accessoryCoverDetails": []
+    }
+
+  ],
+  "new-approval": [
+    {
+      "userId": "6346504382",
+      "proposalId": "6346504382",
+      "name": "Billy Butcher",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1000,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": false
+    },
+    {
+      "userId": "7373504382",
+      "proposalId": "7373504382",
+      "name": "Sadie Sink",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Under Review",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 2000,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "5646547572",
+      "proposalId": "5646547572",
+      "name": "Steve Harrington",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1000,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "7340624025",
+      "proposalId": "7340624025",
+      "name": "Shinjuro Rengoku",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Submitted",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "6346547387",
+      "proposalId": "6346547387",
+      "name": "Dustin Henderson",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "6346544382",
+      "proposalId": "6346544382",
+      "name": "Nancy Wheeler",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Rejected",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "8365544313",
+      "proposalId": "8365544313",
+      "name": "Emma",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 2500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": false
+    },
+    {
+      "userId": "9246544342",
+      "proposalId": "9246544342",
+      "name": "Ray",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Under Review",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "6346724382",
+      "proposalId": "6346724382",
+      "name": "Jim Hopper",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Submitted",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "8335624202",
+      "proposalId": "8335624202",
+      "name": "Will Byers",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Rejected",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": false
+    },
+    {
+      "userId": "4346726436",
+      "proposalId": "4346726436",
+      "name": "Tanjiro Kamado",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    },
+    {
+      "userId": "3343524353",
+      "proposalId": "3343524353",
+      "name": "Nezuko Kamado",
+      "policyDetails": "Basic Plan \nProvides comprehensive coverage including theft and accident protection",
+      "status": "Approved",
+      "requestDate": "2024-02-01",
+      "premiumAmount": 1500,
+      "adminComments": "Comments",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ],
+      "isRenewable": true
+    }
+  ],
+  "proposals": [
+    {
+      "id": "6346504382",
+      "userId": "6346504382",
+      "proposalId": "6346504382",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "7373504382",
+      "userId": "7373504382",
+      "proposalId": "7373504382",
+      "status": "Under Review",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "5646547572",
+      "userId": "5646547572",
+      "proposalId": "5646547572",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "7340624025",
+      "userId": "7340624025",
+      "proposalId": "7340624025",
+      "status": "Submitted",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "6346547387",
+      "userId": "6346547387",
+      "proposalId": "6346547387",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "0": {
+        "0": {
+          "0": {
+            "id": "6346504382",
+            "userId": "6346544382",
+            "proposalId": "6346544382",
+            "status": "Approved",
+            "addOnDetails": [
+              "Basic add-on details",
+              "Basic add-on details"
+            ],
+            "accidentCoverDetails": [
+              "Full coverage details",
+              "Full coverage details"
+            ],
+            "accessoryCoverDetails": [
+              "Basic accessory coverage",
+              "Basic accessory coverage"
+            ]
+          },
+          "1": {
+            "0": {
+              "id": "6346504382",
+              "userId": "6346544382",
+              "proposalId": "6346544382",
+              "status": "Approved",
+              "addOnDetails": [
+                "Basic add-on details",
+                "Basic add-on details"
+              ],
+              "accidentCoverDetails": [
+                "Full coverage details",
+                "Full coverage details"
+              ],
+              "accessoryCoverDetails": [
+                "Basic accessory coverage",
+                "Basic accessory coverage"
+              ]
+            },
+            "1": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "id": "6346544382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Rejected",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "6346544382"
+      },
+      "id": "6346544382"
+    },
+    {
+      "id": "8365544313",
+      "userId": "8365544313",
+      "proposalId": "8365544313",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "9246544342",
+      "userId": "9246544342",
+      "proposalId": "9246544342",
+      "status": "Under Review",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "6346724382",
+      "userId": "6346724382",
+      "proposalId": "6346724382",
+      "status": "Submitted",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "8335624202",
+      "userId": "8335624202",
+      "proposalId": "8335624202",
+      "status": "Rejected",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "4346726436",
+      "userId": "4346726436",
+      "proposalId": "4346726436",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    },
+    {
+      "id": "3343524353",
+      "userId": "3343524353",
+      "proposalId": "3343524353",
+      "status": "Approved",
+      "addOnDetails": [
+        "Basic add-on details",
+        "Basic add-on details"
+      ],
+      "accidentCoverDetails": [
+        "Full coverage details",
+        "Full coverage details"
+      ],
+      "accessoryCoverDetails": [
+        "Basic accessory coverage",
+        "Basic accessory coverage"
+      ]
+    }
+  ],
+  "payments": [
+    {}
+  ]
+}

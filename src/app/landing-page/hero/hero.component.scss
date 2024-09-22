@@ -1,0 +1,82 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+// Hero section container
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: mat.get-color-from-palette($instadrive-primary-palette, 100); // Light background color for hero section
+  color: mat.get-color-from-palette($instadrive-primary-palette, 900); // Dark text color for better readability
+  padding: 50px;
+  height: 100vh;
+  position: relative;
+
+  // Text content on the left
+  .text-content {
+    max-width: 50%;
+
+    .button-wrapper {
+      display: flex;
+      align-items: center; // Center align button
+      position: relative; // Position relative for potential future use
+      margin-bottom: 20px; // Add spacing below the button-wrapper
+
+      .super-simple {
+        background-color: transparent; // No fill
+        border: 2px solid mat.get-color-from-palette($instadrive-primary-palette, 500); // Border color
+        color: mat.get-color-from-palette($instadrive-primary-palette, 500); // Text color
+        padding: 15px 30px; // Padding for spacing
+        font-size: 1rem;
+        border-radius: 25px; // Rounded edges
+        cursor: default; // Default cursor
+        text-align: center;
+        font-weight: bold;
+        display: flex; // Flex display to position nested element
+        align-items: center; // Center align items vertically
+        position: relative; // Position relative for absolute child positioning
+        margin-right: 10px; // Space between "Super Simple" and "Claims"
+
+        &:hover {
+          border-color: mat.get-color-from-palette($instadrive-primary-palette, 600); // Darker border color on hover
+        }
+
+        .claims {
+          background-color: mat.get-color-from-palette($instadrive-accent-palette, 500); // Filled element color
+          color: mat.get-color-from-palette($instadrive-base-palette, 50); // Text color
+          padding: 5px 15px; // Padding for the "Claims" element
+          font-size: 0.75rem; // Smaller font size for nested element
+          border-radius: 25px; // Rounded edges
+          cursor: default; // Default cursor
+          text-align: center;
+          font-weight: bold;
+          margin-left: 15px; // Increased margin for better spacing
+          position: relative; // Ensure it stays in place
+        }
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .subtext {
+      font-size: 1rem; // Adjust font size as needed
+      margin-top: 10px; // Space above the text
+      color: mat.get-color-from-palette($instadrive-primary-palette, 800); // Slightly lighter color for the subtext
+    }
+  }
+
+  // Image on the right
+  .image {
+    max-width: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}

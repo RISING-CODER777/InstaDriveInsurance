@@ -1,0 +1,261 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Define the primary palette
+$instadrive-primary-palette: (
+  50 : #ececf3,
+  100 : #d1d0e0,
+  200 : #b2b1cc,
+  300 : #9391b7,
+  400 : #7b7aa7,
+  500 : #646298,
+  600 : #5c5a90,
+  700 : #525085,
+  800 : #48467b,
+  900 : #36346a,
+  A100 : #8888ff,
+  A200 : #5555ff,
+  A400 : #2222ff,
+  A700 : #0808ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+// Define the base (secondary) palette
+$instadrive-base-palette: (
+  50: #fdfefb,
+  100: #fbfdf6,
+  200: #f8fcf0,
+  300: #f5fbea,
+  400: #f3fae6,
+  500: #f1f9e1,
+  600: #eff8dd,
+  700: #edf7d9,
+  800: #ebf6d5,
+  900: #e7f5cd,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffffff,
+  A700: #ffffff,
+  contrast: (
+    50: light,
+    100: light,
+    200: light,
+    300: light,
+    400: light,
+    500: light,
+    600: light,
+    700: light,
+    800: light,
+    900: light,
+    A100: light,
+    A200: light,
+    A400: light,
+    A700: light,
+  )
+);
+
+// Define the accent palette
+$instadrive-accent-palette: (
+  50 : #fdf5e3,
+  100 : #fbe6b9,
+  200 : #f8d58b,
+  300 : #f5c45c,
+  400 : #f3b839,
+  500 : #f1ab16,
+  600 : #efa413,
+  700 : #ed9a10,
+  800 : #eb910c,
+  900 : #e78006,
+  A100 : #fff4ea,
+  A200 : #ffdbb7,
+  A400 : #ffc284,
+  A700 : #ffb56a,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the warn palette
+$instadrive-warn-palette: (
+  50: #ffeaeb,
+  100: #ffcbce,
+  200: #ffa8ad,
+  300: #ff858c,
+  400: #ff6a73,
+  500: #ff505a,
+  600: #ff4952,
+  700: #ff4048,
+  800: #ff373f,
+  900: #ff272e,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffd4d6,
+  A700: #ffbbbd,
+  contrast: (
+    50: light,
+    100: light,
+    200: light,
+    300: light,
+    400: light,
+    500: light,
+    600: light,
+    700: light,
+    800: light,
+    900: light,
+    A100: light,
+    A200: light,
+    A400: light,
+    A700: light,
+  )
+);
+// Define the success palette
+$instadrive-success-palette: (
+  50 : #e3f9ec,
+  100 : #b9efd1,
+  200 : #8be4b2,
+  300 : #5dd993,
+  400 : #3ad17b,
+  500 : #17c964,
+  600 : #14c35c,
+  700 : #11bc52,
+  800 : #0db548,
+  900 : #07a936,
+  A100 : #d4ffdf,
+  A200 : #a1ffb8,
+  A400 : #6eff91,
+  A700 : #55ff7d,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the on-surface palette
+$instadrive-onsurface-palette: (
+  50 : #e3e3e4,
+  100 : #b8b8bc,
+  200 : #89898f,
+  300 : #595962,
+  400 : #363641,
+  500 : #12121f,
+  600 : #10101b,
+  700 : #0d0d17,
+  800 : #0a0a12,
+  900 : #05050a,
+  A100 : #5050ff,
+  A200 : #1d1dff,
+  A400 : #0000e9,
+  A700 : #0000d0,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+// Define palettes using mat.define-palette
+$instadrive-insurance-primary: mat.define-palette($instadrive-primary-palette);
+$instadrive-insurance-base: mat.define-palette($instadrive-base-palette);
+$instadrive-insurance-accent: mat.define-palette($instadrive-accent-palette, A700);
+$instadrive-insurance-warn: mat.define-palette($instadrive-warn-palette);
+$instadrive-insurance-onsurface: mat.define-palette($instadrive-onsurface-palette);
+$instadrive-insurance-success: mat.define-palette($instadrive-success-palette);
+
+$instadrive-insurance-theme: 
+mat.define-light-theme((
+  color: (
+    primary: $instadrive-insurance-primary,
+    base: $instadrive-insurance-base,
+    accent: $instadrive-insurance-accent,
+    warn: $instadrive-insurance-warn,
+    on-surface: $instadrive-insurance-onsurface,
+    success: $instadrive-insurance-success,
+)
+));
+
+@include mat.all-component-themes($instadrive-insurance-theme);
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.success {
+  color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+}
+
+.danger {
+  color: mat.get-color-from-palette($instadrive-insurance-warn, 500);
+}
+
+
+
+
+
+/* 
+How to use reference code
+---------------------------
+.my-custom-element {
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 500);
+  color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500);
+}
+*/

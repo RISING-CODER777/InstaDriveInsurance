@@ -1,0 +1,47 @@
+<section class="vehicle-selection">
+  <h1 class="not-found-plan">Looking for a Policy?</h1>
+  <p class="exploration-message">
+    Discover the perfect <span class="highlight">automobile insurance</span> to protect your adventures on the road!
+  </p>
+  <div class="insurance-wrapper">
+    <!-- Left Side Image -->
+    <img src="assets/images/landing-page-images/girl-pointing-right.png" alt="Vehicle Insurance" class="insurance-image" />
+
+    <!-- Right Side Card -->
+    <mat-card class="plan-finder-card" appearance="outlined">
+      <mat-card-content>
+        <h3>Apply for Coverage in Just 2 Minutes*</h3>
+        <!-- Vehicle Type Selector -->
+        <mat-button-toggle-group
+          name="vehicleType"
+          aria-label="Vehicle Type"
+          [(value)]="selectedVehicle"
+        >
+          <mat-button-toggle value="car">Car</mat-button-toggle>
+          <mat-button-toggle value="bike">Bike</mat-button-toggle>
+          <mat-button-toggle value="truck">Truck</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <!-- Dynamic Input Field based on Selection -->
+        <div class="input-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter {{ selectedVehicle | titlecase }} Number</mat-label>
+            <input
+              matInput
+              [placeholder]="getPlaceholder()"
+              [(ngModel)]="vehicleNumber"
+              [maxlength]="getMaxLength()"
+            />
+          </mat-form-field>
+        </div>
+
+        <!-- Animated Button -->
+        <button mat-raised-button class="view-prices-btn">
+          View Prices
+          <mat-icon class="arrow-icon">arrow_forward</mat-icon>
+        </button>
+      </mat-card-content>
+      <div class="inverted-design right"></div>
+    </mat-card>
+  </div>
+</section>

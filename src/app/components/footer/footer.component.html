@@ -1,0 +1,30 @@
+<footer class="footer-container">
+    <div class="footer-content mx-auto max-w-7xl px-6 py-12 sm:py-20 lg:px-8">
+        <!-- Footer Navigation -->
+        <nav class="footer-nav" aria-label="Footer">
+            <div *ngFor="let item of siteConfig.nav" class="footer-item">
+                <a [href]="item.href" class="footer-link">{{ item.name }}</a>
+            </div>
+        </nav>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a *ngFor="let social of siteConfig.socialLinks"
+               [href]="social.href"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="social-icon">
+                <ng-container [ngSwitch]="social.name">
+                    <i-feather *ngSwitchCase="'Instagram'" name="instagram" class="icon"></i-feather>
+                    <i-feather *ngSwitchCase="'LinkedIn'" name="linkedin" class="icon"></i-feather>
+                    <i-feather *ngSwitchCase="'Slack'" name="slack" class="icon"></i-feather>
+                </ng-container>
+            </a>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; {{ currentYear }} {{ siteConfig.name }}. All rights reserved.
+        </div>
+    </div>
+</footer>

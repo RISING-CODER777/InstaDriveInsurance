@@ -1,0 +1,80 @@
+@use 'src/styles' as *; 
+@use '@angular/material' as mat;
+
+.footer-container {
+  background-color: mat.get-color-from-palette($instadrive-insurance-onsurface, 600);
+  color: mat.get-color-from-palette($instadrive-insurance-onsurface, 50);
+  border-radius: 1rem 1rem 0 0; // Rounded corners 
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+
+  // curve effect 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px; //  curve height
+    left: 0;
+    right: 0;
+    height: 20px; //  curve height
+    background: inherit;
+    border-radius: 50% 50% 0 0;
+    z-index: -1;
+  }
+
+  .footer-content {
+    text-align: center; // Center text
+    padding: 0 1.5rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .footer-item {
+      display: flex;
+      justify-content: center;
+
+      .footer-link {
+        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 200);
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.875rem; // Smaller font 
+        padding: 0.5rem; 
+        &:hover {
+          color: mat.get-color-from-palette($instadrive-insurance-onsurface, 300);
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      color: mat.get-color-from-palette($instadrive-insurance-onsurface, 200);
+      margin: 0 0.75rem; 
+      .icon {
+        font-size: 1.5rem; 
+        color: inherit; 
+      }
+
+      &:hover {
+        color: mat.get-color-from-palette($instadrive-insurance-onsurface, 300);
+      }
+    }
+  }
+
+  .footer-bottom {
+    color: mat.get-color-from-palette($instadrive-insurance-onsurface, 400);
+    font-size: 0.75rem; 
+    padding: 0.5rem 0; 
+  }
+}

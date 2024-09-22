@@ -1,0 +1,49 @@
+<mat-card class="mat-cards">
+    <mat-card-title>
+        <span style="font-weight: 500;"> {{data.name}}</span><br>
+        {{data.userId}}
+    </mat-card-title>
+    <mat-card-content class="mat-content">
+
+        <div class="more-details">
+            <ul>
+                <p style="font-weight: 400;">Addon Details</p>
+                <li *ngFor="let addOn of data.addOnDetails">{{addOn}}</li>
+            </ul>
+            <ul>
+                <p style="font-weight: 400;">Accident Cover Details</p>
+                <li *ngFor="let accidentCover of data.accidentCoverDetails">{{accidentCover}}</li>
+            </ul>
+            <ul>
+                <p style="font-weight: 400;">Accessory Cover Details</p>
+                <li *ngFor="let accessoryCover of data.accessoryCoverDetails">{{accessoryCover}}</li>
+            </ul>
+        </div>
+        <div>
+            <p>Requested Date: <span style="font-weight: 400;">{{data.requestDate}}</span></p>
+            <p *ngIf="data.isRenewable">Plan is <span class="success">Renewable</span></p>
+            <p *ngIf="!data.isRenewable">Plan is <span class="danger">Not Renewable</span></p>
+        </div>
+    </mat-card-content>
+</mat-card>
+<div class="input-container">
+        <mat-label>Admin Comments</mat-label>
+        <textarea matInput type="text" name="adminComments" placeholder="Admin Comments"></textarea>
+ 
+    <div class="button-container">
+        <div class="inp-div">
+            <mat-label>Status</mat-label>
+            <mat-select matNativeControl required [(value)]="selectedValue" class="select-field">
+                <mat-option *ngFor="let status of status" [value]="status.value" class="option-field">
+                    {{status.viewValue}}
+                </mat-option>
+            </mat-select>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <button mat-raised-button color="primary" (click)="updateStatus(selectedValue)">Done</button>
+            <button mat-button color="warn" (click)="close()">Close</button>
+        </div>
+    </div>
+</div>
+

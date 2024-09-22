@@ -1,0 +1,44 @@
+.table-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .table-container {
+    overflow-y: auto;
+  }
+  
+  .header-row {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+  }
+  
+  .status-approved {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: green;
+    padding: 6px 10px;
+    border-radius: 20px;
+  }
+  
+  .status-rejected {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: red;
+    padding: 6px 10px;
+    border-radius: 20px;
+  }
+  
+  .paginator {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  

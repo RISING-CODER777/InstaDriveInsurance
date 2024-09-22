@@ -1,0 +1,120 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+::ng-deep .bottom-sheet-backdrop-blur {
+  backdrop-filter: blur(8px) !important; /* Apply blur effect */
+  background-color: mat.get-color-from-palette($instadrive-insurance-onsurface, 700, 0.25) !important; /* Optional: Semi-transparent background */
+}
+::ng-deep .bottom-sheet-container {
+  
+}
+
+
+
+/* Container for table and paginator */
+.table-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Table container */
+.table-container {
+  flex: 1;
+  overflow-y: auto; 
+}
+
+/* Sticky header style */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the header is above the table rows */
+}
+
+.header-row {
+  backdrop-filter: blur(10px);
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 700, 0.25) !important;
+  color: mat.get-color-from-palette($instadrive-insurance-onsurface, 300) !important;
+  font-weight: 500 !important;
+}
+
+.col {
+  font-weight: 300 !important;
+  font-size: 18px;
+  cursor: pointer;
+  color: mat.get-color-from-palette($instadrive-insurance-onsurface, 300) !important;
+}
+
+.status-submitted {
+  background-color: mat.get-color-from-palette($instadrive-insurance-primary, A200, 0.25);
+  color: mat.get-color-from-palette($instadrive-insurance-primary, A400);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: small;
+}
+
+.status-under-review {
+  background-color: mat.get-color-from-palette($instadrive-insurance-accent, 200, 0.5);
+  color: mat.get-color-from-palette($instadrive-insurance-accent, 900);
+  padding: 6px 10px;
+  border-radius: 20px;
+  ;
+  font-size: small;
+
+}
+
+.status-approved {
+  background-color: mat.get-color-from-palette($instadrive-insurance-success, 200, 0.5);
+  color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: small;
+
+}
+
+.status-rejected {
+  background-color: mat.get-color-from-palette($instadrive-insurance-warn, 200, 0.5);
+  color: mat.get-color-from-palette($instadrive-insurance-warn, 900);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: small;
+}
+
+.amt-approved {
+  color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+}
+
+.amt-rejected {
+  color: mat.get-color-from-palette($instadrive-insurance-warn, 900);
+}
+
+.policy-details {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.paginator {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; 
+  padding: 10px;
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 100, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px 20px 0 0;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 50);
+}
+
+.mat-row:not(even) {
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 200);
+}

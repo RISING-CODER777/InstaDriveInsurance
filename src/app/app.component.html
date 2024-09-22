@@ -1,0 +1,35 @@
+<div class="page-container">
+  <!-- Display a loading indicator if isLoading is true -->
+  <ng-container *ngIf="isLoading; else loadedContent">
+    <div class="loading-spinner">
+      <!-- You can use an Angular Material spinner or any loading indicator here -->
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+
+  <!-- Conditionally render content when loading is complete -->
+  <ng-template #loadedContent>
+    <ng-container *ngIf="!isAdminRoute; else adminLayout">
+      <app-top-nav-bar></app-top-nav-bar>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </ng-container>
+
+    <!-- Admin layout -->
+    <ng-template #adminLayout>
+      <div class="admin-page-container">
+        <mat-drawer-container class="drawer-container">
+          <mat-drawer mode="side" class="drawer" [opened]="true">
+            <app-admin-side-navbar></app-admin-side-navbar>
+          </mat-drawer>
+
+          <mat-drawer-content class="admin-content">
+            <router-outlet></router-outlet>
+          </mat-drawer-content>
+        </mat-drawer-container>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

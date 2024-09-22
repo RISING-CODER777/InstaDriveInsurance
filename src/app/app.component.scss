@@ -1,0 +1,43 @@
+@use 'src/styles' as *; 
+@use '@angular/material' as mat;
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ensure the container takes the full height of the viewport
+}
+
+.content {
+  flex: 1; // Ensure the content takes up the remaining space
+}
+
+.admin-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ensure the container takes the full height of the viewport
+
+  .drawer-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; // Ensure the container takes the full height of the viewport
+
+    .drawer {
+      width: 250px;
+      height: 100%;
+      padding: 10px;
+    }
+
+  }
+  .admin-content {
+    flex: 1; // Ensure the content takes up the remaining space
+  }
+
+  
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}

@@ -1,0 +1,32 @@
+<mat-toolbar class="top-nav"  [ngClass]="{'scrolled': isScrolled}">
+    <a mat-button class="company-group" [href]="siteConfig.nav[0].href">
+        <!-- Company Logo -->
+        <mat-icon class="company-icon">eco</mat-icon>
+
+        <!-- Company Name -->
+        <span class="company-name">{{ siteConfig.name }}</span>
+    </a>
+
+    <span class="nav-spacer"></span>
+
+    <nav class="nav-group" aria-label="TopNavItems">
+        <div *ngFor="let item of siteConfig.nav" class="nav-item">
+            <a [href]="item.href" style="position: relative;" class="nav-link">{{ item.name }}</a>
+        </div>
+    </nav>
+
+    <span class="nav-spacer"></span>
+
+    <div class="nav-buttons-group">
+        <button mat-button class="nav-button">
+            Sign in
+        </button>
+        <button mat-raised-button color="primary" class="nav-button">
+            Sign up
+        </button>
+    </div>
+
+</mat-toolbar>
+
+<div style="height: 50px" aria-label="spacer">
+</div>
