@@ -1,1 +1,198 @@
-<p>user-signup works!</p>
+<div class="signup-container">
+  <div class="signup-form">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <h2>Sign Up</h2>
+      <div class="step">
+        <!-- Step 1: User Details -->
+        <div *ngIf="currentStep === 1">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="username" required />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+              User name is required.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required />
+            <mat-icon matSuffix>mail</mat-icon>
+            <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+              Please enter a valid email.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phone" required />
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
+              <ng-container *ngIf="signupForm.get('phone')?.errors?.['invalidPhoneNumber']">
+                Enter a valid phone number.
+              </ng-container>
+              <ng-container *ngIf="signupForm.get('phone')?.errors?.['required']">
+                Phone number is required.
+              </ng-container>
+            </mat-error>
+
+          </mat-form-field>
+
+
+          <div class="address-section">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Full Name</mat-label>
+              <input matInput formControlName="fullName" required />
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <mat-error *ngIf="signupForm.get('fullName')?.invalid && signupForm.get('fullName')?.touched">
+                Full name is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Select your date of birth" formControlName="dob" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <!-- Link to login page -->
+          <div class="already-account">
+            <a routerLink="/authentication/user-login">Already have an account?</a>
+          </div>
+          <div class="form-navigation">
+            <div class="login-section">
+              <button mat-stroked-button color="primary" class="login-button" (click)="login()">
+                <mat-icon>arrow_back</mat-icon> Login
+              </button>
+            </div>
+
+            <div class="next-section">
+              <button mat-raised-button color="primary" class="next-button" (click)="next()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Address Details -->
+        <div *ngIf="currentStep === 2">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Aadhaar No</mat-label>
+            <input matInput formControlName="aadhaar" required />
+            <mat-icon matSuffix>credit_card</mat-icon>
+            <mat-error *ngIf="signupForm.get('aadhaar')?.invalid && signupForm.get('aadhaar')?.touched">
+              <ng-container *ngIf="signupForm.get('aadhaar')?.errors?.['invalidAadhaar']">
+                Enter a valid Aadhaar number.
+              </ng-container>
+              <ng-container *ngIf="signupForm.get('aadhaar')?.errors?.['required']">
+                Aadhaar number is required.
+              </ng-container>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>PAN No</mat-label>
+            <input matInput formControlName="pan" required />
+            <mat-icon matSuffix>account_circle</mat-icon>
+            <mat-error *ngIf="signupForm.get('pan')?.invalid && signupForm.get('pan')?.touched">
+              PAN No is required.
+            </mat-error>
+          </mat-form-field>
+
+          <div class="address-section">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Pincode</mat-label>
+              <mat-icon matSuffix>pin_drop</mat-icon>
+              <input matInput formControlName="pincode" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Door No</mat-label>
+              <mat-icon matSuffix>door_front</mat-icon>
+              <input matInput formControlName="door" required />
+            </mat-form-field>
+          </div>
+
+          <div class="address-section">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Street</mat-label>
+              <mat-icon matSuffix>streetview</mat-icon>
+              <input matInput formControlName="street" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>District and State</mat-label>
+              <mat-icon matSuffix>location_city</mat-icon>
+              <input matInput formControlName="districtState" required />
+            </mat-form-field>
+          </div>
+
+          <div class="form-navigation">
+            <div class="back-section">
+              <button mat-stroked-button color="primary" class="back-button" (click)="back()">
+                <mat-icon>arrow_back</mat-icon> Back
+              </button>
+            </div>
+
+            <div class="next-section">
+              <button mat-raised-button color="primary" class="next-button" (click)="next()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Password Details -->
+        <div *ngIf="currentStep === 3">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="passwordHide ? 'password' : 'text'" placeholder="Enter your password" formControlName="password" required>
+            <mat-icon matSuffix (click)="passwordHide = !passwordHide">
+              {{passwordHide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+            <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+              Password is required.
+            </mat-error>
+            <mat-error *ngIf="signupForm.get('password')?.hasError('weakPassword')">
+              Password must be at least 8 characters long and include letters, numbers, and special characters.
+            </mat-error>
+          </mat-form-field>
+          <br><br><br>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="confirmPasswordHide ? 'password' : 'text'" placeholder="Confirm password" formControlName="confirmPassword" required>
+            <mat-icon matSuffix (click)="confirmPasswordHide = !confirmPasswordHide">
+              {{confirmPasswordHide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+            <mat-error *ngIf="signupForm.get('confirmPassword')?.hasError('passwordsNotMatching')">
+              Passwords do not match.
+            </mat-error>
+            <mat-error *ngIf="signupForm.get('confirmPassword')?.hasError('required')">
+              Confirm password is required.
+            </mat-error>
+          </mat-form-field>
+          <br><br><br>
+
+          <div class="form-navigation">
+            <div class="back-section">
+              <button mat-stroked-button color="primary" class="back-button" (click)="back()">
+                <mat-icon>arrow_back</mat-icon> Back
+              </button>
+            </div>
+
+            <div class="submit-section">
+              <button mat-raised-button color="primary" [disabled]="signupForm.invalid" type="submit" (click)="onSubmit()">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

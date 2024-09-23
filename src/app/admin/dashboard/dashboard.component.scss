@@ -1,0 +1,98 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+.admin-dashboard-container {
+  padding: 20px;
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 50);
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .dashboard-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    background: mat.get-color-from-palette($instadrive-base-palette, 50);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .vehicle_pie {
+      align-items: center;
+      padding-top: 20px;
+      margin-right: 20px;
+    }
+
+    .proposal_pie {
+      align-items: center;
+      padding-top: 20px;
+      margin-right: 20px;
+    }
+
+    mat-card-header {
+      text-align: center;
+      background: mat.get-color-from-palette($instadrive-insurance-primary, 500);
+      color: mat.get-color-from-palette($instadrive-insurance-onsurface, 500);
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+
+    .line_card_content {
+      margin-top: 20px;
+    }
+
+    .premium_card_content {
+      margin-top: 20px;
+    }
+
+    .total-policies-count {
+      font-size: 28px;
+      font-weight: bold;
+      color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+      text-align: center;
+    }
+
+    .total-premium-box {
+      text-align: center;
+      padding-top: 70px;
+
+      h1 {
+        font-size: 52px;
+        color: mat.get-color-from-palette($instadrive-insurance-primary, 500);
+        margin: 0;
+      }
+
+      .percent-up {
+        color: mat.get-color-from-palette($instadrive-insurance-success, 500);
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    ngx-charts-line-chart,
+    ngx-charts-pie-chart {
+      margin: 0 auto;
+
+    }
+  }
+}

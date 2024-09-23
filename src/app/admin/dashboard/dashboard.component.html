@@ -1,1 +1,80 @@
-<p>dashboard works!</p>
+<div class="admin-dashboard-container">
+  <div class="content">
+    <!-- Row 1: Total Policies Issued and Total Premium -->
+    <div class="row">
+      <!-- Total Policies Issued Card with line chart -->
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Total Policies Issued</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="line_card_content">
+          <ngx-charts-line-chart
+            [view]="[500, 200]"
+            [scheme]="colorScheme"
+            [results]="lineChartData"
+            [legend]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+          ></ngx-charts-line-chart>
+          <div class="total-policies-count">42K</div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Total Premium Card -->
+      <mat-card class="dashboard-card premium-card">
+        <mat-card-header>
+          <mat-card-title>Total Premium</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="premium_card_content">
+          <div class="total-premium-box">
+            <h1>841034</h1>
+            <p><span class="percent-up">12% ⬆</span></p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Row 2: Vehicle Sources and Proposals Status -->
+    <div class="row">
+      <!-- Vehicle Sources Pie Chart -->
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Vehicle Sources</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="vehicle_pie">
+          <ngx-charts-pie-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="vehicleSources"
+            [doughnut]="true"
+            [arcWidth]="0.6"
+            [labels]="true"
+            [legend]="true"
+            [legendPosition]="legendPositionR"
+          ></ngx-charts-pie-chart>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Proposals Status Pie Chart -->
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Proposals Status</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="proposal_pie">
+          <ngx-charts-pie-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="proposalStatus"
+            [doughnut]="true"
+            [arcWidth]="0.6"
+            [labels]="true"
+            [legend]="true"
+            [legendPosition]="legendPositionR"
+            [maxLabelLength]="30"
+          ></ngx-charts-pie-chart>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

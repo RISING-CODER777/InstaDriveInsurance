@@ -19,6 +19,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms'; 
 
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -39,7 +41,9 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatSelectModule
-  ]
+    MatSelectModule,
+    NgxChartsModule
+  ],
+  providers: [],
 })
 export class AdminModule { }
