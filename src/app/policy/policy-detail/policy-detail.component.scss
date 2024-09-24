@@ -1,0 +1,112 @@
+.policy-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .policy-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    background-color: #fff; /* White background */
+    border: 1px solid #e0e0e0; /* Light gray border for a cleaner look */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+    }
+  }
+  
+  .policy-card mat-card {
+    padding: 20px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  h4 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between title and icon */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .toggle-icon {
+    cursor: pointer;
+    font-size: 18px; /* Size of the icons */
+  }
+  
+  .checkbox-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  mat-checkbox {
+    font-size: 14px;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 100%; /* Position the tooltip below the checkbox */
+    left: 0;
+    margin-top: 5px; /* Add space above the tooltip */
+    background-color: #f0e68c;
+    border: 2px solid #333;
+    padding: 10px;
+    width: 220px; /* Adjust width if necessary */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    z-index: 10;
+    border-radius: 8px;
+    font-family: 'Comic Sans MS', cursive;
+    white-space: normal; /* Allow wrapping of text */
+    
+    /* Add the comic-style arrow */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px; /* Adjust position of the arrow */
+      left: 10px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent #333 transparent;
+    }
+  }
+  
+  .selected-options-card {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+    }
+  }
+  
+  .selected-options-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .selected-options-card h3 {
+    margin-bottom: 15px;
+  }
+  
+  .selected-options-card h4 {
+    font-weight: bold;
+  }
+  

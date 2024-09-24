@@ -23,8 +23,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -65,7 +64,8 @@ const icons = {
     MatBottomSheetModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

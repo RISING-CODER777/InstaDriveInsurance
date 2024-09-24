@@ -1,1 +1,111 @@
-<p>policy-detail works!</p>
+<div class="policy-container">
+    <div class="policy-card">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Insurance Options</mat-card-title>
+        </mat-card-header>
+  
+        <!-- Add-ons Section -->
+        <div class="section">
+          <h4>
+            Add-ons 
+            <span class="toggle-icon" (click)="toggleAddOnOptions()">
+              {{ showAddOnOptions ? '-' : '+' }}
+            </span>
+          </h4>
+          <div *ngIf="showAddOnOptions">
+            <div *ngFor="let option of addOnOptions" class="checkbox-container">
+              <mat-checkbox
+                (mouseover)="showTooltip(option)"
+                (mouseleave)="hideTooltip()"
+                [(ngModel)]="option.selected"
+                (change)="onOptionChange(option, $event.checked)"
+              >
+                {{ option.optionName }}
+              </mat-checkbox>
+  
+              <!-- Tooltip for option details -->
+              <div class="tooltip comic-tooltip" *ngIf="hoveredOption === option">
+                <p>{{ option.description }}</p>
+                <p>Price: ₹{{ option.price }}</p>
+                <p>Coverage: ₹{{ option.coverageAmount }}</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+  
+        <!-- Accident Covers Section -->
+        <div class="section">
+          <h4>
+            Accident Covers 
+            <span class="toggle-icon" (click)="toggleAccidentCoverOptions()">
+              {{ showAccidentCoverOptions ? '-' : '+' }}
+            </span>
+          </h4>
+          <div *ngIf="showAccidentCoverOptions">
+            <div *ngFor="let option of accidentCoverOptions" class="checkbox-container">
+              <mat-checkbox
+                (mouseover)="showTooltip(option)"
+                (mouseleave)="hideTooltip()"
+                [(ngModel)]="option.selected"
+                (change)="onOptionChange(option, $event.checked)"
+              >
+                {{ option.optionName }}
+              </mat-checkbox>
+  
+              <!-- Tooltip for option details -->
+              <div class="tooltip comic-tooltip" *ngIf="hoveredOption === option">
+                <p>{{ option.description }}</p>
+                <p>Price: ₹{{ option.price }}</p>
+                <p>Coverage: ₹{{ option.coverageAmount }}</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+  
+        <!-- Accessories Covers Section -->
+        <div class="section">
+          <h4>
+            Accessories Covers 
+            <span class="toggle-icon" (click)="toggleAccessoryCoverOptions()">
+              {{ showAccessoryCoverOptions ? '-' : '+' }}
+            </span>
+          </h4>
+          <div *ngIf="showAccessoryCoverOptions">
+            <div *ngFor="let option of accessoryCoverOptions" class="checkbox-container">
+              <mat-checkbox
+                (mouseover)="showTooltip(option)"
+                (mouseleave)="hideTooltip()"
+                [(ngModel)]="option.selected"
+                (change)="onOptionChange(option, $event.checked)"
+              >
+                {{ option.optionName }}
+              </mat-checkbox>
+  
+              <!-- Tooltip for option details -->
+              <div class="tooltip comic-tooltip" *ngIf="hoveredOption === option">
+                <p>{{ option.description }}</p>
+                <p>Price: ₹{{ option.price }}</p>
+                <p>Coverage: ₹{{ option.coverageAmount }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  
+    <div class="selected-options-card">
+      <h3>Selected Options</h3>
+      <ul>
+        <li *ngFor="let option of selectedOptions">
+          {{ option.optionName }} - ₹{{ option.price }}
+        </li>
+      </ul>
+      <h4>Total Price: ₹{{ totalPrice }}</h4>
+    </div>
+  </div>
+  
+  <div style="height: 50px;"></div>
+  

@@ -39,6 +39,87 @@
     }
   ],
 
+
+  "insurance-options": [
+    {
+      "optionType": "AddOn",
+      "optionName": "24x7 Roadside Assistance",
+      "description": "24x7 assistance for roadside emergencies.",
+      "price": 500,
+      "coverageAmount": 100000
+    },
+    {
+      "optionType": "AddOn",
+      "optionName": "Zero Depreciation",
+      "description": "Bumper-to-Bumper cover to avoid depreciation cost.",
+      "price": 1000,
+      "coverageAmount": 200000
+    },
+    {
+      "optionType": "AddOn",
+      "optionName": "Engine Protection Cover",
+      "description": "Cover for engine-related issues.",
+      "price": 750,
+      "coverageAmount": 150000
+    },
+    {
+      "optionType": "AddOn",
+      "optionName": "Consumables",
+      "description": "Cover for consumables like engine oil.",
+      "price": 200,
+      "coverageAmount": 50000
+    },
+    {
+      "optionType": "AccidentCover",
+      "optionName": "Owner-Driver PA Cover",
+      "description": "Personal Accident cover for owner-driver.",
+      "price": 1500,
+      "coverageAmount": 1000000
+    },
+    {
+      "optionType": "AccidentCover",
+      "optionName": "₹1 Lac Unnamed Passenger Cover",
+      "description": "₹1 Lac cover for unnamed passengers.",
+      "price": 500,
+      "coverageAmount": 100000
+    },
+    {
+      "optionType": "AccidentCover",
+      "optionName": "₹2 Lac Unnamed Passenger Cover",
+      "description": "₹2 Lac cover for unnamed passengers.",
+      "price": 1000,
+      "coverageAmount": 200000
+    },
+    {
+      "optionType": "AccessoryCover",
+      "optionName": "Electrical Accessories",
+      "description": "Cover for electrical accessories.",
+      "price": 300,
+      "coverageAmount": 50000
+    },
+    {
+      "optionType": "AccessoryCover",
+      "optionName": "Non-Electrical Accessories",
+      "description": "Cover for non-electrical accessories.",
+      "price": 400,
+      "coverageAmount": 60000
+    },
+    {
+      "optionType": "AccessoryCover",
+      "optionName": "Paid Driver Cover",
+      "description": "Cover for paid driver.",
+      "price": 600,
+      "coverageAmount": 80000
+    },
+    {
+      "optionType": "AddOn",
+      "optionName": "Tyre Protector",
+      "description": "Protection for your vehicle's tires against damage.",
+      "price": 2000,
+      "coverageAmount": 50000
+    }
+  ],
+
   "claims-approval": [
     {
       "userId": 1,
