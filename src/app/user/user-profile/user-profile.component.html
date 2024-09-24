@@ -1,51 +1,86 @@
-<div style="height: 70px;">
-</div>
+<!-- Spacing div for scrolling -->
+<div style="height: 70px;"></div>
+
 <div class="profile-container">
-    <div class="banner-container">
-        <p>My Profile</p>
+  <div class="banner-container">
+    <p>My Profile</p>
+  </div>
 
+  <div class="profile-content" *ngIf="userProfile">
+    <div class="profile-card">
+      <!-- Profile Image Upload -->
+      <div class="profile-header">
+        <img src="path/to/profile-image.jpg" alt="Profile Image" class="profile-image" />
+        <button mat-button class="upload-button">Upload Image</button>
+      </div>
+
+      <!-- Personal Information Card -->
+      <div class="personal-info-card">
+        <div class="info-header">
+          <p>Profile Information:</p>
+          <button mat-button class="edit-button">Edit</button>
+        </div>
+        <p>Name: {{ userProfile.fullName }}</p>
+        <p>Email: {{ userProfile.email }}</p>
+        <p>Phone Number: {{ userProfile.phoneNumber }}</p>
+      </div>
+
+      <!-- Address Card -->
+      <div class="address-card">
+        <div class="info-header">
+          <p>Address:</p>
+          <button mat-button class="edit-button">Edit</button>
+        </div>
+        <p>Door No: {{ userProfile.doorNo }}</p>
+        <p>Street: {{ userProfile.street }}</p>
+        <p>Pincode: {{ userProfile.pincode }}</p>
+        <p>District: {{ userProfile.district }}</p>
+        <p>State: {{ userProfile.state }}</p>
+      </div>
     </div>
 
-    <div class="profile-content">
-        <div class="profile-card">
-            profile
+    <!-- Policies Card -->
+    <div class="policies-card">
+      <p style="font-weight: bold;">Policies</p>
+
+      <div class="policy">
+        <div class="policy-info">
+          <div class="general-info">
+            <div>MARUTISX4</div>
+
+            <!-- Uncomment below after service implementation -->
+            <!-- 
+            <div 
+              [ngClass]="{
+                'status-active': element.status === 'Active',
+                'status-expired': element.status === 'Expired'
+              }">
+              {{element.status}}
+            </div> 
+            -->
+            <div class="status-active">Active</div>
+          </div>
+
+          <div class="vehicle-info">
+            DLIOCB1234 | 2011 | Petrol
+          </div>
         </div>
-        <div class="policies-card">
-            <p>Policies</p>
 
-            <div class="policy">
-                <div class="policy-info">
-                    <div class="general-info">
-                        <div>MARUTISX4</div>
-
-                        <!-- TODO: Uncomment below after service implementation -->
-                       <!-- <div 
-                         [ngClass]="{
-                            'status-active': element.status === 'Active',
-                            'status-expired': element.status === 'Expired'
-                          }" -->
-                        <div
-                        class="status-active"
-                        
-                        >Active</div>
-                    </div>
-
-                    <div class="vehicle-info">
-                        DLIOCB1234 | 2011 | Petrol
-                    </div>
-
-                </div>
-                
-                <!-- TODO: Uncomment below after service implementation -->
-                <!-- <div 
-                    [ngClass]="{
-                    'action-active-button': element.status === 'Active',
-                    'action-active-button': element.status === 'Expired'
-                    }" -->
-                <div class="action-active-button">
-                    Claim
-                </div>
-            </div>
-        </div>
+        <!-- Uncomment below after service implementation -->
+        <!-- 
+        <div 
+          [ngClass]="{
+            'action-active-button': element.status === 'Active',
+            'action-expired-button': element.status === 'Expired'
+          }">
+          {{element.status === 'Active' ? 'Claim' : 'Renew'}}
+        </div> 
+        -->
+        <div class="action-active-button">Claim</div>
+      </div>
     </div>
+  </div>
 </div>
+
+<!-- TODO: This div is intentionally added to ensure proper spacing when scrolling -->
+<div style="height: 70px;"></div>

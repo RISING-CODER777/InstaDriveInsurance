@@ -1,7 +1,7 @@
 export const environment = {
     production: false,
 
-    usersEndpoint: 'http://localhost:3000/users',
+    userProfileEndpoint: 'http://localhost:3000/user-profile',
     proposalsEndpoint: 'http://localhost:3000/proposals',
     
     claimsApprovalEndpoint: 'http://localhost:3000/claims-approval',

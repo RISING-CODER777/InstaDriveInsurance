@@ -1,9 +1,44 @@
 {
-  "users": [
+ 
+  "user-profile": [
     {
-      "id": "b86a"
+      "id": 1,
+      "username": "gowtham.cp",
+      "email": "gowthamprabu1409@gmail.com",
+      "phoneNumber": "9876543210",
+      "fullName": "Gowtham CP",
+      "doorNo": "No.123",
+      "street": "2nd Street Anna Nagar",
+      "district": "Chennai",
+      "state": "TamilNadu",
+      "pincode": "6600042"
+    },
+    {
+      "id": 2,
+      "username": "anjali.s",
+      "email": "anjali.singh@example.com",
+      "phoneNumber": "9876543211",
+      "fullName": "Anjali Singh",
+      "doorNo": "No.456",
+      "street": "3rd Avenue T Nagar",
+      "district": "Chennai",
+      "state": "TamilNadu",
+      "pincode": "600017"
+    },
+    {
+      "id": 3,
+      "username": "rajesh.k",
+      "email": "rajesh.kumar@example.com",
+      "phoneNumber": "9876543212",
+      "fullName": "Rajesh Kumar",
+      "doorNo": "No.789",
+      "street": "4th Cross Road Adyar",
+      "district": "Chennai",
+      "state": "TamilNadu",
+      "pincode": "600020"
     }
   ],
+
   "claims-approval": [
     {
       "userId": 1,
