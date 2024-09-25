@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PolicyStatusComponent {
 
+  status: string = 'Pending'; // or 'Approved' // TODO: Need to write logic
+  showMoreDetails: boolean = false;
+
+  toggleDetails() {
+    this.showMoreDetails = !this.showMoreDetails;
+  }
 }
+

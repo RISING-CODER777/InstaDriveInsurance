@@ -1,4 +1,3 @@
-// claims-approval.component.ts
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,6 +6,7 @@ import { Claim } from '../models/claim-approval.model';
 import { AdminService } from '../services/admin.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ClaimsApprovalBottomSheetComponent } from '../templates/claims-approval-bottom-sheet/claims-approval-bottom-sheet.component';
+
 @Component({
   selector: 'app-claims-approval',
   templateUrl: './claims-approval.component.html',
@@ -36,7 +36,10 @@ export class ClaimsApprovalComponent implements AfterViewInit {
     private matBottomSheet: MatBottomSheet
   ) {
     this.adminService.getClaims().subscribe((data: Claim[]) => {
-      this.claims = data;
+      this.claims = data.map(item => ({
+        ...item,
+        dateOfIncident: item.dateOfIncident ? new Date(item.dateOfIncident) : null // Ensure dateOfIncident is a Date object
+      }));
       this.dataSource.data = this.claims;
     });
   }

@@ -1,8 +1,9 @@
 export interface ClaimRequest {
+    claimId: string;
     claimNumber: string;
     name?: string;
-    userId: number; // or string, based on your design
-    dateOfIncident: string;
+    userId: string; // or string, based on your design
+    dateOfIncident: Date | null;
     claimAmount: number;
     approvedAmount: number;
     status: string;

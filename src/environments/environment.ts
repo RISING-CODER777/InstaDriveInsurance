@@ -1,14 +1,14 @@
 export const environment = {
     production: false,
 
-    userProfileEndpoint: 'http://localhost:3000/user-profile',
+    userProfileEndpoint: 'https://localhost:7141/api/UserProfile',
     proposalsEndpoint: 'http://localhost:3000/proposals',
     
-    claimsApprovalEndpoint: 'http://localhost:3000/claims-approval',
-    newApprovalEndpoint: 'http://localhost:3000/new-approval',
+    claimsApprovalEndpoint: 'https://localhost:7141/api/Claims/all',
+    newApprovalEndpoint: 'https://localhost:7141/api/admin/Proposal/AllProposals',
 
     paymentsEndpoint: 'http://localhost:3000/payments',
 
-    insuranceOptionsEndpoint: 'http://localhost:3000/insurance-options',
+    insuranceOptionsEndpoint: 'https://localhost:7141/api/Options',
 
 };

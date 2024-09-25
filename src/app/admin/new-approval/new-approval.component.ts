@@ -4,8 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { NewApproval } from '../models/new-approval.model';
 import { AdminService } from '../services/admin.service';
-
-import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { NewApprovalBottomSheetComponent } from '../templates/new-approval-bottom-sheet/new-approval-bottom-sheet.component';
 
 @Component({
@@ -13,14 +12,11 @@ import { NewApprovalBottomSheetComponent } from '../templates/new-approval-botto
   templateUrl: './new-approval.component.html',
   styleUrls: ['./new-approval.component.scss']
 })
-
 export class NewApprovalComponent implements AfterViewInit {
   newApproval: NewApproval[] = [];
   dataSource = new MatTableDataSource<NewApproval>();
   selection!: NewApproval;
 
-  
-  // Columns to be displayed in the table
   displayedColumns: string[] = ['index', 'user', 'policyDetails', 'status', 'requestDate', 'premiumAmount', 'adminComments'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -31,12 +27,12 @@ export class NewApprovalComponent implements AfterViewInit {
     private matBottomSheet: MatBottomSheet
   ) {
     this.adminService.getNewApproval().subscribe((data: NewApproval[]) => {
-      this.newApproval = data;
+      this.newApproval = data.map(item => ({
+        ...item,
+        requestDate: item.requestDate ? new Date(item.requestDate) : null // Convert requestDate to Date or null
+      }));
       this.dataSource.data = this.newApproval;
     });
-
- 
-   
   }
 
   ngAfterViewInit() {
@@ -53,8 +49,6 @@ export class NewApprovalComponent implements AfterViewInit {
         backdropClass: 'bottom-sheet-backdrop-blur',
         panelClass: 'bottom-sheet-container',
       }
-    )
+    );
   }
-
-
 }

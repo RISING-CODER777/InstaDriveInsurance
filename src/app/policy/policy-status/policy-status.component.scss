@@ -1,0 +1,138 @@
+@use 'src/styles' as *; // Import your styles file
+@use '@angular/material' as mat;
+
+.policy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.policy-card {
+  width: 900px; /* Increased width for a more spacious layout */
+  background: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Light grey from palette */
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+.congratulations-message {
+  background-color: mat.get-color-from-palette($instadrive-insurance-success, 100); /* Light success color */
+  border-left: 5px solid mat.get-color-from-palette($instadrive-insurance-success, 500); /* Darker success color */
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.card-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.contact-details {
+  flex: 0.4;
+  padding: 20px;
+  background: mat.get-color-from-palette($instadrive-insurance-base, 300); /* Darker base color for better visibility */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.policy-details {
+  flex: 0.55;
+  padding: 20px;
+  background: mat.get-color-from-palette($instadrive-insurance-base, 400); /* Even darker base color for better visibility */
+  border-radius: 10px;
+}
+
+.contact-item,
+.info-box,
+.more-details-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+mat-icon {
+  color: mat.get-color-from-palette($instadrive-insurance-primary, 500); /* Primary color */
+  font-size: 24px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.policy-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.insurance-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  color: mat.get-color-from-palette($instadrive-insurance-primary, 500); /* Primary color */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.more-details {
+  max-height: 0; /* Start hidden */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.more-details.expanded {
+  max-height: 100px; /* Set to the maximum height when expanded */
+}
+
+.progress-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.custom-progress {
+  flex: 1;
+  height: 8px;
+  background-color: mat.get-color-from-palette($instadrive-insurance-base, 300); /* Base color */
+}
+
+.payment-container {
+  display: flex;
+  justify-content: flex-end; /* Align payment button to the right */
+}
+
+.payment-btn {
+  display: flex;
+  justify-content: center; /* Center text within button */
+  align-items: center;
+  gap: 8px;
+  background-color: #b0b0b0; /* Grey color for disabled look */
+  color: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Light base color */
+  margin-top: 20px;
+  padding: 10px 20px; /* Padding to make the button more appealing */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s;
+}
+
+.payment-btn[disabled] {
+  background-color: #d0d0d0; /* Lighter grey for disabled state */
+  color: mat.get-color-from-palette($instadrive-insurance-base, 100); /* Keep the text light */
+  cursor: not-allowed; /* Change cursor to indicate disabled */
+}
+
+.payment-btn:hover:not(:disabled) {
+  background-color: mat.get-color-from-palette($instadrive-insurance-primary, 600); /* Darker shade on hover */
+}
+
+.header-content {
+  display: flex;
+  align-items: center; /* Aligns icon and text vertically */
+  gap: 10px; /* Adds space between the icon and text */
+}

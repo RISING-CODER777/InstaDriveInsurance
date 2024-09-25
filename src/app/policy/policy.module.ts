@@ -19,6 +19,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatCheckboxModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatChipsModule
   ]
 })
 export class PolicyModule {}

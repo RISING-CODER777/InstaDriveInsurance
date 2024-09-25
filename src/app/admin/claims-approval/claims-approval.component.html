@@ -19,7 +19,7 @@
       <!-- Column for Date of Incident -->
       <ng-container matColumnDef="dateOfIncident">
         <th mat-header-cell class="header-row" *matHeaderCellDef>Incident Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.dateOfIncident }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.dateOfIncident ? (element.dateOfIncident | date:'shortDate') : 'N/A' }}</td>
       </ng-container>
 
       <!-- Column for Claim Amount -->

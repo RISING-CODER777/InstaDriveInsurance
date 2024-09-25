@@ -1,8 +1,10 @@
 export interface Claim{
-  userId: number;
+  id: string | undefined;
+  claimId: string;
+  userId: string;
   claimNumber: string;
   name:string;
-  dateOfIncident:string;
+  dateOfIncident: Date | null;  
   claimAmount:number;
   approvedAmount:number;
   status:string;

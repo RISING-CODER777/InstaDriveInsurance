@@ -1,8 +1,7 @@
 {
- 
   "user-profile": [
     {
-      "id": 1,
+      "id": "1",
       "username": "gowtham.cp",
       "email": "gowthamprabu1409@gmail.com",
       "phoneNumber": "9876543210",
@@ -14,7 +13,7 @@
       "pincode": "6600042"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "anjali.s",
       "email": "anjali.singh@example.com",
       "phoneNumber": "9876543211",
@@ -26,7 +25,7 @@
       "pincode": "600017"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "rajesh.k",
       "email": "rajesh.kumar@example.com",
       "phoneNumber": "9876543212",
@@ -38,88 +37,96 @@
       "pincode": "600020"
     }
   ],
-
-
   "insurance-options": [
     {
       "optionType": "AddOn",
       "optionName": "24x7 Roadside Assistance",
       "description": "24x7 assistance for roadside emergencies.",
       "price": 500,
-      "coverageAmount": 100000
+      "coverageAmount": 100000,
+      "id": "4b4c"
     },
     {
       "optionType": "AddOn",
       "optionName": "Zero Depreciation",
       "description": "Bumper-to-Bumper cover to avoid depreciation cost.",
       "price": 1000,
-      "coverageAmount": 200000
+      "coverageAmount": 200000,
+      "id": "5b30"
     },
     {
       "optionType": "AddOn",
       "optionName": "Engine Protection Cover",
       "description": "Cover for engine-related issues.",
       "price": 750,
-      "coverageAmount": 150000
+      "coverageAmount": 150000,
+      "id": "87fa"
     },
     {
       "optionType": "AddOn",
       "optionName": "Consumables",
       "description": "Cover for consumables like engine oil.",
       "price": 200,
-      "coverageAmount": 50000
+      "coverageAmount": 50000,
+      "id": "365d"
     },
     {
       "optionType": "AccidentCover",
       "optionName": "Owner-Driver PA Cover",
       "description": "Personal Accident cover for owner-driver.",
       "price": 1500,
-      "coverageAmount": 1000000
+      "coverageAmount": 1000000,
+      "id": "f3e7"
     },
     {
       "optionType": "AccidentCover",
       "optionName": "₹1 Lac Unnamed Passenger Cover",
       "description": "₹1 Lac cover for unnamed passengers.",
       "price": 500,
-      "coverageAmount": 100000
+      "coverageAmount": 100000,
+      "id": "21aa"
     },
     {
       "optionType": "AccidentCover",
       "optionName": "₹2 Lac Unnamed Passenger Cover",
       "description": "₹2 Lac cover for unnamed passengers.",
       "price": 1000,
-      "coverageAmount": 200000
+      "coverageAmount": 200000,
+      "id": "7d6a"
     },
     {
       "optionType": "AccessoryCover",
       "optionName": "Electrical Accessories",
       "description": "Cover for electrical accessories.",
       "price": 300,
-      "coverageAmount": 50000
+      "coverageAmount": 50000,
+      "id": "1770"
     },
     {
       "optionType": "AccessoryCover",
       "optionName": "Non-Electrical Accessories",
       "description": "Cover for non-electrical accessories.",
       "price": 400,
-      "coverageAmount": 60000
+      "coverageAmount": 60000,
+      "id": "a0d4"
     },
     {
       "optionType": "AccessoryCover",
       "optionName": "Paid Driver Cover",
       "description": "Cover for paid driver.",
       "price": 600,
-      "coverageAmount": 80000
+      "coverageAmount": 80000,
+      "id": "d006"
     },
     {
       "optionType": "AddOn",
       "optionName": "Tyre Protector",
       "description": "Protection for your vehicle's tires against damage.",
       "price": 2000,
-      "coverageAmount": 50000
+      "coverageAmount": 50000,
+      "id": "8ea6"
     }
   ],
-
   "claims-approval": [
     {
       "userId": 1,
@@ -592,357 +599,6 @@
       "0": {
         "0": {
           "0": {
-            "id": "6346504382",
-            "userId": "6346504382",
-            "proposalId": "6346504382",
-            "status": "Approved",
-            "addOnDetails": [
-              "Basic add-on details",
-              "Basic add-on details"
-            ],
-            "accidentCoverDetails": [
-              "Full coverage details",
-              "Full coverage details"
-            ],
-            "accessoryCoverDetails": [
-              "Basic accessory coverage",
-              "Basic accessory coverage"
-            ]
-          },
-          "1": {
-            "0": {
-              "0": {
-                "0": {
-                  "id": "6346504382",
-                  "userId": "6346544382",
-                  "proposalId": "6346544382",
-                  "status": "Approved",
-                  "addOnDetails": [
-                    "Basic add-on details",
-                    "Basic add-on details"
-                  ],
-                  "accidentCoverDetails": [
-                    "Full coverage details",
-                    "Full coverage details"
-                  ],
-                  "accessoryCoverDetails": [
-                    "Basic accessory coverage",
-                    "Basic accessory coverage"
-                  ]
-                },
-                "1": {
-                  "0": {
-                    "id": "6346504382",
-                    "userId": "6346544382",
-                    "proposalId": "6346544382",
-                    "status": "Approved",
-                    "addOnDetails": [
-                      "Basic add-on details",
-                      "Basic add-on details"
-                    ],
-                    "accidentCoverDetails": [
-                      "Full coverage details",
-                      "Full coverage details"
-                    ],
-                    "accessoryCoverDetails": [
-                      "Basic accessory coverage",
-                      "Basic accessory coverage"
-                    ]
-                  },
-                  "1": {
-                    "0": {
-                      "id": "6346504382",
-                      "userId": "6346544382",
-                      "proposalId": "6346544382",
-                      "status": "Approved",
-                      "addOnDetails": [
-                        "Basic add-on details",
-                        "Basic add-on details"
-                      ],
-                      "accidentCoverDetails": [
-                        "Full coverage details",
-                        "Full coverage details"
-                      ],
-                      "accessoryCoverDetails": [
-                        "Basic accessory coverage",
-                        "Basic accessory coverage"
-                      ]
-                    },
-                    "1": {
-                      "0": {
-                        "id": "6346504382",
-                        "userId": "6346544382",
-                        "proposalId": "6346544382",
-                        "status": "Approved",
-                        "addOnDetails": [
-                          "Basic add-on details",
-                          "Basic add-on details"
-                        ],
-                        "accidentCoverDetails": [
-                          "Full coverage details",
-                          "Full coverage details"
-                        ],
-                        "accessoryCoverDetails": [
-                          "Basic accessory coverage",
-                          "Basic accessory coverage"
-                        ]
-                      },
-                      "1": {
-                        "id": "6346544382",
-                        "userId": "6346544382",
-                        "proposalId": "6346544382",
-                        "status": "Rejected",
-                        "addOnDetails": [
-                          "Basic add-on details",
-                          "Basic add-on details"
-                        ],
-                        "accidentCoverDetails": [
-                          "Full coverage details",
-                          "Full coverage details"
-                        ],
-                        "accessoryCoverDetails": [
-                          "Basic accessory coverage",
-                          "Basic accessory coverage"
-                        ]
-                      },
-                      "id": "6346544382"
-                    },
-                    "id": "6346544382"
-                  },
-                  "id": "6346544382"
-                },
-                "id": "6346544382"
-              },
-              "id": "6346544382"
-            },
-            "id": "6346544382"
-          },
-          "id": "6346504382"
-        },
-        "1": {
-          "0": {
-            "0": {
-              "0": {
-                "id": "6346504382",
-                "userId": "6346544382",
-                "proposalId": "6346544382",
-                "status": "Approved",
-                "addOnDetails": [
-                  "Basic add-on details",
-                  "Basic add-on details"
-                ],
-                "accidentCoverDetails": [
-                  "Full coverage details",
-                  "Full coverage details"
-                ],
-                "accessoryCoverDetails": [
-                  "Basic accessory coverage",
-                  "Basic accessory coverage"
-                ]
-              },
-              "1": {
-                "0": {
-                  "id": "6346504382",
-                  "userId": "6346544382",
-                  "proposalId": "6346544382",
-                  "status": "Approved",
-                  "addOnDetails": [
-                    "Basic add-on details",
-                    "Basic add-on details"
-                  ],
-                  "accidentCoverDetails": [
-                    "Full coverage details",
-                    "Full coverage details"
-                  ],
-                  "accessoryCoverDetails": [
-                    "Basic accessory coverage",
-                    "Basic accessory coverage"
-                  ]
-                },
-                "1": {
-                  "0": {
-                    "id": "6346504382",
-                    "userId": "6346544382",
-                    "proposalId": "6346544382",
-                    "status": "Approved",
-                    "addOnDetails": [
-                      "Basic add-on details",
-                      "Basic add-on details"
-                    ],
-                    "accidentCoverDetails": [
-                      "Full coverage details",
-                      "Full coverage details"
-                    ],
-                    "accessoryCoverDetails": [
-                      "Basic accessory coverage",
-                      "Basic accessory coverage"
-                    ]
-                  },
-                  "1": {
-                    "0": {
-                      "id": "6346504382",
-                      "userId": "6346544382",
-                      "proposalId": "6346544382",
-                      "status": "Approved",
-                      "addOnDetails": [
-                        "Basic add-on details",
-                        "Basic add-on details"
-                      ],
-                      "accidentCoverDetails": [
-                        "Full coverage details",
-                        "Full coverage details"
-                      ],
-                      "accessoryCoverDetails": [
-                        "Basic accessory coverage",
-                        "Basic accessory coverage"
-                      ]
-                    },
-                    "1": {
-                      "id": "6346544382",
-                      "userId": "6346544382",
-                      "proposalId": "6346544382",
-                      "status": "Rejected",
-                      "addOnDetails": [
-                        "Basic add-on details",
-                        "Basic add-on details"
-                      ],
-                      "accidentCoverDetails": [
-                        "Full coverage details",
-                        "Full coverage details"
-                      ],
-                      "accessoryCoverDetails": [
-                        "Basic accessory coverage",
-                        "Basic accessory coverage"
-                      ]
-                    },
-                    "id": "6346544382"
-                  },
-                  "id": "6346544382"
-                },
-                "id": "6346544382"
-              },
-              "id": "6346544382"
-            },
-            "id": "6346544382"
-          },
-          "id": "6346544382"
-        },
-        "id": "6346504382"
-      },
-      "1": {
-        "0": {
-          "0": {
-            "0": {
-              "id": "6346504382",
-              "userId": "6346544382",
-              "proposalId": "6346544382",
-              "status": "Approved",
-              "addOnDetails": [
-                "Basic add-on details",
-                "Basic add-on details"
-              ],
-              "accidentCoverDetails": [
-                "Full coverage details",
-                "Full coverage details"
-              ],
-              "accessoryCoverDetails": [
-                "Basic accessory coverage",
-                "Basic accessory coverage"
-              ]
-            },
-            "1": {
-              "0": {
-                "id": "6346504382",
-                "userId": "6346544382",
-                "proposalId": "6346544382",
-                "status": "Approved",
-                "addOnDetails": [
-                  "Basic add-on details",
-                  "Basic add-on details"
-                ],
-                "accidentCoverDetails": [
-                  "Full coverage details",
-                  "Full coverage details"
-                ],
-                "accessoryCoverDetails": [
-                  "Basic accessory coverage",
-                  "Basic accessory coverage"
-                ]
-              },
-              "1": {
-                "0": {
-                  "id": "6346504382",
-                  "userId": "6346544382",
-                  "proposalId": "6346544382",
-                  "status": "Approved",
-                  "addOnDetails": [
-                    "Basic add-on details",
-                    "Basic add-on details"
-                  ],
-                  "accidentCoverDetails": [
-                    "Full coverage details",
-                    "Full coverage details"
-                  ],
-                  "accessoryCoverDetails": [
-                    "Basic accessory coverage",
-                    "Basic accessory coverage"
-                  ]
-                },
-                "1": {
-                  "0": {
-                    "id": "6346504382",
-                    "userId": "6346544382",
-                    "proposalId": "6346544382",
-                    "status": "Approved",
-                    "addOnDetails": [
-                      "Basic add-on details",
-                      "Basic add-on details"
-                    ],
-                    "accidentCoverDetails": [
-                      "Full coverage details",
-                      "Full coverage details"
-                    ],
-                    "accessoryCoverDetails": [
-                      "Basic accessory coverage",
-                      "Basic accessory coverage"
-                    ]
-                  },
-                  "1": {
-                    "id": "6346544382",
-                    "userId": "6346544382",
-                    "proposalId": "6346544382",
-                    "status": "Rejected",
-                    "addOnDetails": [
-                      "Basic add-on details",
-                      "Basic add-on details"
-                    ],
-                    "accidentCoverDetails": [
-                      "Full coverage details",
-                      "Full coverage details"
-                    ],
-                    "accessoryCoverDetails": [
-                      "Basic accessory coverage",
-                      "Basic accessory coverage"
-                    ]
-                  },
-                  "id": "6346544382"
-                },
-                "id": "6346544382"
-              },
-              "id": "6346544382"
-            },
-            "id": "6346544382"
-          },
-          "id": "6346544382"
-        },
-        "id": "6346544382"
-      },
-      "id": "6346504382"
-    },
-    {
-      "0": {
-        "0": {
-          "0": {
             "0": {
               "id": "6346504382",
               "userId": "6346504382",
@@ -1292,22 +948,4417 @@
         "id": "6346504382"
       },
       "1": {
-        "id": "7373504382",
-        "userId": "7373504382",
-        "proposalId": "7373504382",
-        "status": "Under Review",
-        "addOnDetails": [
-          "Basic add-on details",
-          "Basic add-on details"
-        ],
-        "accidentCoverDetails": [
-          "Full coverage details",
-          "Full coverage details"
-        ],
-        "accessoryCoverDetails": [
-          "Basic accessory coverage",
-          "Basic accessory coverage"
-        ]
+        "0": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346504382",
+                "proposalId": "6346504382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346504382"
+        },
+        "1": {
+          "id": "7373504382",
+          "userId": "7373504382",
+          "proposalId": "7373504382",
+          "status": "Under Review",
+          "addOnDetails": [
+            "Basic add-on details",
+            "Basic add-on details"
+          ],
+          "accidentCoverDetails": [
+            "Full coverage details",
+            "Full coverage details"
+          ],
+          "accessoryCoverDetails": [
+            "Basic accessory coverage",
+            "Basic accessory coverage"
+          ]
+        },
+        "2": {
+          "0": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346504382",
+                  "proposalId": "6346504382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "0": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "id": "6346544382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Rejected",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346504382"
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "id": "7340624025",
+            "userId": "7340624025",
+            "proposalId": "7340624025",
+            "status": "Submitted",
+            "addOnDetails": [
+              "Basic add-on details",
+              "Basic add-on details"
+            ],
+            "accidentCoverDetails": [
+              "Full coverage details",
+              "Full coverage details"
+            ],
+            "accessoryCoverDetails": [
+              "Basic accessory coverage",
+              "Basic accessory coverage"
+            ]
+          },
+          "2": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "7340624025"
+        },
+        "3": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "id": "6346544382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Rejected",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "7373504382"
+      },
+      "2": {
+        "0": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346504382",
+                "proposalId": "6346504382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346504382"
+        },
+        "1": {
+          "id": "7340624025",
+          "userId": "7340624025",
+          "proposalId": "7340624025",
+          "status": "Submitted",
+          "addOnDetails": [
+            "Basic add-on details",
+            "Basic add-on details"
+          ],
+          "accidentCoverDetails": [
+            "Full coverage details",
+            "Full coverage details"
+          ],
+          "accessoryCoverDetails": [
+            "Basic accessory coverage",
+            "Basic accessory coverage"
+          ]
+        },
+        "2": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "id": "6346544382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Rejected",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "7340624025"
+      },
+      "3": {
+        "0": {
+          "0": {
+            "0": {
+              "id": "6346504382",
+              "userId": "6346544382",
+              "proposalId": "6346544382",
+              "status": "Approved",
+              "addOnDetails": [
+                "Basic add-on details",
+                "Basic add-on details"
+              ],
+              "accidentCoverDetails": [
+                "Full coverage details",
+                "Full coverage details"
+              ],
+              "accessoryCoverDetails": [
+                "Basic accessory coverage",
+                "Basic accessory coverage"
+              ]
+            },
+            "1": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "id": "6346544382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Rejected",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "6346544382"
+      },
+      "id": "6346504382"
+    },
+    {
+      "0": {
+        "0": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346504382",
+                "proposalId": "6346504382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346504382"
+        },
+        "1": {
+          "0": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346504382",
+                  "proposalId": "6346504382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "0": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "id": "6346544382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Rejected",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346504382"
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "id": "7373504382",
+            "userId": "7373504382",
+            "proposalId": "7373504382",
+            "status": "Under Review",
+            "addOnDetails": [
+              "Basic add-on details",
+              "Basic add-on details"
+            ],
+            "accidentCoverDetails": [
+              "Full coverage details",
+              "Full coverage details"
+            ],
+            "accessoryCoverDetails": [
+              "Basic accessory coverage",
+              "Basic accessory coverage"
+            ]
+          },
+          "2": {
+            "0": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346504382",
+                    "proposalId": "6346504382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "0": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "0": {
+                                "id": "6346504382",
+                                "userId": "6346544382",
+                                "proposalId": "6346544382",
+                                "status": "Approved",
+                                "addOnDetails": [
+                                  "Basic add-on details",
+                                  "Basic add-on details"
+                                ],
+                                "accidentCoverDetails": [
+                                  "Full coverage details",
+                                  "Full coverage details"
+                                ],
+                                "accessoryCoverDetails": [
+                                  "Basic accessory coverage",
+                                  "Basic accessory coverage"
+                                ]
+                              },
+                              "1": {
+                                "id": "6346544382",
+                                "userId": "6346544382",
+                                "proposalId": "6346544382",
+                                "status": "Rejected",
+                                "addOnDetails": [
+                                  "Basic add-on details",
+                                  "Basic add-on details"
+                                ],
+                                "accidentCoverDetails": [
+                                  "Full coverage details",
+                                  "Full coverage details"
+                                ],
+                                "accessoryCoverDetails": [
+                                  "Basic accessory coverage",
+                                  "Basic accessory coverage"
+                                ]
+                              },
+                              "id": "6346544382"
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346504382"
+                },
+                "1": {
+                  "0": {
+                    "0": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "id": "6346544382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Rejected",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346504382"
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "id": "7340624025",
+              "userId": "7340624025",
+              "proposalId": "7340624025",
+              "status": "Submitted",
+              "addOnDetails": [
+                "Basic add-on details",
+                "Basic add-on details"
+              ],
+              "accidentCoverDetails": [
+                "Full coverage details",
+                "Full coverage details"
+              ],
+              "accessoryCoverDetails": [
+                "Basic accessory coverage",
+                "Basic accessory coverage"
+              ]
+            },
+            "2": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "7340624025"
+          },
+          "3": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "7373504382"
+        },
+        "2": {
+          "0": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346504382",
+                  "proposalId": "6346504382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "0": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "id": "6346544382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Rejected",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346504382"
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "id": "7340624025",
+            "userId": "7340624025",
+            "proposalId": "7340624025",
+            "status": "Submitted",
+            "addOnDetails": [
+              "Basic add-on details",
+              "Basic add-on details"
+            ],
+            "accidentCoverDetails": [
+              "Full coverage details",
+              "Full coverage details"
+            ],
+            "accessoryCoverDetails": [
+              "Basic accessory coverage",
+              "Basic accessory coverage"
+            ]
+          },
+          "2": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "7340624025"
+        },
+        "3": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "id": "6346544382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Rejected",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "6346504382"
+      },
+      "1": {
+        "0": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346504382",
+                "proposalId": "6346504382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346504382"
+        },
+        "1": {
+          "id": "7373504382",
+          "userId": "7373504382",
+          "proposalId": "7373504382",
+          "status": "Under Review",
+          "addOnDetails": [
+            "Basic add-on details",
+            "Basic add-on details"
+          ],
+          "accidentCoverDetails": [
+            "Full coverage details",
+            "Full coverage details"
+          ],
+          "accessoryCoverDetails": [
+            "Basic accessory coverage",
+            "Basic accessory coverage"
+          ]
+        },
+        "2": {
+          "0": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346504382",
+                  "proposalId": "6346504382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "0": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "0": {
+                              "id": "6346504382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Approved",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "1": {
+                              "id": "6346544382",
+                              "userId": "6346544382",
+                              "proposalId": "6346544382",
+                              "status": "Rejected",
+                              "addOnDetails": [
+                                "Basic add-on details",
+                                "Basic add-on details"
+                              ],
+                              "accidentCoverDetails": [
+                                "Full coverage details",
+                                "Full coverage details"
+                              ],
+                              "accessoryCoverDetails": [
+                                "Basic accessory coverage",
+                                "Basic accessory coverage"
+                              ]
+                            },
+                            "id": "6346544382"
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346504382"
+              },
+              "1": {
+                "0": {
+                  "0": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "0": {
+                            "id": "6346504382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Approved",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "1": {
+                            "id": "6346544382",
+                            "userId": "6346544382",
+                            "proposalId": "6346544382",
+                            "status": "Rejected",
+                            "addOnDetails": [
+                              "Basic add-on details",
+                              "Basic add-on details"
+                            ],
+                            "accidentCoverDetails": [
+                              "Full coverage details",
+                              "Full coverage details"
+                            ],
+                            "accessoryCoverDetails": [
+                              "Basic accessory coverage",
+                              "Basic accessory coverage"
+                            ]
+                          },
+                          "id": "6346544382"
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346504382"
+            },
+            "1": {
+              "0": {
+                "0": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "0": {
+                          "id": "6346504382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Approved",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "1": {
+                          "id": "6346544382",
+                          "userId": "6346544382",
+                          "proposalId": "6346544382",
+                          "status": "Rejected",
+                          "addOnDetails": [
+                            "Basic add-on details",
+                            "Basic add-on details"
+                          ],
+                          "accidentCoverDetails": [
+                            "Full coverage details",
+                            "Full coverage details"
+                          ],
+                          "accessoryCoverDetails": [
+                            "Basic accessory coverage",
+                            "Basic accessory coverage"
+                          ]
+                        },
+                        "id": "6346544382"
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346504382"
+          },
+          "1": {
+            "id": "7340624025",
+            "userId": "7340624025",
+            "proposalId": "7340624025",
+            "status": "Submitted",
+            "addOnDetails": [
+              "Basic add-on details",
+              "Basic add-on details"
+            ],
+            "accidentCoverDetails": [
+              "Full coverage details",
+              "Full coverage details"
+            ],
+            "accessoryCoverDetails": [
+              "Basic accessory coverage",
+              "Basic accessory coverage"
+            ]
+          },
+          "2": {
+            "0": {
+              "0": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "0": {
+                        "id": "6346504382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Approved",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "1": {
+                        "id": "6346544382",
+                        "userId": "6346544382",
+                        "proposalId": "6346544382",
+                        "status": "Rejected",
+                        "addOnDetails": [
+                          "Basic add-on details",
+                          "Basic add-on details"
+                        ],
+                        "accidentCoverDetails": [
+                          "Full coverage details",
+                          "Full coverage details"
+                        ],
+                        "accessoryCoverDetails": [
+                          "Basic accessory coverage",
+                          "Basic accessory coverage"
+                        ]
+                      },
+                      "id": "6346544382"
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "7340624025"
+        },
+        "3": {
+          "0": {
+            "0": {
+              "0": {
+                "id": "6346504382",
+                "userId": "6346544382",
+                "proposalId": "6346544382",
+                "status": "Approved",
+                "addOnDetails": [
+                  "Basic add-on details",
+                  "Basic add-on details"
+                ],
+                "accidentCoverDetails": [
+                  "Full coverage details",
+                  "Full coverage details"
+                ],
+                "accessoryCoverDetails": [
+                  "Basic accessory coverage",
+                  "Basic accessory coverage"
+                ]
+              },
+              "1": {
+                "0": {
+                  "id": "6346504382",
+                  "userId": "6346544382",
+                  "proposalId": "6346544382",
+                  "status": "Approved",
+                  "addOnDetails": [
+                    "Basic add-on details",
+                    "Basic add-on details"
+                  ],
+                  "accidentCoverDetails": [
+                    "Full coverage details",
+                    "Full coverage details"
+                  ],
+                  "accessoryCoverDetails": [
+                    "Basic accessory coverage",
+                    "Basic accessory coverage"
+                  ]
+                },
+                "1": {
+                  "0": {
+                    "id": "6346504382",
+                    "userId": "6346544382",
+                    "proposalId": "6346544382",
+                    "status": "Approved",
+                    "addOnDetails": [
+                      "Basic add-on details",
+                      "Basic add-on details"
+                    ],
+                    "accidentCoverDetails": [
+                      "Full coverage details",
+                      "Full coverage details"
+                    ],
+                    "accessoryCoverDetails": [
+                      "Basic accessory coverage",
+                      "Basic accessory coverage"
+                    ]
+                  },
+                  "1": {
+                    "0": {
+                      "id": "6346504382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Approved",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "1": {
+                      "id": "6346544382",
+                      "userId": "6346544382",
+                      "proposalId": "6346544382",
+                      "status": "Rejected",
+                      "addOnDetails": [
+                        "Basic add-on details",
+                        "Basic add-on details"
+                      ],
+                      "accidentCoverDetails": [
+                        "Full coverage details",
+                        "Full coverage details"
+                      ],
+                      "accessoryCoverDetails": [
+                        "Basic accessory coverage",
+                        "Basic accessory coverage"
+                      ]
+                    },
+                    "id": "6346544382"
+                  },
+                  "id": "6346544382"
+                },
+                "id": "6346544382"
+              },
+              "id": "6346544382"
+            },
+            "id": "6346544382"
+          },
+          "id": "6346544382"
+        },
+        "id": "7373504382"
       },
       "2": {
         "0": {

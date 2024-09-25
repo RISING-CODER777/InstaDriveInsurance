@@ -3,13 +3,14 @@ export interface NewApproval {
     name: string;
     userId: string;
     proposalId: string;
+    proposalNumber: string; // Added proposalNumber property
     policyDetails: string;
     status: string;
-    requestDate: Date;
+    requestDate: Date | null;
     premiumAmount: number;
     adminComments: string;
-    addOnDetails: string[]; 
-    accidentCoverDetails: string[]; 
-    accessoryCoverDetails: string[]; 
+    addOnDetails: string[];
+    accidentCoverDetails: string[];
+    accessoryCoverDetails: string[];
     isRenewable: boolean;
 }
