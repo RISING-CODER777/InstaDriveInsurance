@@ -7,7 +7,7 @@ import { ClaimsApprovalComponent } from './claims-approval/claims-approval.compo
 import { AdminOptionsComponent } from './admin-options/admin-options.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', component: DashboardComponent },
   { path: 'new-approval', component: NewApprovalComponent},
   { path: 'claims-approval', component: ClaimsApprovalComponent},
   { path: 'admin-options', component: AdminOptionsComponent },

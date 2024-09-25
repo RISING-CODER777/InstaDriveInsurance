@@ -1,3 +1,4 @@
+// claims-approval.component.ts
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -5,22 +6,20 @@ import { MatSort } from '@angular/material/sort';
 import { Claim } from '../models/claim-approval.model';
 import { AdminService } from '../services/admin.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-
+import { ClaimsApprovalBottomSheetComponent } from '../templates/claims-approval-bottom-sheet/claims-approval-bottom-sheet.component';
 @Component({
   selector: 'app-claims-approval',
   templateUrl: './claims-approval.component.html',
-  styleUrls: ['./claims-approval.component.scss']
+  styleUrls: ['./claims-approval.component.scss'],
 })
 export class ClaimsApprovalComponent implements AfterViewInit {
-  
   claims: Claim[] = [];
   dataSource = new MatTableDataSource<Claim>();
   selectedClaim!: Claim;
 
   displayedColumns: string[] = [
     'index',
-    'claimNumber',
-    'user',
+    'claimUser',
     'dateOfIncident',
     'claimAmount',
     'approvedAmount',
@@ -47,4 +46,12 @@ export class ClaimsApprovalComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
+  selectHandler(row: Claim) {
+    this.selectedClaim = row;
+    this.matBottomSheet.open(ClaimsApprovalBottomSheetComponent, {
+      data: this.selectedClaim,
+      backdropClass: 'bottom-sheet-backdrop-blur',
+      panelClass: 'bottom-sheet-container',
+    });
+  }
 }

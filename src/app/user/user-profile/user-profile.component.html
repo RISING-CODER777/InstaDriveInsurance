@@ -1,51 +1,94 @@
-<div style="height: 70px;">
-</div>
+<!-- div to eliminate top nav bar overlap -->
+<div style="height: 70px;"></div>
+
 <div class="profile-container">
-    <div class="banner-container">
-        <p>My Profile</p>
+  <div class="banner-container">
+    <p *ngIf="!errorMessage">My Profile</p>
+    <p *ngIf="errorMessage" ngClass="danger">{{ errorMessage }}</p>
+  </div>
 
+
+  <div class="profile-content" *ngIf="userProfile">
+    <div class="profile-card">
+      <!-- Profile Image Upload -->
+
+
+      <div class="profile-header">
+        <img src="path/to/profile-image.jpg" alt="Profile Image" class="profile-image" />
+        <button mat-button class="upload-button">Upload Image</button>
+      </div>
+
+      <!-- Personal Information Card -->
+      <div class="personal-info-card">
+        <div class="info-header">
+          <p>Profile Information:</p>
+          <button mat-button class="edit-button">Edit</button>
+        </div>
+        <p>Name: {{ userProfile.fullName }}</p>
+        <p>Email: {{ userProfile.email }}</p>
+        <p>Phone Number: {{ userProfile.phoneNumber }}</p>
+      </div>
+
+      <!-- Address Card -->
+      <div class="address-card">
+        <div class="info-header">
+          <p>Address:</p>
+          <button mat-button class="edit-button">Edit</button>
+        </div>
+        <p>Door No: {{ userProfile.doorNo }}</p>
+        <p>Street: {{ userProfile.street }}</p>
+        <p>Pincode: {{ userProfile.pincode }}</p>
+        <p>District: {{ userProfile.district }}</p>
+        <p>State: {{ userProfile.state }}</p>
+      </div>
     </div>
 
-    <div class="profile-content">
-        <div class="profile-card">
-            profile
-        </div>
-        <div class="policies-card">
-            <p>Policies</p>
+    <!-- Policies Card -->
+    <div class="policies-card">
+      <p>Policies</p>
+      <p *ngIf="errorMessage" ngClass="danger">{{ errorMessage }}</p>
+      <p *ngIf="userPolicyLoading" style="text-align: center; padding: 10px;" ngClass="status-active">Loading...</p>
+      <p *ngIf="userPolicies.length === 0 && !errorMessage && !userPolicyLoading"
+        style="text-align: center; padding: 20px;">No Policies found <br>
+        <button mat-icon-button (click)="getUserPolicies()"><mat-icon>refresh</mat-icon></button>
+      </p>
+      <div *ngFor="let policy of userPolicies" class="policy" [attr.id]="'policy-' + policy.id">
+        <div class="policy-info">
+          <div class="general-info">
+            <div>{{policy.make}}</div>
 
-            <div class="policy">
-                <div class="policy-info">
-                    <div class="general-info">
-                        <div>MARUTISX4</div>
-
-                        <!-- TODO: Uncomment below after service implementation -->
-                       <!-- <div 
-                         [ngClass]="{
-                            'status-active': element.status === 'Active',
-                            'status-expired': element.status === 'Expired'
-                          }" -->
-                        <div
-                        class="status-active"
-                        
-                        >Active</div>
-                    </div>
-
-                    <div class="vehicle-info">
-                        DLIOCB1234 | 2011 | Petrol
-                    </div>
-
-                </div>
-                
-                <!-- TODO: Uncomment below after service implementation -->
-                <!-- <div 
-                    [ngClass]="{
-                    'action-active-button': element.status === 'Active',
-                    'action-active-button': element.status === 'Expired'
-                    }" -->
-                <div class="action-active-button">
-                    Claim
-                </div>
+            <div [ngClass]="{
+                'status-active': policy.status === 'Active',
+                'status-expired': policy.status === 'Expired'
+              }">
+              {{policy.status}}
             </div>
+
+          </div>
+
+          <div *ngIf="!policy.showDoneButton" class="vehicle-info">
+            {{ policy.registrationNumber }} | {{ policy.year }} | {{ policy.fuelType }}
+          </div>
+          <div *ngIf="policy.showDoneButton">
+            <input type="text" placeholder="Enter claim details" />
+          </div>
         </div>
+
+        <div [ngClass]="{
+          'action-active-button': policy.status === 'Active',
+          'action-expired-button': policy.status === 'Expired'
+        }"
+         [ngStyle]="{
+          'opacity': policy.isClaimed ? 0.8 : 1,
+          'color': policy.isClaimed ? 'grey' : 'black',
+          'pointer-events': policy.isClaimed ? 'none' : 'auto'
+        }"
+        style="user-select: none; font-weight: 400;"
+         (click)="policy.status === 'Active' ? claimPolicy(policy.id) : renewPolicy(policy.id)">
+          {{policy.showDoneButton ? 'Done' : policy.status === 'Active' ? 'Claim' : 'Renew'}}
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>

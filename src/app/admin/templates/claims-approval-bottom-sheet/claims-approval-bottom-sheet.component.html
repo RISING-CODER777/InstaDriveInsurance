@@ -1,1 +1,47 @@
-<p>claims-approval-bottom-sheet works!</p>
+<mat-card class="mat-cards">
+    <mat-card-title>
+      <span style="font-weight: 500;">{{ data.name }}</span><br />
+      <span style="font-weight: 400;">Claim ID: {{ data.claimNumber }}</span><br />
+    </mat-card-title>
+    <mat-card-content class="mat-content">
+      <div class="more-details">
+        <ul>
+          <p style="font-weight: 400;">Addon Details</p>
+          <li *ngFor="let addOn of data.addOnDetails">{{ addOn }}</li>
+        </ul>
+        <ul>
+          <p style="font-weight: 400;">Accident Cover Details</p>
+          <li *ngFor="let accidentCover of data.accidentalCoverDetails">
+            {{ accidentCover }}
+          </li>
+        </ul>
+        <ul>
+          <p style="font-weight: 400;">Accessory Cover Details</p>
+          <li *ngFor="let accessoryCover of data.accessoryCoverDetails">
+            {{ accessoryCover }}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>Incident Date: <span style="font-weight: 400;">{{ data.dateOfIncident }}</span></p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <div class="input-container">
+    <div class="input-div">
+      <mat-label>Status</mat-label>
+      <mat-select matNativeControl required [(ngModel)]="selectedValue" class="select-field">
+        <mat-option *ngFor="let status of status" [value]="status.value" class="option-field">
+          {{ status.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+  
+    <!-- Updated button section -->
+    <div style="display: flex; gap: 10px;">
+      <button mat-raised-button color="primary" (click)="updateClaimStatus(selectedValue)">Done</button>
+      <button mat-button color="warn" (click)="close()">Close</button>
+    </div>
+  </div>
+  

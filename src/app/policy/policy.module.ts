@@ -15,6 +15,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select'; 
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatExpansionModule
   ]
 })
 export class PolicyModule {}

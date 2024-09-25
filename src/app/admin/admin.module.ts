@@ -20,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AdminOptionsComponent } from './admin-options/admin-options.component';
@@ -38,7 +40,7 @@ import { AdminOptionsComponent } from './admin-options/admin-options.component';
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
-
+    FormsModule,
     MatListModule,
     MatPaginatorModule,
     MatTableModule,

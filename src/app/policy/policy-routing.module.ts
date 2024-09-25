@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PolicyComponent } from './policy.component';
+import { PolicyFormComponent } from './policy-form/policy-form.component';
+import { PolicyDetailComponent } from './policy-detail/policy-detail.component';
+const routes: Routes = [
+  { path: 'policy-form', component: PolicyFormComponent },
+  { path: 'policy-detail', component: PolicyDetailComponent } 
+];
 
-const routes: Routes = [{ path: '', component: PolicyComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

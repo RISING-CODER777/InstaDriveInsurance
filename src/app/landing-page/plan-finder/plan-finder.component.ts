@@ -9,7 +9,7 @@ export class PlanFinderComponent {
   selectedVehicle: string = 'car';
   vehicleNumber: string = '';
 
-  // Function to get placeholder based on selected vehicle type
+  // get placeholder based on selected vehicle type
   getPlaceholder(): string {
     switch (this.selectedVehicle) {
       case 'car':
