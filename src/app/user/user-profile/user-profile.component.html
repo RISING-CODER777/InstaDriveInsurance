@@ -83,7 +83,7 @@
           'color': policy.isClaimed ? 'grey' : 'black',
           'pointer-events': policy.isClaimed ? 'none' : 'auto'
         }"
-        style="user-select: none;"
+        style="user-select: none; font-weight: 400;"
          (click)="policy.status === 'Active' ? claimPolicy(policy.id) : renewPolicy(policy.id)">
           {{policy.showDoneButton ? 'Done' : policy.status === 'Active' ? 'Claim' : 'Renew'}}
         </div>
