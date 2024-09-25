@@ -16,8 +16,13 @@ import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AdminOptionsComponent } from './admin-options/admin-options.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NewApprovalComponent,
     ClaimsApprovalComponent,
     NewApprovalBottomSheetComponent,
-    ClaimsApprovalBottomSheetComponent
+    ClaimsApprovalBottomSheetComponent,
+    AdminOptionsComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +46,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgxChartsModule
+    NgxChartsModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatGridListModule,
+    MatInputModule
   ],
   providers: [],
 })
