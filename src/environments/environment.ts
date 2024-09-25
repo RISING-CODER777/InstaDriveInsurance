@@ -3,6 +3,7 @@ export const environment = {
 
     userProfileEndpoint: 'http://localhost:3000/user-profile',
     proposalsEndpoint: 'http://localhost:3000/proposals',
+    userPoliciesEndpoint: 'http://localhost:3000/user-policies',
     
     claimsApprovalEndpoint: 'http://localhost:3000/claims-approval',
     newApprovalEndpoint: 'http://localhost:3000/new-approval',

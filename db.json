@@ -2636,5 +2636,34 @@
     {
       "id": "75e3"
     }
+  ],
+  "user-policies": [
+    {
+      "id": "1",
+      "make": "Ford",
+      "fuelType": "Petrol",
+      "year": "2022",
+      "registrationNumber": "ABC124",
+      "status": "Active",
+      "isClaimed": false
+    },
+    {
+      "id": "2",
+      "make": "Ola",
+      "fuelType": "Electric",
+      "year": "2024",
+      "registrationNumber": "UBR223",
+      "status": "Active",
+      "isClaimed": false
+    },
+    {
+      "id": "3",
+      "make": "Maruti Suzuki",
+      "fuelType": "Diesel",
+      "year": "2011",
+      "registrationNumber": "HTC128",
+      "status": "Expired",
+      "isClaimed": false
+    }
   ]
 }
