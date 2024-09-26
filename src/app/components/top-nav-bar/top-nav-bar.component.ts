@@ -14,9 +14,8 @@ export class TopNavBarComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log(scrollTop);
     this.isScrolled = scrollTop > 200;  // Adjust the threshold for when the navbar should animate up
-    console.log(this.isScrolled);
+    
   }
 
   constructor(private router: Router) { }

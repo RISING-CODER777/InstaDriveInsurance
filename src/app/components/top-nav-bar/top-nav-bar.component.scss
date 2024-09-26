@@ -12,7 +12,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; // Ensure it stays on top of other elements
+    z-index: 10; // Ensure it stays on top of other elements
     transition: transform 0.3s ease-in-out; // Smooth transition for scrolling effect
 
     &.scrolled {

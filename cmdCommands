@@ -16,7 +16,7 @@ npx ng g c creditcards/add --module creditcards/creditcards.module.ts
 
 
 npx ng g service /to/services/example
-npx ng g service /src/core/services/proposals
+npx ng g service core/services/example
 
 ## To-Create-Models
 

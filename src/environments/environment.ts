@@ -16,5 +16,6 @@ export const environment = {
 
     userProposalsEndpoint:'https://localhost:7141/api/UserProposalStatus/proposal'
 
+    insurancePlansEndpoint: 'http://localhost:3000/insurance-plans',
 
 };

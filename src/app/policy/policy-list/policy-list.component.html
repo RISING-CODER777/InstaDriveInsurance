@@ -1,1 +1,93 @@
-<p>policy-list works!</p>
+<div style="height: 60px;"></div>
+
+<div class="list-container">
+    <!-- Dimmed background overlay that will activate on scroll/focus -->
+    <div  *ngIf="isFocused" class="dim-background"></div>
+
+    <div class="policy-group">
+        <!-- Form Filter -->
+        <div #formBackdrop class="form-backdrop">
+            <form #formFilter [formGroup]="policyListForm" (ngSubmit)="onSubmit()" class="formFilter">
+                <div class="inp-div">
+
+                    <label>Type</label>
+
+                    <mat-select formControlName="type">
+                        <mat-option value="show all">Show All</mat-option>
+                        <mat-option value="bike">Bike</mat-option>
+                        <mat-option value="car">Car</mat-option>
+                        <mat-option value="truck">Truck</mat-option>
+                    </mat-select>
+                </div>
+                <div class="inp-div">
+
+                    <label>Make</label>
+                    <mat-select formControlName="make">
+                        <!-- <mat-option *ngFor="let make of makes" [value]="make">{{ make }}</mat-option> -->
+                        <mat-option value="show all">Show All</mat-option>
+                    </mat-select>
+
+                </div>
+                <div class="inp-div">
+
+                    <label>Engine CC</label>
+                    <mat-select formControlName="engineCC">
+                        <!-- <mat-option *ngFor="let cc of engine-cc" [value]="cc">{{ cc }}</mat-option> -->
+                        <mat-option value="show all">Show All</mat-option>
+                    </mat-select>
+
+                </div>
+                <div class="inp-div">
+
+                    <label>Seating Capacity</label>
+                    <mat-select formControlName="seatingCapacity">
+                        <mat-option value="show all">Show All</mat-option>
+                        <mat-option value="2">2 Seats</mat-option>
+                        <mat-option value="4">4 Seats</mat-option>
+                    </mat-select>
+
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Policy List -->
+        <div class="parent">
+
+
+            <div class="policy-list">
+                <div *ngFor="let plan of plans" class="policy-card">
+
+                    <div class="policy-card-header">
+                        <div class="policy-card-title">
+                            <div class="title-text">
+                                <span class="plan-name">{{ plan.planName }} </span>
+                                <span class="type">{{ plan.vehicleType }}</span>
+
+                            </div>
+                            <span class="subtitle">{{ plan.planType }}</span>
+                        </div>
+                    </div>
+
+                    <div class="policy-card-body">
+                        <div class="description">
+                            {{ plan.description }}
+
+                        </div>
+                        <div class="premium">{{ "₹ " + plan.basePremium }}</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlighter -->
+    <div #highlight class="highlight">
+
+        Fill the above form to get your policy pricing approximation!
+        <button mat-icon-button class="close-button" (click)="removeFocus()"><mat-icon>close</mat-icon></button>
+
+    </div>
+</div>
