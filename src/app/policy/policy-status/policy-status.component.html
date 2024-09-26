@@ -1,114 +1,97 @@
 <div style="height: 70px;"></div>
 
-<div class="policy-container">
-    <mat-card class="policy-card">
-      <mat-card-header>
-        <mat-card-title>
-          <div class="header-content">
-            <mat-icon>description</mat-icon>
-            <span>Proposal Status</span>
-          </div>
-        </mat-card-title>
-      </mat-card-header>
-  
-      <mat-card-content>
-        <!-- Congratulations Message -->
-        <div class="congratulations-message" *ngIf="status === 'Pending'">
-          <h3>🎉 Congratulations!</h3>
-          <p>Your proposal has been successfully submitted. You will receive an email with payment details within 2 days.</p>
+<div class="policy-container" *ngIf="userProposal">
+  <mat-card class="policy-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="header-content">
+          <mat-icon>description</mat-icon>
+          <span>Proposal Status</span>
         </div>
-  
-        <div class="card-layout">
-          <!-- Left Section: Contact Details -->
-          <div class="contact-details">
-            <h4>Get in Touch</h4>
-            <p class="contact-description">We're here to help:</p>
-            <div class="contact-item">
-              <mat-icon>email</mat-icon>
-              <span><strong>Email:</strong> <a href="mailto:instradriveinsurance@gmail.com">instradriveinsurance@gmail.com</a></span>
-            </div>
-            <div class="contact-item">
-              <mat-icon>phone</mat-icon>
-              <span><strong>Phone:</strong> +91 12345 67890</span>
-            </div>
-            <div class="contact-item">
-              <mat-icon>schedule</mat-icon>
-              <span><strong>Hours:</strong> Mon-Fri, 8 AM - 6 PM</span>
-            </div>
-            <div class="contact-item">
-              <mat-icon>location_on</mat-icon>
-              <span>128 Clarence Street, Sydney, NSW</span>
-            </div>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- Congratulations Message -->
+      <div class="congratulations-message" >
+        <h3>🎉 Congratulations!</h3>
+        <p>Your proposal has been successfully submitted. You will receive an email with payment details within 2 days.</p>
+      </div>
+
+      <div class="card-layout">
+        <div class="contact-details">
+          <h4>Get in Touch</h4>
+          <p class="contact-description">We're here to help:</p>
+          <div class="contact-item">
+            <mat-icon>email</mat-icon>
+            <span><strong>Email:</strong> <a href="mailto:instradriveinsurance@gmail.com">instradriveinsurance@gmail.com</a></span>
           </div>
-  
-          <!-- Right Section: Policy Details -->
-          <div class="policy-details">
-            <!-- Horizontally Aligned Policy Info -->
-            <div class="policy-info-row">
-              <div class="info-box">
-                <mat-icon>verified_user</mat-icon>
-                <p><strong>Policy No:</strong> #987654</p>
-              </div>
-              <div class="info-box">
-                <mat-icon>assignment</mat-icon>
-                <p><strong>Status:</strong> 
-                  <mat-chip [color]="status === 'Approved' ? 'primary' : 'warn'">{{ status }}</mat-chip>
-                </p>
-              </div>
-              <div class="info-box">
-                <mat-icon>attach_money</mat-icon>
-                <p><strong>Amount:</strong> ₹7,500</p> <!-- Changed the symbol to ₹ -->
-              </div>
-            </div>
-  
-            <!-- Insurance Plan Info -->
-            <div class="insurance-plan">
-              <div class="info-box">
-                <mat-icon>security</mat-icon>
-                <p><strong>Plan:</strong> Comprehensive Coverage</p>
-              </div>
-              <div class="info-box">
-                <mat-icon>add_circle</mat-icon>
-                <p><strong>Add-ons:</strong> Roadside Assistance, Theft Protection</p>
-              </div>
-              <mat-icon class="toggle-icon" (click)="toggleDetails()">expand_more</mat-icon>
-            </div>
-  
-            <!-- Toggle Section for More Info -->
-            <div *ngIf="showMoreDetails" class="more-details expanded">
-              <div class="more-details-item">
-                <mat-icon>info</mat-icon>
-                <p><strong>Duration:</strong> 1 Year</p>
-              </div>
-              <div class="more-details-item">
-                <mat-icon>directions_car</mat-icon>
-                <p><strong>Vehicle:</strong> Sedan 2022</p>
-              </div>
-            </div>
-  
-            <!-- Progress Bar with Icons -->
-            <div class="progress-section">
-              <div class="icon-container">
-                <mat-icon class="progress-icon">schedule</mat-icon>
-              </div>
-              <mat-progress-bar mode="determinate" value="50" class="custom-progress"></mat-progress-bar>
-              <div class="icon-container">
-                <mat-icon class="progress-icon">check_circle</mat-icon>
-              </div>
-            </div>
-  
-            <!-- Payment Button -->
-            <div class="payment-container">
-              <button mat-raised-button 
-                      color="primary" 
-                      [disabled]="status !== 'Approved'" 
-                      class="payment-btn">
-                <span>Make Payment</span>
-                <mat-icon>payment</mat-icon>
-              </button>
-            </div>
+          <div class="contact-item">
+            <mat-icon>phone</mat-icon>
+            <span><strong>Phone:</strong> +91 12345 67890</span>
+          </div>
+          <div class="contact-item">
+            <mat-icon>schedule</mat-icon>
+            <span><strong>Hours:</strong> Mon-Fri, 8 AM - 6 PM</span>
+          </div>
+          <div class="contact-item">
+            <mat-icon>location_on</mat-icon>
+            <span>128 Clarence Street, Sydney, NSW</span>
           </div>
         </div>
-      </mat-card-content>
-    </mat-card>
+
+        <div class="policy-details">
+          <div class="policy-info-row">
+            <div class="info-box">
+              <mat-icon>verified_user</mat-icon>
+              <p><strong>Proposal No:</strong> {{ userProposal.proposalNumber }}</p>
+            </div>
+            <div class="info-box">
+              <mat-icon>assignment</mat-icon>
+              <p><strong>Status:</strong> 
+                <mat-chip [color]="userProposal.status === 'Approved' ? 'primary' : 'warn'">{{ userProposal.status }}</mat-chip>
+              </p>
+            </div>
+            <div class="info-box">
+              <mat-icon>attach_money</mat-icon>
+              <p><strong>Amount:</strong> ₹7,500</p> <!-- Placeholder amount -->
+            </div>
+          </div>
+
+          <div class="insurance-plan">
+            <div class="info-box">
+              <mat-icon>security</mat-icon>
+              <p><strong>Plan:</strong> {{ userProposal.planName }}</p>
+            </div>
+            <div class="info-box">
+              <mat-icon>add_circle</mat-icon>
+              <p><strong>Add-ons:</strong> {{ userProposal.addOnDetails.join(', ') }}</p>
+            </div>
+            <mat-icon class="toggle-icon" (click)="toggleDetails()">expand_more</mat-icon>
+          </div>
+
+          <div *ngIf="showMoreDetails" class="more-details expanded">
+            <div class="more-details-item">
+              <mat-icon>info</mat-icon>
+              <p><strong>Duration:</strong> 1 Year</p>
+            </div>
+            <div class="more-details-item">
+              <mat-icon>directions_car</mat-icon>
+              <p><strong>Vehicle:</strong> {{ userProposal.make }} {{ userProposal.model }}</p>
+            </div>
+          </div>
+
+          <div class="payment-container">
+            <button mat-raised-button 
+                    color="primary" 
+                    [disabled]="userProposal.status !== 'Approved'" 
+                    class="payment-btn">
+              <span>Make Payment</span>
+              <mat-icon>payment</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

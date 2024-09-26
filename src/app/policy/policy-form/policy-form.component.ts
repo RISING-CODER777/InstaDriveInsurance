@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { VehicleValidators } from 'src/app/validators/vehicle-validators';
-
+import { VehicleService } from 'src/app/core/services/vehicle.service';
+import { Vehicle } from 'src/app/core/models/vehicle.model';
 @Component({
   selector: 'app-policy-form',
   templateUrl: './policy-form.component.html',
@@ -13,7 +14,7 @@ export class PolicyFormComponent implements OnInit {
   vehicleTypes = ['Bike', 'Car', 'Truck'];
   currentYear: number;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, private vehicleService: VehicleService) { // Inject the VehicleService
     this.currentYear = new Date().getFullYear();
     this.policyForm = this.builder.group({
       basicInfo: this.builder.group({
@@ -38,6 +39,16 @@ export class PolicyFormComponent implements OnInit {
         vin: ['', [Validators.required, Validators.maxLength(17), VehicleValidators.vinValidator]],
         engineNo: ['', [Validators.required, Validators.maxLength(10)]],
         color: ['', [Validators.required, Validators.maxLength(60), Validators.pattern(/^[a-zA-Z]+$/)]]
+      }),
+      vehicleSpecs: this.builder.group({
+        fuelType: ['', [Validators.required, Validators.maxLength(30)]],
+        registrationNumber: ['', [Validators.required, Validators.maxLength(40)]],
+        mileage: ['', [Validators.required]]
+      }),
+      engineWeight: this.builder.group({
+        engineCC: ['', [Validators.required]],
+        grossWeight: ['', [Validators.required]],
+        seatCapacity: ['', [Validators.required]]
       })
     });
   }
@@ -65,9 +76,45 @@ export class PolicyFormComponent implements OnInit {
     return this.policyForm.get('additionalDetails') as FormGroup;
   }
 
+  get vehicleSpecsForm() {
+    return this.policyForm.get('vehicleSpecs') as FormGroup;
+  }
+
+  get engineWeightForm() {
+    return this.policyForm.get('engineWeight') as FormGroup;
+  }
+
   handleSubmit() {
     if (this.policyForm.valid) {
-      console.log('Form Submitted!', this.policyForm.value);
+      const vehicle: Vehicle = {
+        userID: 3, // Hardcoded userID for now
+        vehicleType: this.basicInfoForm.value.vehicleType,
+        make: this.basicInfoForm.value.make,
+        model: this.basicInfoForm.value.model,
+        modelYear: this.vehicleDetailsForm.value.modelYear,
+        purchaseYear: this.vehicleDetailsForm.value.purchaseYear,
+        purchaseAmount: this.vehicleDetailsForm.value.purchaseAmount,
+        vin: this.additionalDetailsForm.value.vin,
+        engineNo: this.additionalDetailsForm.value.engineNo,
+        color: this.additionalDetailsForm.value.color,
+        fuelType: this.vehicleSpecsForm.value.fuelType,
+        registrationNumber: this.vehicleSpecsForm.value.registrationNumber,
+        mileage: this.vehicleSpecsForm.value.mileage,
+        engineCC: this.engineWeightForm.value.engineCC,
+        grossWeight: this.engineWeightForm.value.grossWeight,
+        seatCapacity: this.engineWeightForm.value.seatCapacity,
+      };
+
+      this.vehicleService.submitVehicle(vehicle).subscribe({
+        next: (response: any) => {
+          console.log('Vehicle submitted successfully:', response);
+          // reset the form
+          this.policyForm.reset();
+        },
+        error: (err: any) => {
+          console.error('Error submitting vehicle:', err);
+        },
+      });
     }
   }
 }

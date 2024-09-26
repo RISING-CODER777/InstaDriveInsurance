@@ -1,5 +1,5 @@
 export interface ClaimRequest {
-    claimId: string;
+    claimId: string | undefined;
     claimNumber: string;
     name?: string;
     userId: string; // or string, based on your design

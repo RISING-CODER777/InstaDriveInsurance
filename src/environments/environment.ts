@@ -11,5 +11,10 @@ export const environment = {
     paymentsEndpoint: 'http://localhost:3000/payments',
 
     insuranceOptionsEndpoint: 'https://localhost:7141/api/Options',
+    vehicleEndpoint:'https://localhost:7141/api/Vehicle',
+    updateProposalStatusEndpoint: 'https://localhost:7141/api/admin/Proposal',
+
+    userProposalsEndpoint:'https://localhost:7141/api/UserProposalStatus/proposal'
+
 
 };
