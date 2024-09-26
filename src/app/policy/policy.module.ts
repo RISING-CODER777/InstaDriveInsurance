@@ -19,8 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
-
-
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     PolicyComponent,
@@ -43,7 +42,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatCheckboxModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule,
   ]
 })
 export class PolicyModule {}

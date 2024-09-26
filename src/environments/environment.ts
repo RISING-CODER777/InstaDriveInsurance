@@ -11,5 +11,6 @@ export const environment = {
     paymentsEndpoint: 'http://localhost:3000/payments',
 
     insuranceOptionsEndpoint: 'http://localhost:3000/insurance-options',
+    insurancePlansEndpoint: 'http://localhost:3000/insurance-plans',
 
 };

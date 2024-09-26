@@ -2665,5 +2665,81 @@
       "status": "Expired",
       "isClaimed": false
     }
+  ],
+  "insurance-plans": [
+    {
+      "insurancePlanID": 1,
+      "planName": "Basic Car Insurance",
+      "description": "Basic coverage including third-party liability and own damage.",
+      "basePremium": 4000,
+      "vehicleType": "Car",
+      "planType": "Basic"
+    },
+    {
+      "insurancePlanID": 2,
+      "planName": "Comprehensive Car Insurance",
+      "description": "Comprehensive coverage including third-party liability, own damage, and additional benefits.",
+      "basePremium": 8000,
+      "vehicleType": "Car",
+      "planType": "Comprehensive"
+    },
+    {
+      "insurancePlanID": 3,
+      "planName": "Third-Party Car Insurance",
+      "description": "Insurance coverage for third-party liabilities only.",
+      "basePremium": 3000,
+      "vehicleType": "Car",
+      "planType": "Third Party"
+    },
+    {
+      "insurancePlanID": 4,
+      "planName": "Basic Two-Wheeler Insurance",
+      "description": "Basic coverage including third-party liability and own damage.",
+      "basePremium": 1500,
+      "vehicleType": "Two-Wheeler",
+      "planType": "Basic"
+    },
+    {
+      "insurancePlanID": 5,
+      "planName": "Comprehensive Two-Wheeler Insurance",
+      "description": "Comprehensive coverage including third-party liability and own damage.",
+      "basePremium": 3000,
+      "vehicleType": "Two-Wheeler",
+      "planType": "Comprehensive"
+    },
+    {
+      "insurancePlanID": 6,
+      "planName": "Third-Party Two-Wheeler Insurance",
+      "description": "Insurance coverage for third-party liabilities only.",
+      "basePremium": 1200,
+      "vehicleType": "Two-Wheeler",
+      "planType": "Third Party"
+    },
+    {
+      "insurancePlanID": 7,
+      "planName": "Basic Truck Insurance",
+      "description": "Basic coverage including third-party liability and own damage.",
+      "basePremium": 10000,
+      "vehicleType": "Truck",
+      "planType": "Basic"
+    },
+    {
+      "insurancePlanID": 8,
+      "planName": "Comprehensive Truck Insurance",
+      "description": "Comprehensive coverage including third-party liability and own damage.",
+      "basePremium": 20000,
+      "vehicleType": "Truck",
+      "planType": "Comprehensive"
+    },
+    {
+      "insurancePlanID": 9,
+      "planName": "Third-Party Truck Insurance",
+      "description": "Insurance coverage for third-party liabilities only.",
+      "basePremium": 8000,
+      "vehicleType": "Truck",
+      "planType": "Third Party"
+    }
   ]
+
+
 }
