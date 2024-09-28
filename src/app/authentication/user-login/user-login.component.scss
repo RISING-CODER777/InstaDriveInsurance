@@ -3,7 +3,7 @@
 
 // Use theme colors from styles.scss
 $primary-color: mat.get-color-from-palette($instadrive-insurance-primary, 500);
-$background-color: mat.get-color-from-palette($instadrive-insurance-base, 100);
+$background-color: mat.get-color-from-palette($instadrive-primary-palette, 100);
 $form-background: white;
 $shadow-color: rgba(0, 0, 0, 0.1);
 

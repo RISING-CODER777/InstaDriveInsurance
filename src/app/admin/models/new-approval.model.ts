@@ -8,8 +8,8 @@ export interface NewApproval {
     requestDate: Date;
     premiumAmount: number;
     adminComments: string;
-    addOnDetails: string[]; 
-    accidentCoverDetails: string[]; 
-    accessoryCoverDetails: string[]; 
+    addOnDetails: string[];
+    accidentCoverDetails: string[];
+    accessoryCoverDetails: string[];
     isRenewable: boolean;
 }

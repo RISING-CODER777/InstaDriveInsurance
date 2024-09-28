@@ -1,0 +1,90 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px); /* Full height adjustment */
+  background-color: #f5f5f5;
+  padding: 80px;
+}
+
+.admin-plans-card {
+  max-width: 600px;
+  width: 1000px;
+  size-adjust: auto;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+  }}
+
+form {
+  width: 100%;
+  max-width: 800px; /* Form width limit */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px; /* Prevent edge touching */
+}
+
+mat-form-field {
+  width: 100%;
+  max-width: 80%; /* Reduce input width */
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+  border: none;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end; /* Align buttons right */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.review-content {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+mat-error {
+  font-size: 0.875rem;
+  color: #d50000;
+}

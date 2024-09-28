@@ -15,8 +15,11 @@
             [legend]="false"
             [xAxis]="true"
             [yAxis]="true"
+            [yScaleMin]="0"
+            [yScaleMax]="10"
+            [animations]="false"
           ></ngx-charts-line-chart>
-          <div class="total-policies-count">42K</div>
+          <div class="total-policies-count">{{ totalPoliciesCount | number }}</div>
         </mat-card-content>
       </mat-card>
 
@@ -27,8 +30,10 @@
         </mat-card-header>
         <mat-card-content class="premium_card_content">
           <div class="total-premium-box">
-            <h1>841034</h1>
-            <p><span class="percent-up">12% ⬆</span></p>
+            <h1>{{ totalPremium | number }}</h1>
+            <p>
+              <span class="percent-up">{{ premiumChangePercentage | number: '1.0-0' }}% ⬆</span>
+            </p>
           </div>
         </mat-card-content>
       </mat-card>
