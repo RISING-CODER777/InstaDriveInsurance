@@ -4,7 +4,7 @@ export const environment = {
     userProfileEndpoint: 'http://localhost:3000/user-profile',
     proposalsEndpoint: 'http://localhost:3000/proposals',
     userPoliciesEndpoint: 'http://localhost:3000/user-policies',
-    
+
     claimsApprovalEndpoint: 'http://localhost:3000/claims-approval',
     newApprovalEndpoint: 'http://localhost:3000/new-approval',
 
@@ -12,4 +12,14 @@ export const environment = {
 
     insuranceOptionsEndpoint: 'http://localhost:3000/insurance-options',
 
+    adminPlansEndpoint :'https://localhost:7246/api/InsurancePlan/add',
+    adminOptionsEndpoint :'https://localhost:7246/api/Option/add',
+
+    loginEndpoint:'https://localhost:7246/api/Auth/login',
+    userSignUpEndpoint :'https://localhost:7246/api/User/signup',
+
+    policiesIssuedEndpoint :'https://localhost:7246/api/Policy/GetTotalPoliciesIssued',
+    totalPremiumAmountEndpoint :'https://localhost:7246/api/Policy/TotalPremium',
+    vehicleSourcesEndpoint : 'https://localhost:7246/api/Policy/GetVehicleSources',
+    proposalStatusEndpoint: 'https://localhost:7246/api/Proposal/GetProposalStatusCounts'
 };

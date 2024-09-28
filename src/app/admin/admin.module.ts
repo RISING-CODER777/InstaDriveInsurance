@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AdminOptionsComponent } from './admin-options/admin-options.component';
+import { AdminPlansComponent } from './admin-plans/admin-plans.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminOptionsComponent } from './admin-options/admin-options.component';
     ClaimsApprovalComponent,
     NewApprovalBottomSheetComponent,
     ClaimsApprovalBottomSheetComponent,
-    AdminOptionsComponent
+    AdminOptionsComponent,
+    AdminPlansComponent
   ],
   imports: [
     CommonModule,
