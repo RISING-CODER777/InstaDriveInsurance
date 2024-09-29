@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserSignupValidators } from 'src/app/validators/user-signup-validators';
+import { AuthService } from '../services/auth.service';
+import { UserSignUp } from '../models/user-signup.model'; // Ensure correct import of your UserSignUp model
 
 @Component({
   selector: 'app-user-signup',
@@ -12,7 +14,7 @@ export class UserSignupComponent {
   signupForm: FormGroup;
   currentStep: number = 1;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.signupForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -24,7 +26,7 @@ export class UserSignupComponent {
       pincode: ['', Validators.required],
       door: ['', Validators.required],
       street: ['', Validators.required],
-      districtState: ['', Validators.required],
+      districtState: ['', Validators.required], // Assuming this is a single field for state and district
       password: ['', [Validators.required, UserSignupValidators.passwordStrengthValidator()]],
       confirmPassword: ['', Validators.required]
     });
@@ -70,7 +72,34 @@ export class UserSignupComponent {
 
   onSubmit() {
     if (this.signupForm.valid) {
-      this.router.navigate(['/authentication/user-login']);
+      const formData = this.signupForm.value;
+
+      // Combine address fields into a single address string
+      const address = `${formData.door}, ${formData.street}, ${formData.districtState}`;
+
+      // Create the UserSignUp object
+      const userSignUp: UserSignUp = {
+        username: formData.username,
+        password: formData.password,
+        email: formData.email,
+        phoneNumber: formData.phone,
+        fullName: formData.fullName,
+        dateOfBirth: formData.dob,
+        aadharNumber: formData.aadhaar,
+        panNumber: formData.pan,
+        address: address // Set the combined address
+      };
+
+      // Call the sign-up service
+      this.authService.userSignUp(userSignUp).subscribe({
+        next: (response) => {
+          console.log('Signup successful', response);
+          this.router.navigate(['/authentication/user-login']);
+        },
+        error: (error) => {
+          console.error('Signup error', error);
+        }
+      });
     }
   }
 
