@@ -8,40 +8,33 @@ import { InsuranceOptionService } from 'src/app/core/services/insurance-option.s
   styleUrls: ['./policy-detail.component.scss'],
 })
 export class PolicyDetailComponent {
-  hoveredOption: any = null;
+  hoveredOption: InsuranceOption | null = null;
 
-  // Properties to control the visibility of options
-  showAddOnOptions = false;
-  showAccidentCoverOptions = false;
-  showAccessoryCoverOptions = false;
-
-  // Initialize the options as empty arrays
   addOnOptions: InsuranceOption[] = [];
   accidentCoverOptions: InsuranceOption[] = [];
   accessoryCoverOptions: InsuranceOption[] = [];
 
-  // Track selected options and total price
   selectedOptions: InsuranceOption[] = [];
-  totalPrice: number = 0;
-  
+  totalPrice: number = 0;  // Total price of selected options
+  baseInsuranceAmount: number = 1000000;  // Base insurance plan amount
+  totalOptionsAmount: number = 0;  // Total price of all selected options
+  totalPayableAmount: number = 0;  // Final payable amount
+
   constructor(private insuranceOptionService: InsuranceOptionService) {}
 
   ngOnInit(): void {
     this.loadInsuranceOptions();
   }
-  
+
   loadInsuranceOptions(): void {
     this.insuranceOptionService.getInsuranceOptions().subscribe((data: InsuranceOption[]) => {
-      // Split options based on optionType
       this.addOnOptions = data.filter(option => option.optionType === 'AddOn');
       this.accidentCoverOptions = data.filter(option => option.optionType === 'AccidentCover');
       this.accessoryCoverOptions = data.filter(option => option.optionType === 'AccessoryCover');
     });
   }
-  
-  
-  // Methods to handle hover for tooltips
-  showTooltip(option: any) {
+
+  showTooltip(option: InsuranceOption) {
     this.hoveredOption = option;
   }
 
@@ -49,28 +42,21 @@ export class PolicyDetailComponent {
     this.hoveredOption = null;
   }
 
-  // Methods to toggle visibility of options
-  toggleAddOnOptions() {
-    this.showAddOnOptions = !this.showAddOnOptions;
-  }
-
-  toggleAccidentCoverOptions() {
-    this.showAccidentCoverOptions = !this.showAccidentCoverOptions;
-  }
-
-  toggleAccessoryCoverOptions() {
-    this.showAccessoryCoverOptions = !this.showAccessoryCoverOptions;
-  }
-
-   // Method to handle checkbox change
-   onOptionChange(option: InsuranceOption, isChecked: boolean) {
+  onOptionChange(option: InsuranceOption, isChecked: boolean) {
     if (isChecked) {
       this.selectedOptions.push(option);
-      this.totalPrice += option.price;
+      this.totalOptionsAmount += option.price;
     } else {
-      this.selectedOptions = this.selectedOptions.filter(o => o.optionName !== option.optionName);
-      this.totalPrice -= option.price;
+      const index = this.selectedOptions.indexOf(option);
+      if (index > -1) {
+        this.selectedOptions.splice(index, 1);
+        this.totalOptionsAmount -= option.price;
+      }
     }
+    this.calculateTotalPayableAmount();
   }
 
+  calculateTotalPayableAmount(): void {
+    this.totalPayableAmount = this.baseInsuranceAmount + this.totalOptionsAmount;
+  }
 }

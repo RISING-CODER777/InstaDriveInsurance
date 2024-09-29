@@ -13,13 +13,13 @@ export class ProposalsService {
 
   constructor(private HttpClient: HttpClient) { }
 
-  getProposalById(proposalId: String): Observable<Proposal> {
-    const url = `${this.proposalsEndpoint}?proposalId=${proposalId}`
+  getProposalById(proposalID: String): Observable<Proposal> {
+    const url = `${this.proposalsEndpoint}?proposalId=${proposalID}`
     return this.HttpClient.get<Proposal>(url);
   }
 
-  updateProposalById(proposalId: String, proposal: Proposal): Observable<Proposal> {
-    const url = `${this.proposalsEndpoint}/${proposalId}`
+  updateProposalById(proposalID: String, proposal: Proposal): Observable<Proposal> {
+    const url = `${this.proposalsEndpoint}/${proposalID}`
     return this.HttpClient.put<Proposal>(url, proposal);
   }
 }

@@ -7,6 +7,7 @@ export interface ClaimRequest {
     claimAmount: number;
     approvedAmount: number;
     status: string;
+    remarks:string;
     description?: string;
     addOnDetails: any[];
     accidentalCoverDetails: any[];

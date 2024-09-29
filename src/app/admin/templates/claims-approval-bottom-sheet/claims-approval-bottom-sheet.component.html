@@ -11,15 +11,11 @@
         </ul>
         <ul>
           <p style="font-weight: 400;">Accident Cover Details</p>
-          <li *ngFor="let accidentCover of data.accidentalCoverDetails">
-            {{ accidentCover }}
-          </li>
+          <li *ngFor="let accidentCover of data.accidentalCoverDetails">{{ accidentCover }}</li>
         </ul>
         <ul>
           <p style="font-weight: 400;">Accessory Cover Details</p>
-          <li *ngFor="let accessoryCover of data.accessoryCoverDetails">
-            {{ accessoryCover }}
-          </li>
+          <li *ngFor="let accessoryCover of data.accessoryCoverDetails">{{ accessoryCover }}</li>
         </ul>
       </div>
       <div>
@@ -30,18 +26,29 @@
   
   <div class="input-container">
     <div class="input-div">
-      <mat-label>Status</mat-label>
-      <mat-select matNativeControl required [(ngModel)]="selectedValue" class="select-field">
-        <mat-option *ngFor="let status of status" [value]="status.value" class="option-field">
-          {{ status.viewValue }}
-        </mat-option>
-      </mat-select>
+      <mat-label>Admin Comments</mat-label>
+      <textarea matInput [(ngModel)]="adminComments" rows="3" placeholder="Enter comments"></textarea>
     </div>
   
-    <!-- Updated button section -->
-    <div style="display: flex; gap: 10px;">
-      <button mat-raised-button color="primary" (click)="updateClaimStatus(selectedValue)">Done</button>
-      <button mat-button color="warn" (click)="close()">Close</button>
+    <div class="button-container">
+      <div class="inp-div">
+        <mat-label>Status</mat-label>
+        <mat-select [(value)]="selectedValue" class="select-field">
+          <mat-option *ngFor="let status of status" [value]="status.value">
+            {{status.viewValue}}
+          </mat-option>
+        </mat-select>
+      </div>
+  
+      <div class="approved-amount">
+        <mat-label>Approved Amount</mat-label>
+        <input matInput type="number" [(ngModel)]="approvedAmount" placeholder="Enter approved amount" />
+      </div>
+      
+      <div style="display: flex; gap: 10px;">
+        <button mat-raised-button color="primary" (click)="updateClaimStatus()">Done</button>
+        <button mat-button color="warn" (click)="close()">Close</button>
+      </div>
     </div>
   </div>
   

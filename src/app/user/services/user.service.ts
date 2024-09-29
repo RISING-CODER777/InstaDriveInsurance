@@ -12,7 +12,9 @@ export class UserService {
   private userPoliciesEndpoint = environment.userPoliciesEndpoint;
   constructor( private HttpClient: HttpClient ) { }
 
-  getUserPolicies(): Observable<UserPolicies[]> {
-    return this.HttpClient.get<UserPolicies[]>(this.userPoliciesEndpoint);
-  }  
+  getUserPolicies(userId: number): Observable<UserPolicies[]> {
+    return this.HttpClient.get<UserPolicies[]>(`${this.userPoliciesEndpoint}/${userId}`);
 }
+
+  }  
+

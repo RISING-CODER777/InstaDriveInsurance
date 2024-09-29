@@ -22,6 +22,7 @@ export class PolicyStatusComponent implements OnInit {
     this.userProposalService.getUserProposalById(id).subscribe({
       next: (proposal: UserProposalStatus) => {
         this.userProposal = proposal; // Update the userProposal with fetched data
+        console.log(proposal);
       },
       error: (error: any) => {
         console.error('Error fetching user proposal:', error);

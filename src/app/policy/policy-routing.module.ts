@@ -8,7 +8,7 @@ import { PolicyListComponent } from './policy-list/policy-list.component';
 const routes: Routes = [
   { path: 'policy-form', component: PolicyFormComponent },
   { path: 'policy-detail', component: PolicyDetailComponent },
-  { path: 'policy-list', component: PolicyListComponent}
+  { path: 'policy-list', component: PolicyListComponent},
   { path: 'policy-detail', component: PolicyDetailComponent },
   { path: 'policy-status', component: PolicyStatusComponent } 
 

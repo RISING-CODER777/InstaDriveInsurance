@@ -32,6 +32,7 @@ export class NewApprovalComponent implements AfterViewInit {
         requestDate: item.requestDate ? new Date(item.requestDate) : null // Convert requestDate to Date or null
       }));
       this.dataSource.data = this.newApproval;
+      console.log(data);
     });
   }
 

@@ -7,12 +7,9 @@
     <p *ngIf="errorMessage" ngClass="danger">{{ errorMessage }}</p>
   </div>
 
-
   <div class="profile-content" *ngIf="userProfile">
     <div class="profile-card">
       <!-- Profile Image Upload -->
-
-
       <div class="profile-header">
         <img src="path/to/profile-image.jpg" alt="Profile Image" class="profile-image" />
         <button mat-button class="upload-button">Upload Image</button>
@@ -50,44 +47,53 @@
       <p *ngIf="userPolicyLoading" style="text-align: center; padding: 10px;" ngClass="status-active">Loading...</p>
       <p *ngIf="userPolicies.length === 0 && !errorMessage && !userPolicyLoading"
         style="text-align: center; padding: 20px;">No Policies found <br>
-        <button mat-icon-button (click)="getUserPolicies()"><mat-icon>refresh</mat-icon></button>
+        <button mat-icon-button (click)="getUserPolicies(userId)"><mat-icon>refresh</mat-icon></button>
       </p>
+
+      <!-- Loop through policies -->
       <div *ngFor="let policy of userPolicies" class="policy" [attr.id]="'policy-' + policy.id">
         <div class="policy-info">
           <div class="general-info">
             <div>{{policy.make}}</div>
-
             <div [ngClass]="{
                 'status-active': policy.status === 'Active',
                 'status-expired': policy.status === 'Expired'
               }">
               {{policy.status}}
             </div>
-
           </div>
 
           <div *ngIf="!policy.showDoneButton" class="vehicle-info">
             {{ policy.registrationNumber }} | {{ policy.year }} | {{ policy.fuelType }}
           </div>
+
+          <!-- Claim Form -->
           <div *ngIf="policy.showDoneButton">
-            <input type="text" placeholder="Enter claim details" />
+            <input type="date" [(ngModel)]="claimForm.DateOfIncident" placeholder="Date of Incident" />
+            <input type="text" [(ngModel)]="claimForm.Description" placeholder="Description" />
+            <select [(ngModel)]="claimForm.ClaimType">
+              <option value="">Select Claim Type</option>
+              <option value="Damage">Damage</option>
+              <option value="Theft">Theft</option>
+              <option value="Accident">Accident</option>
+            </select>
           </div>
         </div>
 
+        <!-- Action Buttons for Claim or Renew -->
         <div [ngClass]="{
           'action-active-button': policy.status === 'Active',
           'action-expired-button': policy.status === 'Expired'
         }"
-         [ngStyle]="{
+        [ngStyle]="{
           'opacity': policy.isClaimed ? 0.8 : 1,
           'color': policy.isClaimed ? 'grey' : 'black',
           'pointer-events': policy.isClaimed ? 'none' : 'auto'
         }"
         style="user-select: none; font-weight: 400;"
-         (click)="policy.status === 'Active' ? claimPolicy(policy.id) : renewPolicy(policy.id)">
+        (click)="policy.status === 'Active' ? claimPolicy(policy.id) : renewPolicy(policy.id)">
           {{policy.showDoneButton ? 'Done' : policy.status === 'Active' ? 'Claim' : 'Renew'}}
         </div>
-
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@ export interface NewApproval {
     id: string | undefined;
     name: string;
     userId: string;
-    proposalId: string;
+    proposalID: string;
     proposalNumber: string; // Added proposalNumber property
     policyDetails: string;
     status: string;

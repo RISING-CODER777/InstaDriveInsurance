@@ -6,6 +6,7 @@ import { UserComponent } from './user.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     UserRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ]
 })
 export class UserModule { }

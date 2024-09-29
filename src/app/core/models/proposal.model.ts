@@ -1,5 +1,5 @@
 export interface Proposal {
-    proposalId: string | undefined
+    proposalID: string | undefined
     userId: string
     status: string
     addOnSelection: string[]

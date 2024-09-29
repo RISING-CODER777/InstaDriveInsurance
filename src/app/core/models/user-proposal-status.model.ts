@@ -8,5 +8,6 @@ export interface UserProposalStatus {
     addOnDetails: string[];
     accidentCoverDetails: string[];
     accessoryCoverDetails: string[];
+    premiumAmount: number;
   }
   

@@ -1,9 +1,7 @@
-import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { NewApproval } from '../../models/new-approval.model';
 import { AdminService } from '../../services/admin.service';
-import { Proposal } from 'src/app/core/models/proposal.model';
-import { ProposalsService } from 'src/app/core/services/proposals.service';
+import { NewApprovalStatusUpdate } from '../../models/new-approval-status-update.model';
 
 @Component({
   selector: 'app-new-approval-bottom-sheet',
@@ -13,37 +11,41 @@ import { ProposalsService } from 'src/app/core/services/proposals.service';
 export class NewApprovalBottomSheetComponent {
 
   status = [
-    {value: 'Approved', viewValue: 'Approved'},
-    {value: 'Rejected', viewValue: 'Rejected'},
-    {value: 'Under Review', viewValue: 'Under Review'},
-    {value: 'Submitted', viewValue: 'Submitted'}
+    { value: 'Approved', viewValue: 'Approved' },
+    { value: 'Rejected', viewValue: 'Rejected' },
+    { value: 'Under Review', viewValue: 'Under Review' },
+    { value: 'Submitted', viewValue: 'Submitted' }
   ];
   selectedValue!: string;
-  updatedProposal!: Proposal;
+  adminComments!: string;
 
   constructor(
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: NewApproval,
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: any,  // NewApproval Data
     private matBottomSheetRef: MatBottomSheetRef,
-    private proposalService: ProposalsService,
-  ) {
-
-  }
+    private adminService: AdminService,
+  ) { }
 
   ngOnInit() {
     this.selectedValue = this.data.status;
   }
-  updateStatus(status: string) {
-    this.proposalService.getProposalById(this.data.proposalId).subscribe((data: Proposal) => {
-      this.updatedProposal = data;
-      this.updatedProposal.status = status;
-      console.log(this.updatedProposal);
-      this.proposalService.updateProposalById(this.data.proposalId, this.updatedProposal).subscribe((data: Proposal) => {
-        console.log(data);
-      })
-    })
-    
+
+  updateStatus() {
+    const updatedData: NewApprovalStatusUpdate = {
+      status: this.selectedValue,
+      remarks: this.adminComments,
+      approvedBy: 'rajesh_admin'  //Need to change this harcode
+    };
+
+    this.adminService.patchProposalStatus(this.data.proposalID, updatedData).subscribe(response => {
+      console.log('Proposal updated:', response);
+      this.matBottomSheetRef.dismiss();
+    }, error => {
+      console.error('Error updating proposal:', error);
+    });
     this.matBottomSheetRef.dismiss();
+
   }
+
   close() {
     this.matBottomSheetRef.dismiss();
   }

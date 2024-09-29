@@ -22,6 +22,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatExpansionModule,
     MatIconModule,
     MatProgressBarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTooltipModule
   ]
 })
 export class PolicyModule {}
