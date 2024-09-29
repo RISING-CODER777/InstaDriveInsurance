@@ -2,18 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ForgotPasswordDialogComponent } from '../forgot-password-dialog/forgot-password-dialog.component'; // Adjust the path as needed
 
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss']
 })
-
 export class AdminLoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private dialog: MatDialog // Inject MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -24,29 +29,34 @@ export class AdminLoginComponent implements OnInit {
 
   onSubmit(): void {
     const username = this.loginForm.get('username')?.value;
-    const passwordHash = this.loginForm.get('password')?.value; // Changed to match DTO
+    const passwordHash = this.loginForm.get('password')?.value;
 
-    if (username && passwordHash) { // Change here too
+    if (username && passwordHash) {
       this.authService.login(username, passwordHash).subscribe({
         next: (response: any) => {
           if (response && response.token) {
             this.authService.setToken(response.token);
-            // You can decode token here to get user details
             this.router.navigate(['/admin']);
           } else {
-            console.error('Invalid response');
+            this.openDialog("Invalid username or password"); // Show dialog on invalid response
           }
         },
         error: (error: any) => {
-          console.error(error);
+          this.openDialog("Invalid username or password"); // Show dialog on error
         },
         complete: () => {
           console.log('Request completed');
         }
       });
     } else {
-      console.error('Invalid form values');
+      this.openDialog("Please fill in all fields"); // Show dialog on empty form
     }
+  }
+
+  openDialog(message: string): void {
+    this.dialog.open(ForgotPasswordDialogComponent, {
+      data: { message } // Pass message to dialog
+    });
   }
 
   hide = true;

@@ -17,6 +17,8 @@ export const environment = {
 
     loginEndpoint:'https://localhost:7246/api/Auth/login',
     userSignUpEndpoint :'https://localhost:7246/api/User/signup',
+    forgotPwdEndpoint :'https://localhost:7246/api/Auth/forgot-password',
+    resetPwdEndpoint :'https://localhost:7246/api/Auth/reset-password',
 
     policiesIssuedEndpoint :'https://localhost:7246/api/Policy/GetTotalPoliciesIssued',
     totalPremiumAmountEndpoint :'https://localhost:7246/api/Policy/TotalPremium',
