@@ -1,6 +1,6 @@
 <div style="height: 70px;"></div>
 
-<div class="policy-container" *ngIf="userProposal">
+<div *ngIf="userProposal" class="policy-container">
   <mat-card class="policy-card">
     <mat-card-header>
       <mat-card-title>
@@ -13,13 +13,14 @@
 
     <mat-card-content>
       <!-- Congratulations Message -->
-      <div class="congratulations-message" >
+      <div class="congratulations-message">
         <h3>🎉 Congratulations!</h3>
         <p>Your proposal has been successfully submitted. You will receive an email with payment details within 2 days.</p>
       </div>
 
       <div class="card-layout">
-        <div class="contact-details">
+        <!-- Contact Details Card -->
+        <mat-card class="contact-details">
           <h4>Get in Touch</h4>
           <p class="contact-description">We're here to help:</p>
           <div class="contact-item">
@@ -38,9 +39,10 @@
             <mat-icon>location_on</mat-icon>
             <span>128 Clarence Street, Sydney, NSW</span>
           </div>
-        </div>
+        </mat-card>
 
-        <div class="policy-details">
+        <!-- Proposal Details Card -->
+        <mat-card class="policy-details">
           <div class="policy-info-row">
             <div class="info-box">
               <mat-icon>verified_user</mat-icon>
@@ -54,7 +56,7 @@
             </div>
             <div class="info-box">
               <mat-icon>attach_money</mat-icon>
-              <p><strong>Amount:</strong> ₹{{userProposal.premiumAmount}}</p> 
+              <p><strong>Amount:</strong> ₹{{ userProposal.premiumAmount }}</p> 
             </div>
           </div>
 
@@ -63,14 +65,46 @@
               <mat-icon>security</mat-icon>
               <p><strong>Plan:</strong> {{ userProposal.planName }}</p>
             </div>
-            <div class="info-box">
-              <mat-icon>add_circle</mat-icon>
-              <p><strong>Add-ons:</strong> {{ userProposal.addOnDetails.join(', ') }}</p>
+
+            <!-- Collapsible Add-ons Section -->
+            <div>
+              <div class="toggle-icon" (click)="toggleAddons()">
+                <mat-icon>{{ showAddons ? 'expand_less' : 'expand_more' }}</mat-icon>
+                <span>Add-ons</span>
+              </div>
+              <div *ngIf="showAddons" class="info-box">
+                <mat-icon>add_circle</mat-icon>
+                <p>{{ userProposal.addOnDetails.join(', ') || 'None' }}</p>
+              </div>
             </div>
-            <mat-icon class="toggle-icon" (click)="toggleDetails()">expand_more</mat-icon>
+
+            <!-- Collapsible Accident Cover Section -->
+            <div>
+              <div class="toggle-icon" (click)="toggleAccidentCover()">
+                <mat-icon>{{ showAccidentCover ? 'expand_less' : 'expand_more' }}</mat-icon>
+                <span>Accident Cover</span>
+              </div>
+              <div *ngIf="showAccidentCover" class="info-box">
+                <mat-icon>local_hospital</mat-icon>
+                <p>{{ userProposal.accidentCoverDetails.join(', ') || 'None' }}</p>
+              </div>
+            </div>
+
+            <!-- Collapsible Accessory Cover Section -->
+            <div>
+              <div class="toggle-icon" (click)="toggleAccessoryCover()">
+                <mat-icon>{{ showAccessoryCover ? 'expand_less' : 'expand_more' }}</mat-icon>
+                <span>Accessory Cover</span>
+              </div>
+              <div *ngIf="showAccessoryCover" class="info-box">
+                <mat-icon>settings</mat-icon>
+                <p>{{ userProposal.accessoryCoverDetails.join(', ') || 'None' }}</p>
+              </div>
+            </div>
           </div>
 
-          <div *ngIf="showMoreDetails" class="more-details expanded">
+          <!-- Duration and Vehicle Info -->
+          <div class="more-details expanded">
             <div class="more-details-item">
               <mat-icon>info</mat-icon>
               <p><strong>Duration:</strong> 1 Year</p>
@@ -81,16 +115,16 @@
             </div>
           </div>
 
-          <div class="payment-container">
+          <!-- Payment Button -->
+          <div class="payment-container" *ngIf="userProposal.status === 'Approved'">
             <button mat-raised-button 
                     color="primary" 
-                    [disabled]="userProposal.status !== 'Approved'" 
                     class="payment-btn">
               <span>Make Payment</span>
-              <mat-icon>payment</mat-icon>
+              <mat-icon class="payment-icon">payment</mat-icon>
             </button>
           </div>
-        </div>
+        </mat-card>
       </div>
     </mat-card-content>
   </mat-card>

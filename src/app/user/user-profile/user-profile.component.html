@@ -51,7 +51,7 @@
       </p>
 
       <!-- Loop through policies -->
-      <div *ngFor="let policy of userPolicies" class="policy" [attr.id]="'policy-' + policy.id">
+      <div *ngFor="let policy of userPolicies" class="policy" [attr.id]="'policy-' + policy.policyID">
         <div class="policy-info">
           <div class="general-info">
             <div>{{policy.make}}</div>
@@ -91,7 +91,7 @@
           'pointer-events': policy.isClaimed ? 'none' : 'auto'
         }"
         style="user-select: none; font-weight: 400;"
-        (click)="policy.status === 'Active' ? claimPolicy(policy.id) : renewPolicy(policy.id)">
+        (click)="policy.status === 'Active' ? claimPolicy(policy.policyID) : renewPolicy(policy.policyID)">
           {{policy.showDoneButton ? 'Done' : policy.status === 'Active' ? 'Claim' : 'Renew'}}
         </div>
       </div>

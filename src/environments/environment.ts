@@ -10,7 +10,7 @@ export const environment = {
 
     paymentsEndpoint: 'http://localhost:3000/payments',
 
-    insuranceOptionsEndpoint: 'http://localhost:3000/insurance-options',
+    insuranceOptionsEndpoint: 'https://localhost:7141/api/Options',
 
     vehicleEndpoint:'https://localhost:7141/api/Vehicle',
     updateProposalStatusEndpoint: 'https://localhost:7141/api/admin/Proposal',
@@ -21,15 +21,21 @@ export const environment = {
 
     calculatePremiumEndpoint: 'https://localhost:7141/api/PremiumApproximation/calculate',
 
-    claimApprovalStatusUpdateEndpoint: 'https://localhost:7141/api/Claims/update-details'
+    claimApprovalStatusUpdateEndpoint: 'https://localhost:7141/api/Claims/update-details',
     adminPlansEndpoint :'https://localhost:7246/api/InsurancePlan/add',
     adminOptionsEndpoint :'https://localhost:7246/api/Option/add',
 
-    loginEndpoint:'https://localhost:7246/api/Auth/login',
+    loginEndpoint:'https://localhost:7141/api/Auth/login',
     userSignUpEndpoint :'https://localhost:7246/api/User/signup',
 
     policiesIssuedEndpoint :'https://localhost:7246/api/Policy/GetTotalPoliciesIssued',
     totalPremiumAmountEndpoint :'https://localhost:7246/api/Policy/TotalPremium',
     vehicleSourcesEndpoint : 'https://localhost:7246/api/Policy/GetVehicleSources',
-    proposalStatusEndpoint: 'https://localhost:7246/api/Proposal/GetProposalStatusCounts'
+    proposalStatusEndpoint: 'https://localhost:7246/api/Proposal/GetProposalStatusCounts',
+
+    claimRequestEndpoint: 'https://localhost:7141/api/Claim',
+
+    premiumProposalCoverageEndpoint:'https://localhost:7141/api/Proposals',
+
+    insuranceOptionSelectionEndpoint:'https://localhost:7141/api/ProposalOptions'
 };

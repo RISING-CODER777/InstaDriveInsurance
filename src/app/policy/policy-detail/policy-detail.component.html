@@ -1,4 +1,3 @@
-
 <div style="height: 70px;"></div>
 
 <div class="policy-container">
@@ -75,8 +74,8 @@
   <div class="right-side-container">
     <div class="amount-card premium-card">
       <mat-card>
-        <h3>Insurance Plan: Premium Coverage</h3>
-        <p>Amount: ₹1,000,000</p>
+        <h3>Insurance Plan: {{ planName }}</h3> <!-- Changed to use dynamic planName -->
+        <p>Amount: ₹{{ baseInsuranceAmount | number }} </p> <!-- Changed to use dynamic baseInsuranceAmount -->
       </mat-card>
     </div>
 
@@ -88,10 +87,10 @@
         </li>
       </ul>
       <div class="total-container">
-        <h4>Total Options Amount: ₹{{ totalOptionsAmount }}</h4>
-        <h4>Total Payable: ₹{{ totalPayableAmount }}</h4>
+        <h4>Total Options Amount: ₹{{ totalOptionsAmount | number }}</h4> <!-- Added number pipe for formatting -->
+        <h4>Total Payable: ₹{{ totalPayableAmount | number }}</h4> <!-- Added number pipe for formatting -->
       </div>
-      <button mat-raised-button color="primary" class="quote-button">Send Quote</button>
+      <button mat-raised-button color="primary" class="quote-button" (click)="sendQuote()">Send Quote</button>
     </div>
   </div>
 </div>

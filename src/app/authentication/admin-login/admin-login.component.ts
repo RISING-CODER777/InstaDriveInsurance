@@ -8,10 +8,10 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss']
 })
-
 export class AdminLoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+  hide = true;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -24,14 +24,13 @@ export class AdminLoginComponent implements OnInit {
 
   onSubmit(): void {
     const username = this.loginForm.get('username')?.value;
-    const passwordHash = this.loginForm.get('password')?.value; // Changed to match DTO
+    const password = this.loginForm.get('password')?.value; // Correct field name
 
-    if (username && passwordHash) { // Change here too
-      this.authService.login(username, passwordHash).subscribe({
+    if (username && password) { 
+      this.authService.login(username, password).subscribe({
         next: (response: any) => {
           if (response && response.token) {
             this.authService.setToken(response.token);
-            // You can decode token here to get user details
             this.router.navigate(['/admin']);
           } else {
             console.error('Invalid response');
@@ -48,7 +47,4 @@ export class AdminLoginComponent implements OnInit {
       console.error('Invalid form values');
     }
   }
-
-  hide = true;
-
 }

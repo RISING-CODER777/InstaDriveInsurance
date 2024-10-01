@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { SharedDataService } from 'src/app/core/services/shared-data.service'; // Import the shared data service
 
 @Component({
   selector: 'app-plan-finder',
@@ -6,10 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./plan-finder.component.scss'],
 })
 export class PlanFinderComponent {
-  selectedVehicle: string = 'car';
-  vehicleNumber: string = '';
+  selectedVehicle: string = 'car'; // Default set to 'car'
+  vehicleNumber: string = ''; // Vehicle number variable remains for user input, but will not be used
 
-  // get placeholder based on selected vehicle type
+  constructor(private router: Router, private sharedDataService: SharedDataService) {} // Inject the shared data service
+
+  // Get placeholder based on selected vehicle type
   getPlaceholder(): string {
     switch (this.selectedVehicle) {
       case 'car':
@@ -35,5 +39,18 @@ export class PlanFinderComponent {
       default:
         return 0;
     }
+  }
+
+  // Navigate to policy list with selected vehicle type when button is clicked
+  viewPrices() {
+    // Store the selected vehicle type in the shared data service
+    this.sharedDataService.setVehicleType(this.selectedVehicle);
+    this.sharedDataService.setVehicleNumber(this.vehicleNumber);
+
+
+    // Navigate to the policy list 
+    this.router.navigate(['/policy/policy-list'], {
+      queryParams: { type: this.selectedVehicle }, 
+    });
   }
 }

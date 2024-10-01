@@ -1,7 +1,7 @@
 <form [formGroup]="policyForm" (ngSubmit)="handleSubmit()">
   <mat-stepper [linear]="isLinear" #stepper>
-     <!-- Step 1: Basic Information -->
-     <mat-step [stepControl]="basicInfoForm">
+    <!-- Step 1: Basic Information -->
+    <mat-step [stepControl]="basicInfoForm">
       <ng-template matStepLabel>Basic</ng-template>
       <form [formGroup]="basicInfoForm">
         <div class="form-group">
@@ -21,9 +21,6 @@
             <mat-error *ngIf="basicInfoForm.get('make')?.hasError('required')">
               Make is required.
             </mat-error>
-            <mat-error *ngIf="basicInfoForm.get('make')?.hasError('pattern')">
-              Make must be alphanumeric.
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -31,9 +28,6 @@
             <input matInput formControlName="model" placeholder="Enter model" required maxlength="100">
             <mat-error *ngIf="basicInfoForm.get('model')?.hasError('required')">
               Model is required.
-            </mat-error>
-            <mat-error *ngIf="basicInfoForm.get('model')?.hasError('pattern')">
-              Model must be alphanumeric.
             </mat-error>
           </mat-form-field>
         </div>
@@ -55,12 +49,6 @@
             <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('required')">
               Model Year is required.
             </mat-error>
-            <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('minlength')">
-              Model Year must be at least 4 digits.
-            </mat-error>
-            <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('yearInvalid')">
-              {{ vehicleDetailsForm.get('modelYear')?.errors?.['yearInvalid'] }}
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -69,12 +57,6 @@
             <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('required')">
               Purchase Year is required.
             </mat-error>
-            <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('minlength')">
-              Purchase Year must be at least 4 digits.
-            </mat-error>
-            <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('yearInvalid')">
-              {{ vehicleDetailsForm.get('purchaseYear')?.errors?.['yearInvalid'] }}
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -82,9 +64,6 @@
             <input matInput formControlName="purchaseAmount" type="number" placeholder="Enter purchase amount" required>
             <mat-error *ngIf="vehicleDetailsForm.get('purchaseAmount')?.hasError('required')">
               Purchase Amount is required.
-            </mat-error>
-            <mat-error *ngIf="vehicleDetailsForm.get('purchaseAmount')?.hasError('purchaseAmountInvalid')">
-              Purchase Amount must be greater than 0.
             </mat-error>
           </mat-form-field>
         </div>
@@ -107,9 +86,6 @@
             <mat-error *ngIf="additionalDetailsForm.get('vin')?.hasError('required')">
               VIN is required.
             </mat-error>
-            <mat-error *ngIf="additionalDetailsForm.get('vin')?.hasError('vinInvalid')">
-              {{ additionalDetailsForm.get('vin')?.errors?.['vinInvalid'] }}
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -118,9 +94,6 @@
             <mat-error *ngIf="additionalDetailsForm.get('engineNo')?.hasError('required')">
               Engine Number is required.
             </mat-error>
-            <mat-error *ngIf="additionalDetailsForm.get('engineNo')?.hasError('engineNoInvalid')">
-              {{ additionalDetailsForm.get('engineNo')?.errors?.['engineNoInvalid'] }}
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -128,9 +101,6 @@
             <input matInput formControlName="color" placeholder="Enter color" required maxlength="60">
             <mat-error *ngIf="additionalDetailsForm.get('color')?.hasError('required')">
               Color is required.
-            </mat-error>
-            <mat-error *ngIf="additionalDetailsForm.get('color')?.hasError('pattern')">
-              Color must contain only letters.
             </mat-error>
           </mat-form-field>
         </div>
@@ -141,48 +111,48 @@
         </div>
       </form>
     </mat-step>
-       <!-- Step 4: Vehicle Specs -->
-<mat-step [stepControl]="vehicleSpecsForm">
-  <ng-template matStepLabel>Specs</ng-template>
-  <form [formGroup]="vehicleSpecsForm">
-    <div class="form-group">
-      <mat-form-field appearance="fill">
-        <mat-label>Fuel Type</mat-label>
-        <mat-select formControlName="fuelType" required>
-          <mat-option value="Petrol">Petrol</mat-option>
-          <mat-option value="Diesel">Diesel</mat-option>
-          <mat-option value="CNG">CNG</mat-option>
-          <mat-option value="Hybrid">Hybrid</mat-option>
-        </mat-select>
-        <mat-error *ngIf="vehicleSpecsForm.get('fuelType')?.hasError('required')">
-          Fuel Type is required.
-        </mat-error>
-      </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Registration Number</mat-label>
-        <input matInput formControlName="registrationNumber" placeholder="Enter registration number" required maxlength="40">
-        <mat-error *ngIf="vehicleSpecsForm.get('registrationNumber')?.hasError('required')">
-          Registration Number is required.
-        </mat-error>
-      </mat-form-field>
+    <!-- Step 4: Vehicle Specs -->
+    <mat-step [stepControl]="vehicleSpecsForm">
+      <ng-template matStepLabel>Specs</ng-template>
+      <form [formGroup]="vehicleSpecsForm">
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Fuel Type</mat-label>
+            <mat-select formControlName="fuelType" required>
+              <mat-option value="Petrol">Petrol</mat-option>
+              <mat-option value="Diesel">Diesel</mat-option>
+              <mat-option value="CNG">CNG</mat-option>
+              <mat-option value="Hybrid">Hybrid</mat-option>
+            </mat-select>
+            <mat-error *ngIf="vehicleSpecsForm.get('fuelType')?.hasError('required')">
+              Fuel Type is required.
+            </mat-error>
+          </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Mileage</mat-label>
-        <input matInput formControlName="mileage" type="number" placeholder="Enter mileage" required>
-        <mat-error *ngIf="vehicleSpecsForm.get('mileage')?.hasError('required')">
-          Mileage is required.
-        </mat-error>
-      </mat-form-field>
-    </div>
+          <mat-form-field appearance="fill">
+            <mat-label>Registration Number</mat-label>
+            <input matInput formControlName="registrationNumber" placeholder="Enter registration number" required maxlength="40">
+            <mat-error *ngIf="vehicleSpecsForm.get('registrationNumber')?.hasError('required')">
+              Registration Number is required.
+            </mat-error>
+          </mat-form-field>
 
-    <div class="button-group">
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
-    </div>
-  </form>
-</mat-step>
+          <mat-form-field appearance="fill">
+            <mat-label>Mileage</mat-label>
+            <input matInput formControlName="mileage" type="number" placeholder="Enter mileage" required>
+            <mat-error *ngIf="vehicleSpecsForm.get('mileage')?.hasError('required')">
+              Mileage is required.
+            </mat-error>
+          </mat-form-field>
+        </div>
 
+        <div class="button-group">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
 
     <!-- Step 5: Engine & Weight Details -->
     <mat-step [stepControl]="engineWeightForm">
@@ -225,7 +195,7 @@
     <mat-step>
       <ng-template matStepLabel>Final</ng-template>
       <div class="review-content">
-        <p>Your vehicle type is: {{ basicInfoForm.value.vehicleType }}</p>
+        <p>Your vehicle type is: {{ policyForm.get('basicInfo.vehicleType')?.value }}</p>
         <p>Your make is: {{ basicInfoForm.value.make }}</p>
         <p>Your model is: {{ basicInfoForm.value.model }}</p>
         <p>Your model year is: {{ vehicleDetailsForm.value.modelYear }}</p>
@@ -234,16 +204,15 @@
         <p>Your VIN is: {{ additionalDetailsForm.value.vin }}</p>
         <p>Your engine number is: {{ additionalDetailsForm.value.engineNo }}</p>
         <p>Your color is: {{ additionalDetailsForm.value.color }}</p>
-        <!-- Step 4 Fields -->
         <p>Your fuel type is: {{ vehicleSpecsForm.value.fuelType }}</p>
-        <p>Your registration number is: {{ vehicleSpecsForm.value.registrationNumber }}</p>
+        <p>Your registration number is: 
+          {{ vehicleSpecsForm.value.registrationNumber || autoFilledRegistrationNumber }}
+        </p>        
         <p>Your mileage is: {{ vehicleSpecsForm.value.mileage }}</p>
-        <!-- Step 5 Fields -->
-        <p>Your engine CC is: {{ engineWeightForm.value.engineCC }}</p>
+        <p>Your engine CC is: {{ policyForm.get('engineWeight.engineCC')?.value }}</p>
         <p>Your gross weight is: {{ engineWeightForm.value.grossWeight }}</p>
-        <p>Your seat capacity is: {{ engineWeightForm.value.seatCapacity }}</p>
+        <p>Your seat capacity is: {{ policyForm.get('engineWeight.seatCapacity')?.value }}</p>
       </div>
-       
       <div class="button-group">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button type="submit">Submit</button>

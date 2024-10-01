@@ -9,7 +9,7 @@ import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.compone
 import { FooterComponent } from './components/footer/footer.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { Instagram, Slack, FileText, Home, FilePlus, LogOut  } from 'angular-feather/icons';
+import { Instagram, Slack, FileText, Home, FilePlus, LogOut, Shield, Layers } from 'angular-feather/icons'; // Import Shield and Layers
 import { FeatherModule } from 'angular-feather';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AdminSideNavbarComponent } from './admin/admin-side-navbar/admin-side-navbar.component';
@@ -35,7 +35,8 @@ const icons = {
   Home,
   FilePlus,
   LogOut,
-  
+  Shield,
+  Layers
 };
 
 @NgModule({

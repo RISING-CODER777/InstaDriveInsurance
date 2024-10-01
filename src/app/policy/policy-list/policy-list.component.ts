@@ -2,7 +2,9 @@ import { Component, ElementRef, HostListener, Renderer2, ViewChild, AfterViewIni
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { InsurancePlans } from 'src/app/core/models/insurance-plans.model';
 import { InsurancePlansService } from 'src/app/core/services/insurance-plans.service';
-import { InsuranceOptionService } from 'src/app/core/services/insurance-option.service'; // Import service
+import { InsuranceOptionService } from 'src/app/core/services/insurance-option.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SharedDataService } from 'src/app/core/services/shared-data.service'; // Import the SharedDataService
 
 @Component({
   selector: 'app-policy-list',
@@ -17,34 +19,45 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
   isScrolled: boolean = false;
   policyListForm!: FormGroup;
   plans: InsurancePlans[] = [];
-  filteredPlans: InsurancePlans[] = []; // New array to hold filtered plans
+  filteredPlans: InsurancePlans[] = [];
   errorMessage: string = '';
   plansLoading: boolean = false;
 
   // Dropdown options
   typeOptions = ['Show All', 'Bike', 'Car', 'Truck'];
-  engineCCOptions = [0, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000]; // Numeric options
+  engineCCOptions = [0, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000];
   seatingCapacityOptions = ['Show All', 2, 4, 8];
   planTypeOptions = ['Show All', 'Basic', 'Comprehensive', 'Third Party'];
 
   isFocused: boolean = false;
+  policyType: string | undefined;
 
   constructor(
     private formBuilder: FormBuilder,
     private renderer: Renderer2,
     private insurancePlansService: InsurancePlansService,
-    private insuranceOptionService: InsuranceOptionService // Inject service
+    private insuranceOptionService: InsuranceOptionService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private sharedDataService: SharedDataService // Inject SharedDataService
   ) {
+    // Initialize form with default values
     this.policyListForm = this.formBuilder.group({
       type: ['Show All'],
-      engineCC: [0], // Default to 0
+      engineCC: [100],
       seatingCapacity: ['Show All'],
       planType: ['Show All'],
     });
   }
 
   ngOnInit() {
-    this.getInsurancePlans();
+    this.route.queryParams.subscribe(params => {
+      this.policyType = params['type'];
+      this.policyListForm.patchValue({
+        type: this.policyType ? this.capitalizeFirstLetter(this.policyType) : 'Show All'
+      });
+      this.getInsurancePlans();
+    });
   }
 
   ngOnDestroy() {}
@@ -54,8 +67,12 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
     this.onWindowScroll();
   }
 
+  capitalizeFirstLetter(type: string): string {
+    return type.charAt(0).toUpperCase() + type.slice(1).toLowerCase();
+  }
+
   onSubmit() {
-    this.calculatePremiumAndDisplay(); // Call function to calculate premium and update display
+    this.calculatePremiumAndDisplay();
   }
 
   getInsurancePlans(): void {
@@ -64,7 +81,7 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
       next: (data: InsurancePlans[] | undefined) => {
         if (data) {
           this.plans = data;
-          this.filteredPlans = data; // Initialize filtered plans with all plans
+          this.filterPlans();
         }
         this.plansLoading = false;
       },
@@ -78,10 +95,7 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (!this.formFilterElement) {
-      return;
-    }
-
+    if (!this.formFilterElement) return;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isScrolled = scrollTop > 200;
     if (this.isScrolled) {
@@ -99,15 +113,8 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
     this.isFocused = true;
     this.renderer.setStyle(this.formBackdropElement.nativeElement, 'background-color', 'white');
     this.renderer.setStyle(this.highlightElement.nativeElement, 'top', '50%');
-
-    this.formFilterElement.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-
-    setTimeout(() => {
-      this.removeFocus();
-    }, 3000);
+    this.formFilterElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => this.removeFocus(), 3000);
   }
 
   removeFocus() {
@@ -118,7 +125,6 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
     this.renderer.setStyle(this.formBackdropElement.nativeElement, 'background-color', 'var(--form-backdrop-default-bg)');
   }
 
-  // Updated method to calculate premium and update the display
   calculatePremiumAndDisplay(): void {
     const requestData = {
       VehicleType: this.policyListForm.get('type')?.value,
@@ -127,51 +133,69 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
       PlanType: this.policyListForm.get('planType')?.value
     };
 
-    // Log the request data (optional)
-    console.log('Request Data for Premium Calculation:', requestData);
+    // Store data in SharedDataService
+    this.sharedDataService.setVehicleType(requestData.VehicleType);
+    this.sharedDataService.setEngineCC(requestData.EngineCC);
+    this.sharedDataService.setSeatingCapacity(requestData.SeatingCapacity);
+    this.sharedDataService.setPlanType(requestData.PlanType);
 
-    // Check for "Show All" and skip the POST request if true
-    if (requestData.VehicleType === 'Show All' || requestData.PlanType === 'Show All') {
-      this.filteredPlans = this.plans.filter(plan => {
-        const isTypeMatch = requestData.VehicleType === 'Show All' || plan.vehicleType === requestData.VehicleType;
-        const isPlanTypeMatch = requestData.PlanType === 'Show All' || plan.planType === requestData.PlanType;
+    this.sharedDataService.printSharedData(); // print the shared data
 
-        return isTypeMatch && isPlanTypeMatch;
+
+    this.filterPlans();
+
+    if (requestData.VehicleType !== 'Show All' && requestData.PlanType !== 'Show All') {
+      this.insuranceOptionService.calculatePremium(requestData).subscribe({
+        next: (response) => {
+          const { premium } = response;
+          this.updatePremiumForMatchingPlan(requestData.VehicleType, requestData.PlanType, premium);
+        },
+        error: (error) => {
+          console.error('Error calculating premium:', error);
+        }
       });
-      return; // Exit the method without making a POST request
     }
+  }
 
-    // Make the POST request to calculate premium
-    this.insuranceOptionService.calculatePremium(requestData).subscribe({
-      next: (response) => {
-        // Extract the premium from the response
-        const { premium } = response;
+  filterPlans(): void {
+    const selectedType = this.policyListForm.get('type')?.value;
+    const selectedPlanType = this.policyListForm.get('planType')?.value;
+    this.filteredPlans = this.plans.filter(plan => {
+      const isTypeMatch = selectedType === 'Show All' || plan.vehicleType === selectedType;
+      const isPlanTypeMatch = selectedPlanType === 'Show All' || plan.planType === selectedPlanType;
+      return isTypeMatch && isPlanTypeMatch;
+    });
+  }
 
-        // Update the premium on the correct plan card based on vehicleType and planType
-        this.plans = this.plans.map(plan => {
-          if (plan.vehicleType === requestData.VehicleType && plan.planType === requestData.PlanType) {
-            return {
-              ...plan,
-              basePremium: premium // Update the premium for the matching plan
-            };
-          }
-          return plan;
-        });
-
-        // Filter the plans based on selected type and plan type
-        this.filteredPlans = this.plans.filter(plan => {
-          const isTypeMatch = requestData.VehicleType === 'Show All' || plan.vehicleType === requestData.VehicleType;
-          const isPlanTypeMatch = requestData.PlanType === 'Show All' || plan.planType === requestData.PlanType;
-
-          return isTypeMatch && isPlanTypeMatch;
-        });
-
-        // No need to print the premium to console
-        console.log('Premium Calculation Response:', response); 
-      },
-      error: (error) => {
-        console.error('Error calculating premium:', error);
+  updatePremiumForMatchingPlan(vehicleType: string, planType: string, premium: number): void {
+    this.plans = this.plans.map(plan => {
+      if (plan.vehicleType === vehicleType && plan.planType === planType) {
+        return { ...plan, basePremium: premium };
       }
+      return plan;
+    });
+    this.filterPlans();
+  }
+
+  // Method to handle clicking on the premium amount
+  onPremiumClick(plan: InsurancePlans): void {
+    console.log('Selected Plan ID:', plan.insurancePlanID); // Log the insurance plan ID
+    console.log('Selected Plan Name:', plan.planName); // Log the insurance plan name
+
+    // Set the plan ID in SharedDataService
+    this.sharedDataService.setPlanId(plan.insurancePlanID);
+    this.sharedDataService.setPlanName(plan.planName); 
+
+
+    // Redirect to the policy form page and retain query params
+    this.router.navigate(['/policy/policy-form'], {
+      // queryParams: {
+    //   type: this.policyListForm.get('type')?.value,
+    //   engineCC: this.policyListForm.get('engineCC')?.value,
+    //   seatingCapacity: this.policyListForm.get('seatingCapacity')?.value,
+    //   planType: this.policyListForm.get('planType')?.value,
+    //   planId: plan.insurancePlanID // Pass the selected plan ID
+    // }
     });
   }
 }

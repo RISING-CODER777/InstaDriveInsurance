@@ -6,12 +6,11 @@ import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { UserSignUp } from '../models/user-signup.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private loginEndpoint=environment.loginEndpoint;
+  private loginEndpoint = environment.loginEndpoint;
   private userSignUpEndpoint = environment.userSignUpEndpoint;
 
   constructor(private http: HttpClient) { }
@@ -20,23 +19,21 @@ export class AuthService {
     return this.http.post(this.userSignUpEndpoint, signUpData);
   }
 
-  login(username: string, passwordHash: string): Observable<any> {
+  login(username: string, password: string): Observable<any> {
     const loginData = {
-        username: username,
-        passwordHash: passwordHash
+      username: username,
+      password: password // Correct field name
     };
 
     return this.http.post(this.loginEndpoint, loginData, {
-        headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' }
     }).pipe(
-        catchError((error: any) => {
-            console.error(error);
-            return of(error);
-        })
+      catchError((error: any) => {
+        console.error(error);
+        return of(error);
+      })
     );
-}
-
-
+  }
 
   getToken(): string | null {
     return localStorage.getItem('token');

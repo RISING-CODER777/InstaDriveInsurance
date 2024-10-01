@@ -1,26 +1,46 @@
 <mat-nav-list class="side-nav">
     <div class="side-nav-title">
-        <!-- Company Logo -->
-        <mat-icon class="company-icon">eco</mat-icon>
-        Admin
+      <!-- Company Logo -->
+      <mat-icon class="company-icon">eco</mat-icon>
+      Admin
     </div>
-    <a class="nav-items" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <i-feather name="home"></i-feather>
-        Dashboard
+  
+    <!-- Dashboard Link -->
+    <a class="nav-items" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i-feather name="home"></i-feather>
+      Dashboard
     </a>
+  
+    <!-- New Approval Link -->
     <a class="nav-items" routerLink="/admin/new-approval" routerLinkActive="active">
-        <i-feather name="file-plus"></i-feather>
-        New Approval
+      <i-feather name="file-plus"></i-feather>
+      New Approval
     </a>
+  
+    <!-- Claims Approval Link -->
     <a class="nav-items" routerLink="/admin/claims-approval" routerLinkActive="active">
-        <i-feather name="file-text"></i-feather>
-        Claims Approval
+      <i-feather name="file-text"></i-feather>
+      Claims Approval
     </a>
-
+  
+    <!-- Admin Options (Accidental Covers & Accessories) -->
+    <a class="nav-items" routerLink="/admin/admin-options" routerLinkActive="active">
+      <i-feather name="shield"></i-feather> <!-- Shield icon represents protection/coverage -->
+      Insurance Options
+    </a>
+  
+    <!-- Admin Plans (Plan Management) -->
+    <a class="nav-items" routerLink="/admin/admin-plans" routerLinkActive="active">
+      <i-feather name="layers"></i-feather> <!-- Layers icon represents different plans/levels -->
+      Plan Management
+    </a>
+  
     <span class="spacer"></span>
-
-    <!-- TODO: Add Logout Logic -->
-    <a class="nav-logout" routerLink="/"> <i-feather name="log-out"></i-feather>
-        Logout
+  
+    <!-- Logout -->
+    <a class="nav-logout" routerLink="/">
+      <i-feather name="log-out"></i-feather>
+      Logout
     </a>
-</mat-nav-list>
+  </mat-nav-list>
+  
