@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ForgotPasswordDialogComponent } from '../forgot-password-dialog/forgot-password-dialog.component'; // Adjust the path as needed
 
 @Component({
   selector: 'app-admin-login',
@@ -13,7 +15,11 @@ export class AdminLoginComponent implements OnInit {
   loginForm!: FormGroup;
   hide = true;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private dialog: MatDialog // Inject MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -33,18 +39,24 @@ export class AdminLoginComponent implements OnInit {
             this.authService.setToken(response.token);
             this.router.navigate(['/admin']);
           } else {
-            console.error('Invalid response');
+            this.openDialog("Invalid username or password"); // Show dialog on invalid response
           }
         },
         error: (error: any) => {
-          console.error(error);
+          this.openDialog("Invalid username or password"); // Show dialog on error
         },
         complete: () => {
           console.log('Request completed');
         }
       });
     } else {
-      console.error('Invalid form values');
+      this.openDialog("Please fill in all fields"); // Show dialog on empty form
     }
+  }
+
+  openDialog(message: string): void {
+    this.dialog.open(ForgotPasswordDialogComponent, {
+      data: { message } // Pass message to dialog
+    });
   }
 }

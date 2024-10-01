@@ -12,6 +12,8 @@ import { UserSignUp } from '../models/user-signup.model';
 export class AuthService {
   private loginEndpoint = environment.loginEndpoint;
   private userSignUpEndpoint = environment.userSignUpEndpoint;
+  private forgotPwdEndpoint = environment.forgotPwdEndpoint;
+  private resetPwdEndpoint = environment.resetPwdEndpoint;
 
   constructor(private http: HttpClient) { }
 
@@ -69,4 +71,13 @@ export class AuthService {
     const userDetails = this.getUserDetails();
     return userDetails ? userDetails.role : null; // 'role' refers to user role in custom JWT claims
   }
+
+  forgotPassword(email: string): Observable<any> {
+    return this.http.post(this.forgotPwdEndpoint, { email });
+  }
+
+  resetPassword(email: string, token: string, newPassword: string) {
+    return this.http.post(this.resetPwdEndpoint, { email, token, newPassword });
+}
+
 }
