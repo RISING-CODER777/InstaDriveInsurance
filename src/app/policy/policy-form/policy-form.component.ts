@@ -3,7 +3,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { VehicleValidators } from 'src/app/validators/vehicle-validators';
 import { VehicleService } from 'src/app/core/services/vehicle.service';
 import { SharedDataService } from 'src/app/core/services/shared-data.service';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/authentication/services/auth.service';
 
 @Component({
   selector: 'app-policy-form',
@@ -17,12 +18,14 @@ export class PolicyFormComponent implements OnInit {
   currentYear: number;
   isFromAutoFill: boolean = false;
   autoFilledRegistrationNumber: string = '';
+  userId!: number; // Ensure userId is a number
 
   constructor(
     private builder: FormBuilder,
     private vehicleService: VehicleService,
     private sharedDataService: SharedDataService,
-    private router: Router // Inject Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.currentYear = new Date().getFullYear();
     this.policyForm = this.builder.group({
@@ -63,6 +66,12 @@ export class PolicyFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Fetch the user ID from AuthService
+    const userIdFromService = this.authService.getUserId(); // Adjust this to match your actual method
+
+    // Ensure userId is always a number, fallback to -1 if null or invalid
+    this.userId = userIdFromService ? Number(userIdFromService) : -1;
+
     const registrationNumber = this.sharedDataService.getVehicleNumber();
     const engineCC = this.sharedDataService.getEngineCC();
     const seatCapacity = this.sharedDataService.getSeatingCapacity();
@@ -131,7 +140,7 @@ export class PolicyFormComponent implements OnInit {
 
     if (this.policyForm.valid) {
       const vehicle = {
-        userID: 3, // Assuming the user ID is 3; replace this with the actual user ID if applicable.
+        userID: this.userId,
         vehicleType: this.basicInfoForm.value.vehicleType,
         make: this.basicInfoForm.value.make,
         model: this.basicInfoForm.value.model,
@@ -150,29 +159,26 @@ export class PolicyFormComponent implements OnInit {
         isFromAutoFill: this.isFromAutoFill
       };
 
-      console.log('Vehicle Data to Submit:', vehicle); // Log the vehicle data
+      console.log('Vehicle Data to Submit:', vehicle);
 
       this.vehicleService.submitVehicle(vehicle).subscribe({
         next: (response: any) => {
           console.log('Vehicle submitted successfully:', response);
-          console.log('Vehicle ID:', response.vehicleID); // Capture and use the vehicle ID
+          console.log('Vehicle ID:', response.vehicleID);
 
           // Prepare the proposal coverage object
           const premiumProposalCoverage = {
-            userID: 3, // Use the actual user ID if applicable
-            vehicleID: response.vehicleID, // Get the vehicle ID from the response
-            insurancePlanID: this.sharedDataService.getPlanId() // Get the plan ID from shared data
+            userID: this.userId,
+            vehicleID: response.vehicleID,
+            insurancePlanID: this.sharedDataService.getPlanId()
           };
 
           // Submit the premium proposal coverage
           this.vehicleService.submitPremiumProposalCoverage(premiumProposalCoverage).subscribe({
             next: (proposalResponse) => {
               console.log('Premium proposal coverage submitted successfully:', proposalResponse);
-              this.sharedDataService.setPremiumAmount(proposalResponse.premiumAmount); // Set premium amount
+              this.sharedDataService.setPremiumAmount(proposalResponse.premiumAmount);
               this.sharedDataService.setProposalID(proposalResponse.proposalID);
-
-
-              // Optionally navigate to a different page or display a success message
               this.router.navigate(['/policy/policy-detail']);
             },
             error: (error) => {
@@ -188,7 +194,7 @@ export class PolicyFormComponent implements OnInit {
         }
       });
     } else {
-      console.error('Form is invalid:', this.policyForm.errors); // Log form errors
+      console.error('Form is invalid:', this.policyForm.errors);
     }
 
     // Optionally disable fields again after submission

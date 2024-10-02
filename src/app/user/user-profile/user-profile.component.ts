@@ -4,9 +4,9 @@ import { UserProfile } from 'src/app/core/models/user-profile.model';
 import { UserProfileService } from 'src/app/core/services/user-profile.service';
 import { UserService } from '../services/user.service';
 import { UserPolicies } from '../models/user-policies.model';
-import { ClaimRequestService } from 'src/app/core/services/claim-request.service'; 
-import { ClaimRequest } from 'src/app/core/models/claim-request.model'; 
-
+import { ClaimRequestService } from 'src/app/core/services/claim-request.service';
+import { ClaimRequest } from 'src/app/core/models/claim-request.model';
+import { AuthService } from 'src/app/authentication/services/auth.service';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -17,7 +17,7 @@ export class UserProfileComponent implements OnInit {
   userPolicies: UserPolicies[] = []; // Initialize to an empty array
   userPolicyLoading: boolean = false;
   errorMessage: string | undefined;
-  userId: number = 3; // Consider fetching this dynamically from authentication context
+  userId: number; // Declare userId as a number
 
   // Claim form fields
   claimForm = {
@@ -29,12 +29,16 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private userProfileService: UserProfileService,
     private userService: UserService,
-    private claimRequestService: ClaimRequestService
-  ) {}
+    private claimRequestService: ClaimRequestService,
+    private authService: AuthService // Inject AuthService
+  ) {
+    // Fetch userId dynamically from AuthService
+    this.userId = Number(this.authService.getUserId()) || 0; // Ensure userId is a number
+  }
 
   ngOnInit(): void {
     this.getUserProfileDetails(this.userId);
-    this.getUserPolicies(this.userId); 
+    this.getUserPolicies(this.userId);
   }
 
   claimPolicy(policyId: number): void {
@@ -62,7 +66,7 @@ export class UserProfileComponent implements OnInit {
     }
 
     const claimData: ClaimRequest = {
-      userID: this.userId, 
+      userID: this.userId, // Ensure userId is a number
       policyID: policyId,   
       dateOfIncident: new Date(this.claimForm.DateOfIncident).toISOString(), 
       description: this.claimForm.Description,

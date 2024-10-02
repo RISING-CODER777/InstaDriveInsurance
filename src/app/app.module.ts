@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -24,7 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatMenuModule } from '@angular/material/menu';
 
 
 // Define the icons you need
@@ -66,7 +67,9 @@ const icons = {
     MatSelectModule,
     MatFormFieldModule,
     MatButtonToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

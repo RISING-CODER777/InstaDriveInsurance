@@ -10,6 +10,13 @@ import { Router } from '@angular/router';
 export class TopNavBarComponent {
   siteConfig = NavUtilities.siteConfig;
   isScrolled: boolean = false;
+  loggedIn: boolean = true;
+  profile = {
+    avatar: '/assets/images/login-images/apple_icon.png',
+    username: 'John Doe',
+    email: 'XH8oQ@example.com'
+
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
