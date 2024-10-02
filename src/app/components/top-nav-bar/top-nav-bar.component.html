@@ -1,4 +1,4 @@
-<mat-toolbar class="top-nav"  [ngClass]="{'scrolled': isScrolled}">
+<mat-toolbar class="top-nav" [ngClass]="{'scrolled': isScrolled}">
     <a mat-button class="company-group" [href]="siteConfig.nav[0].href">
         <!-- Company Logo -->
         <mat-icon class="company-icon">eco</mat-icon>
@@ -18,33 +18,47 @@
     <span class="nav-spacer"></span>
 
     <ng-container *ngIf="!loggedIn">
-    <div class="nav-buttons-group">
-        <button mat-button class="nav-button" (click)="navigateToLogin()">
-            Sign in
-        </button>
-        <button mat-raised-button color="primary" class="nav-button" (click)="navigateToSignUp()">
-            Sign up
-        </button>
-    </div>
-   </ng-container>
+        <div class="nav-buttons-group">
+            <button mat-button class="nav-button" (click)="navigateToLogin()">
+                Sign in
+            </button>
+            <button mat-raised-button color="primary" class="nav-button" (click)="navigateToSignUp()">
+                Sign up
+            </button>
+        </div>
+    </ng-container>
 
-   <ng-container class="profile-group" *ngIf="loggedIn">
-    <button mat-icon-button [matMenuTriggerFor]="profileMenu" matToolTip="Profile" class="profile-button">
-        <img src="profile.avatar" />
-    </button>
-    <mat-menu class="profile-menu" #profileMenu="matMenu">
-        <button mat-menu-item>{{ profile.username }}</button>
-        <button mat-menu-item>{{ profile.email }}</button>
-        <span class="nav-divider"></span>
-        <button mat-menu-item>Profile</button>
-        <button mat-menu-item>Settings</button>
-        <span class="nav-divider"></span>
-        <button mat-menu-item>Logout</button>
-    </mat-menu>
+    <ng-container *ngIf="loggedIn">
+        <div class="profile-group">
+            <button mat-icon-button [matMenuTriggerFor]="profileMenu" matToolTip="Profile" class="profile-button">
+                <img [src]="profile.avatar" alt="Profile" />
+            </button>
+            <mat-menu #profileMenu="matMenu" class="profile-menu">
 
-   </ng-container>
+                <div class="title">{{ profile.username }}</div>
+                <div class="subtitle">{{ profile.email }}</div>
+                <div class="nav-divider"></div>
+                <button mat-menu-item class="profile-btn">Profile</button>
+                <button mat-menu-item class="profile-btn">Settings</button>
+                <div class="nav-divider"></div>
+                <button mat-menu-item class="profile-btn">Logout</button>
+            </mat-menu>
+        </div>
+
+    </ng-container>
 
 </mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- <div style="height: 50px" aria-label="spacer">
 </div> -->
