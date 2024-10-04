@@ -12,7 +12,24 @@
       <!-- Profile Image Upload -->
       <div class="profile-header">
         <img src="path/to/profile-image.jpg" alt="Profile Image" class="profile-image" />
-        <button mat-button class="upload-button">Upload Image</button>
+        <div class="upload-wrapper">
+
+
+          <input #fileInput hidden type="file" (change)="selectFile($event)" />
+
+          <button type="button" mat-button class="upload-button" (click)="onFileInputClick()"
+            *ngIf="!selectedFiles && !currentFileUpload">Upload Image</button>
+
+          <button mat-button class="upload-button" *ngIf="selectedFiles && !currentFileUpload" (click)="upload()">Save</button>
+
+          <div *ngIf="currentFileUpload" class="progress-bar">
+            <div attr.aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"
+              [ngStyle]="{ width: percentage + '%' }">
+              {{ percentage }}%
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Personal Information Card -->
@@ -84,14 +101,12 @@
         <div [ngClass]="{
           'action-active-button': policy.status === 'Active',
           'action-expired-button': policy.status === 'Expired'
-        }"
-        [ngStyle]="{
+        }" [ngStyle]="{
           'opacity': policy.isClaimed ? 0.8 : 1,
           'color': policy.isClaimed ? 'grey' : 'black',
           'pointer-events': policy.isClaimed ? 'none' : 'auto'
-        }"
-        style="user-select: none; font-weight: 400;"
-        (click)="policy.status === 'Active' ? claimPolicy(policy.policyID) : renewPolicy(policy.policyID)">
+        }" style="user-select: none; font-weight: 400;"
+          (click)="policy.status === 'Active' ? claimPolicy(policy.policyID) : renewPolicy(policy.policyID)">
           {{policy.showDoneButton ? 'Done' : policy.status === 'Active' ? 'Claim' : 'Renew'}}
         </div>
       </div>

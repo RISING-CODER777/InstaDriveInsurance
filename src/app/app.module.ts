@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -53,6 +57,10 @@ const icons = {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+
     MatButtonModule,
     MatIconModule,
     FeatherModule.pick(icons), // Import and configure FeatherModule here
