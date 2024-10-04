@@ -26,6 +26,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 
 // Define the icons you need
@@ -45,7 +47,6 @@ const icons = {
     AppComponent,
     TopNavBarComponent,
     FooterComponent,
-
     AdminSideNavbarComponent
   ],
   imports: [
@@ -70,6 +71,7 @@ const icons = {
     MatCheckboxModule,
     MatTooltipModule,
     MatMenuModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

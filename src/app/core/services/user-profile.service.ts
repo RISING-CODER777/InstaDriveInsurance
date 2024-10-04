@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserProfileService {
   private userProfilesEndpoint = environment.userProfileEndpoint; 
+  private updateUserProfileEndpoint = environment.updateUserProfileEndpoint; 
 
   constructor(private httpClient: HttpClient) {}
 
@@ -16,5 +17,11 @@ export class UserProfileService {
   getUserProfileById(id: number): Observable<UserProfile> {
     const url = `${this.userProfilesEndpoint}/${id}`; 
     return this.httpClient.get<UserProfile>(url);
+  }
+
+  // Update user profile
+  updateUserProfile(userId: number, userProfile: UserProfile): Observable<UserProfile> {
+    const url = `${this.updateUserProfileEndpoint}/${userId}`; // Use userId in URL
+    return this.httpClient.put<UserProfile>(url, userProfile);
   }
 }

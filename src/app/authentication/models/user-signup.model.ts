@@ -1,6 +1,6 @@
 export interface UserSignUp {
   username: string;
-  password: string;
+  passwordHash: string;
   email: string;
   phoneNumber: string;
   fullName: string;
@@ -9,3 +9,4 @@ export interface UserSignUp {
   panNumber: string;
   address: string;
 }
+

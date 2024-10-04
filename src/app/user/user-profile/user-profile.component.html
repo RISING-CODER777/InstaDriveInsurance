@@ -19,24 +19,54 @@
       <div class="personal-info-card">
         <div class="info-header">
           <p>Profile Information:</p>
-          <button mat-button class="edit-button">Edit</button>
+          <button mat-button class="edit-button" 
+                  [ngStyle]="isEditingPersonal ? { 'background-color': '#17c964', 'color': 'white' } : {}"
+                  (click)="togglePersonalInfoEdit()">
+            {{ isEditingPersonal ? 'Done' : 'Edit' }}
+          </button>
         </div>
-        <p>Name: {{ userProfile.fullName }}</p>
-        <p>Email: {{ userProfile.email }}</p>
-        <p>Phone Number: {{ userProfile.phoneNumber }}</p>
+        <p>Name: 
+          <input *ngIf="isEditingPersonal" [(ngModel)]="userProfile.fullName" />
+          <span *ngIf="!isEditingPersonal">{{ userProfile.fullName }}</span>
+        </p>
+        <p>Email: 
+          <span>{{ userProfile.email }}</span>
+        </p>
+        <p>Phone Number: 
+          <span>{{ userProfile.phoneNumber }}</span>
+        </p>
       </div>
 
       <!-- Address Card -->
       <div class="address-card">
         <div class="info-header">
           <p>Address:</p>
-          <button mat-button class="edit-button">Edit</button>
+          <button mat-button class="edit-button" 
+                  [ngStyle]="isEditingAddress ? { 'background-color': '#17c964', 'color': 'white' } : {}"
+                  (click)="toggleAddressEdit()">
+            {{ isEditingAddress ? 'Done' : 'Edit' }}
+          </button>
         </div>
-        <p>Door No: {{ userProfile.doorNo }}</p>
-        <p>Street: {{ userProfile.street }}</p>
-        <p>Pincode: {{ userProfile.pincode }}</p>
-        <p>District: {{ userProfile.district }}</p>
-        <p>State: {{ userProfile.state }}</p>
+        <p>Door No: 
+          <input *ngIf="isEditingAddress" [(ngModel)]="userProfile.doorNo" />
+          <span *ngIf="!isEditingAddress">{{ userProfile.doorNo }}</span>
+        </p>
+        <p>Street: 
+          <input *ngIf="isEditingAddress" [(ngModel)]="userProfile.street" />
+          <span *ngIf="!isEditingAddress">{{ userProfile.street }}</span>
+        </p>
+        <p>Pincode: 
+          <input *ngIf="isEditingAddress" [(ngModel)]="userProfile.pincode" />
+          <span *ngIf="!isEditingAddress">{{ userProfile.pincode }}</span>
+        </p>
+        <p>District: 
+          <input *ngIf="isEditingAddress" [(ngModel)]="userProfile.district" />
+          <span *ngIf="!isEditingAddress">{{ userProfile.district }}</span>
+        </p>
+        <p>State: 
+          <input *ngIf="isEditingAddress" [(ngModel)]="userProfile.state" />
+          <span *ngIf="!isEditingAddress">{{ userProfile.state }}</span>
+        </p>
       </div>
     </div>
 

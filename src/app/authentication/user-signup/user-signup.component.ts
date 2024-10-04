@@ -26,7 +26,8 @@ export class UserSignupComponent {
       pincode: ['', Validators.required],
       door: ['', Validators.required],
       street: ['', Validators.required],
-      districtState: ['', Validators.required], // Assuming this is a single field for state and district
+      district: ['', Validators.required],  // Separate field for district
+      state: ['', Validators.required],     // Separate field for state
       password: ['', [Validators.required, UserSignupValidators.passwordStrengthValidator()]],
       confirmPassword: ['', Validators.required]
     });
@@ -53,7 +54,8 @@ export class UserSignupComponent {
         this.signupForm.get('pincode')?.valid &&
         this.signupForm.get('door')?.valid &&
         this.signupForm.get('street')?.valid &&
-        this.signupForm.get('districtState')?.valid) {
+        this.signupForm.get('district')?.valid &&   // Corrected reference for district
+        this.signupForm.get('state')?.valid) {      // Corrected reference for state
       this.currentStep = 3;
     } else {
       this.signupForm.markAllAsTouched();
@@ -70,17 +72,22 @@ export class UserSignupComponent {
     this.router.navigate(['/authentication/user-login']);
   }
 
+  isSubmitting = false;
+
+
   onSubmit() {
-    if (this.signupForm.valid) {
+    if (this.signupForm.valid && !this.isSubmitting) {
+      this.isSubmitting = true; // Disable button
+  
       const formData = this.signupForm.value;
-
+  
       // Combine address fields into a single address string
-      const address = `${formData.door}, ${formData.street}, ${formData.districtState}`;
-
+      const address = `${formData.door}, ${formData.street}, ${formData.district}, ${formData.state}, ${formData.pincode}`;
+  
       // Create the UserSignUp object
       const userSignUp: UserSignUp = {
         username: formData.username,
-        password: formData.password,
+        passwordHash: formData.password,
         email: formData.email,
         phoneNumber: formData.phone,
         fullName: formData.fullName,
@@ -89,7 +96,7 @@ export class UserSignupComponent {
         panNumber: formData.pan,
         address: address // Set the combined address
       };
-
+  
       // Call the sign-up service
       this.authService.userSignUp(userSignUp).subscribe({
         next: (response) => {
@@ -98,10 +105,13 @@ export class UserSignupComponent {
         },
         error: (error) => {
           console.error('Signup error', error);
+        },
+        complete: () => {
+          this.isSubmitting = false; // Re-enable button after completion
         }
       });
     }
-  }
+  }  
 
   passwordHide = true;
   confirmPasswordHide = true;

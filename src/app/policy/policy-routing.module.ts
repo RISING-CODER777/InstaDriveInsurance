@@ -5,12 +5,12 @@ import { PolicyFormComponent } from './policy-form/policy-form.component';
 import { PolicyDetailComponent } from './policy-detail/policy-detail.component';
 import { PolicyStatusComponent } from './policy-status/policy-status.component';
 import { PolicyListComponent } from './policy-list/policy-list.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
-  { path: 'policy-form', component: PolicyFormComponent },
-  { path: 'policy-detail', component: PolicyDetailComponent },
+  { path: 'policy-form', component: PolicyFormComponent , canActivate: [AuthGuard]},
+  { path: 'policy-detail', component: PolicyDetailComponent ,canActivate: [AuthGuard]},
   { path: 'policy-list', component: PolicyListComponent},
-  { path: 'policy-detail', component: PolicyDetailComponent },
-  { path: 'policy-status', component: PolicyStatusComponent } 
+  { path: 'policy-status', component: PolicyStatusComponent,canActivate: [AuthGuard] } 
 
 ];
 

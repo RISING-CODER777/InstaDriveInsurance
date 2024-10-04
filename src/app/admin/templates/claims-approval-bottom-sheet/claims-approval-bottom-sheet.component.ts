@@ -29,7 +29,9 @@ export class ClaimsApprovalBottomSheetComponent {
   ) {}
 
   ngOnInit() {
-    this.selectedValue = this.data.status; // Initialize selected status
+    this.selectedValue = this.data.status; 
+    console.log('Incoming Approval Data:', this.data);
+    // Initialize selected status
   }
 
   updateClaimStatus() {

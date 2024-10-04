@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { UserSignUp } from '../models/user-signup.model';
@@ -16,7 +16,25 @@ export class AuthService {
   private forgotPwdEndpoint = environment.forgotPwdEndpoint;
   private resetPwdEndpoint = environment.resetPwdEndpoint;
 
+  // BehaviorSubject to track user login status and profile details
+  private authStatus = new BehaviorSubject<boolean>(this.isAuthenticated());
+  private userProfileSubject = new BehaviorSubject<any>(null); // For user profile
+
   constructor(private http: HttpClient, private router: Router) {}
+
+  // Observable to expose the current authentication state and profile
+  authStatus$ = this.authStatus.asObservable();
+  userProfile$ = this.userProfileSubject.asObservable();
+
+  // Method to update authentication status
+  updateAuthStatus(status: boolean): void {
+    this.authStatus.next(status);
+  }
+
+  // Method to update user profile
+  updateUserProfile(profile: any): void {
+    this.userProfileSubject.next(profile);
+  }
 
   userSignUp(signUpData: UserSignUp): Observable<any> {
     return this.http.post(this.userSignUpEndpoint, signUpData);
@@ -42,10 +60,14 @@ export class AuthService {
 
   setToken(token: string): void {
     localStorage.setItem('token', token);
+    // Update the authentication state when the token is set
+    this.updateAuthStatus(true);
   }
 
   removeToken(): void {
     localStorage.removeItem('token');
+    // Update the authentication state when the token is removed
+    this.updateAuthStatus(false);
   }
 
   // Decode token and check if the user is authenticated
@@ -95,13 +117,21 @@ export class AuthService {
 
   getRole(): string | null {
     const userDetails = this.getUserDetails();
-    return userDetails ? userDetails.role : null;
+    return userDetails ? userDetails.role : null; // Get user role
   }
 
-  // Logout user and clear token
+  // Logout user, clear token, and reset user profile
   logout(): void {
+    const role = this.getRole(); // Get the role of the user
     this.removeToken();
-    this.router.navigate(['/login']); // Redirect to login page after logout
+    this.updateUserProfile(null); // Reset the profile
+
+    // Redirect based on user role
+    if (role === 'admin') {
+      this.router.navigate(['/authentication/admin-login']); // Redirect to admin login page
+    } else {
+      this.router.navigate(['/']); // Redirect to home page for users
+    }
   }
 
   // Forgot Password

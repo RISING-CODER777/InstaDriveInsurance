@@ -23,10 +23,10 @@ export const environment = {
 
     claimApprovalStatusUpdateEndpoint: 'https://localhost:7141/api/Claims/update-details',
     adminPlansEndpoint :'https://localhost:7246/api/InsurancePlan/add',
-    adminOptionsEndpoint :'https://localhost:7246/api/Option/add',
+    adminOptionsEndpoint :'https://localhost:7141/api/Options',
 
     loginEndpoint:'https://localhost:7141/api/Auth/login',
-    userSignUpEndpoint :'https://localhost:7246/api/User/signup',
+    userSignUpEndpoint :'https://localhost:7141/api/User',
     forgotPwdEndpoint :'https://localhost:7141/api/Auth/forgot-password',
     resetPwdEndpoint :'https://localhost:7141/api/Auth/reset-password',
 
@@ -39,5 +39,11 @@ export const environment = {
 
     premiumProposalCoverageEndpoint:'https://localhost:7141/api/Proposals',
 
-    insuranceOptionSelectionEndpoint:'https://localhost:7141/api/ProposalOptions'
+    insuranceOptionSelectionEndpoint:'https://localhost:7141/api/ProposalOptions',
+
+    insuranceAmountEndpoint:'https://localhost:7141/api/Payment/InsuranceAmount',
+
+    paymentEndpoint :'https://localhost:7141/api/Payment',
+
+    updateUserProfileEndpoint :'https://localhost:7141/api/UserProfile/update',
 };

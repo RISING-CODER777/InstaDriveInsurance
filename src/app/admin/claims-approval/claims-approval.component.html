@@ -1,3 +1,25 @@
+<div class="filter-container">
+  <!-- Status Filter -->
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select [(value)]="filterStatus" (selectionChange)="applyFilter()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="Submitted">Submitted</mat-option>
+      <mat-option value="Under Review">Under Review</mat-option>
+      <mat-option value="Approved">Approved</mat-option>
+      <mat-option value="Rejected">Rejected</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Date of Incident Filter -->
+  <mat-form-field>
+    <mat-label>Incident Date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="filterDate" (dateChange)="applyFilter()" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
 <div class="table-wrapper">
   <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort class="table-container">

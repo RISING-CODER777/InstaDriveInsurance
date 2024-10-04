@@ -118,3 +118,21 @@
 .mat-row:not(even) {
   background-color: mat.get-color-from-palette($instadrive-insurance-base, 200);
 }
+
+.filter-container {
+  display: flex;
+  justify-content: center; /* Center the filter items */
+  align-items: center; /* Align vertically */
+  gap: 20px; /* Space between the filter elements */
+  padding-bottom: 10px; /* Space below the filters */
+  margin-top: 10px; /* Small margin from the top */
+}
+
+.filter-item {
+  min-width: 150px; /* Set a compact width */
+}
+
+.mat-form-field {
+  margin: 0; /* Remove any extra margins */
+  padding: 0; /* Remove padding for compactness */
+}

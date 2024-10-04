@@ -16,6 +16,8 @@ export class ClaimsApprovalComponent implements AfterViewInit {
   claims: Claim[] = [];
   dataSource = new MatTableDataSource<Claim>();
   selectedClaim!: Claim;
+  filterDate: Date | null = null;
+  filterStatus: string = '';
 
   displayedColumns: string[] = [
     'index',
@@ -38,7 +40,7 @@ export class ClaimsApprovalComponent implements AfterViewInit {
     this.adminService.getClaims().subscribe((data: Claim[]) => {
       this.claims = data.map(item => ({
         ...item,
-        dateOfIncident: item.dateOfIncident ? new Date(item.dateOfIncident) : null // Ensure dateOfIncident is a Date object
+        dateOfIncident: item.dateOfIncident ? new Date(item.dateOfIncident) : null, // Ensure dateOfIncident is a Date object
       }));
       this.dataSource.data = this.claims;
     });
@@ -47,6 +49,24 @@ export class ClaimsApprovalComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataSource.filterPredicate = this.customFilterPredicate();
+  }
+
+  // Custom filter to combine date and status filtering
+  customFilterPredicate() {
+    return (data: Claim, filter: string): boolean => {
+      const matchStatus = this.filterStatus ? data.status === this.filterStatus : true;
+      const matchDate = this.filterDate
+        ? new Date(data.dateOfIncident || '').toLocaleDateString() === this.filterDate?.toLocaleDateString()
+        : true;
+
+      return matchStatus && matchDate;
+    };
+  }
+
+  // Apply both filters (date and status)
+  applyFilter() {
+    this.dataSource.filter = '' + Math.random(); // Trigger filter update
   }
 
   selectHandler(row: Claim) {

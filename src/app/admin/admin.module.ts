@@ -20,11 +20,17 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
-
+import { MatIconModule } from '@angular/material/icon'; 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AdminOptionsComponent } from './admin-options/admin-options.component';
 import { AdminPlansComponent } from './admin-plans/admin-plans.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateFilterPipe } from 'src/app/filter/date-filter.pipe'; // Adjust the path accordingly
+import { StatusFilterPipe } from 'src/app/filter/status-filter.pipe';
+import { MatNativeDateModule } from '@angular/material/core'; // Import the MatNativeDateModule
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,10 @@ import { AdminPlansComponent } from './admin-plans/admin-plans.component';
     NewApprovalBottomSheetComponent,
     ClaimsApprovalBottomSheetComponent,
     AdminOptionsComponent,
-    AdminPlansComponent
+    AdminPlansComponent,
+    DateFilterPipe,
+    StatusFilterPipe
+
   ],
   imports: [
     CommonModule,
@@ -53,7 +62,11 @@ import { AdminPlansComponent } from './admin-plans/admin-plans.component';
     ReactiveFormsModule,
     MatStepperModule,
     MatGridListModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatIconModule
   ],
   providers: [],
 })

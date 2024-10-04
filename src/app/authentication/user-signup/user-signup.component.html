@@ -35,9 +35,7 @@
                 Phone number is required.
               </ng-container>
             </mat-error>
-
           </mat-form-field>
-
 
           <div class="address-section">
             <mat-form-field appearance="outline" class="form-field">
@@ -57,10 +55,10 @@
             </mat-form-field>
           </div>
 
-          <!-- Link to login page -->
           <div class="already-account">
             <a routerLink="/authentication/user-login">Already have an account?</a>
           </div>
+
           <div class="form-navigation">
             <div class="login-section">
               <button mat-stroked-button color="primary" class="login-button" (click)="login()">
@@ -92,7 +90,6 @@
             </mat-error>
           </mat-form-field>
 
-
           <mat-form-field appearance="outline" class="form-field">
             <mat-label>PAN No</mat-label>
             <input matInput formControlName="pan" required />
@@ -123,11 +120,19 @@
               <input matInput formControlName="street" required />
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="form-field">
-              <mat-label>District and State</mat-label>
-              <mat-icon matSuffix>location_city</mat-icon>
-              <input matInput formControlName="districtState" required />
-            </mat-form-field>
+            <div class="side-by-side">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>District</mat-label>
+                <mat-icon matSuffix>location_city</mat-icon>
+                <input matInput formControlName="district" required />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>State</mat-label>
+                <mat-icon matSuffix>map</mat-icon>
+                <input matInput formControlName="state" required />
+              </mat-form-field>
+            </div>
           </div>
 
           <div class="form-navigation">
@@ -160,7 +165,6 @@
               Password must be at least 8 characters long and include letters, numbers, and special characters.
             </mat-error>
           </mat-form-field>
-          <br><br><br>
 
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Confirm Password</mat-label>
@@ -175,7 +179,6 @@
               Confirm password is required.
             </mat-error>
           </mat-form-field>
-          <br><br><br>
 
           <div class="form-navigation">
             <div class="back-section">
@@ -185,9 +188,9 @@
             </div>
 
             <div class="submit-section">
-              <button mat-raised-button color="primary" [disabled]="signupForm.invalid" type="submit" (click)="onSubmit()">
+              <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="isSubmitting">
                 Submit
-              </button>
+              </button>              
             </div>
           </div>
         </div>
@@ -195,4 +198,3 @@
     </form>
   </div>
 </div>
-

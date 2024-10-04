@@ -17,6 +17,10 @@ export class NewApprovalComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<NewApproval>();
   selection!: NewApproval;
 
+  // New properties for filters
+  filterDate: Date | null = null; // For filtering by date
+  filterStatus: string = ''; // For filtering by status
+
   displayedColumns: string[] = ['index', 'user', 'policyDetails', 'status', 'requestDate', 'premiumAmount', 'adminComments'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,6 +30,7 @@ export class NewApprovalComponent implements AfterViewInit {
     private adminService: AdminService,
     private matBottomSheet: MatBottomSheet
   ) {
+    // Fetching new approvals from the service
     this.adminService.getNewApproval().subscribe((data: NewApproval[]) => {
       this.newApproval = data.map(item => ({
         ...item,
@@ -41,8 +46,18 @@ export class NewApprovalComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
+  // Apply filters based on date and status
+  applyFilters() {
+    this.dataSource.data = this.newApproval.filter(item => {
+      const requestDate = item.requestDate ? new Date(item.requestDate) : null; // Create a Date or null
+      const dateMatch = this.filterDate && requestDate ? requestDate.toDateString() === this.filterDate.toDateString() : true; // Check if both dates are valid
+      const statusMatch = this.filterStatus ? item.status === this.filterStatus : true; // Check if status matches
+      return dateMatch && statusMatch; // Return if both match
+    });
+  }
+
   selectHandler(row: NewApproval) {
-    this.selection = row;
+    this.selection = row; // Set the selected row
     this.matBottomSheet.open(
       NewApprovalBottomSheetComponent,
       {

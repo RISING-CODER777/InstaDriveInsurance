@@ -1,12 +1,11 @@
 <div style="height: 70px;"></div>
 <div class="payment-container">
-    <h2>Complete Your Payment</h2>
+  <h2>Complete Your Payment</h2>
+
+  <div class="payment-details">
+    <p><strong>Amount:</strong> ₹{{ amount }}</p>
+    <p><strong>Description:</strong> Payment for Insta Drive Automobile Insurance</p>
   
-    <div class="payment-details">
-      <p><strong>Amount:</strong> ₹1000</p>
-      <p><strong>Description:</strong> Razorpay Angular Integration</p>
-  
-      <button class="pay-now-btn" (click)="payNow()">Pay Now</button>
-    </div>
+    <button class="pay-now-btn" (click)="payNow()">Pay Now</button>
   </div>
-  
+</div>

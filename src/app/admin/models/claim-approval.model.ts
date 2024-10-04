@@ -11,7 +11,7 @@ export interface Claim{
   description:string;
   remarks:string;
   addOnDetails : any[],
-  accidentalCoverDetails: any[],
+  accidentCoverDetails: any[],
   accessoryCoverDetails: any[],
 
 
