@@ -8,5 +8,6 @@ export interface UserProfile {
     street: string;   
     district: string; 
     state: string;    
-    pincode: string;  
+    pincode: string; 
+    avatarUrl?: string; 
 }

@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
@@ -27,6 +30,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -54,6 +60,10 @@ const icons = {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+
     MatButtonModule,
     MatIconModule,
     FeatherModule.pick(icons), // Import and configure FeatherModule here
@@ -71,7 +81,9 @@ const icons = {
     MatCheckboxModule,
     MatTooltipModule,
     MatMenuModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

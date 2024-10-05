@@ -55,6 +55,19 @@
           border: 3px solid mat.get-color-from-palette($instadrive-insurance-primary, 500);
         }
 
+        .upload-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .progress-bar {
+            flex: 1;
+            margin-top: 10px;
+            text-align: center;
+          }
+        }
+
         .upload-button {
           padding: 10px 20px;
           border-radius: 50px;
