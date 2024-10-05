@@ -1,0 +1,142 @@
+<div class="admin-form-management">
+    <div class="header">
+      <h2>Add Admin</h2>
+      <button mat-icon-button (click)="onCancel()" matTooltip="Close">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="admin-form-container">
+      <mat-card>
+        <mat-horizontal-stepper [linear]="true" #stepper>
+          <!-- Step 1: Admin Details -->
+          <mat-step [stepControl]="adminFormGroup1">
+            <form [formGroup]="adminFormGroup1">
+              <div class="step-fields">
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" required />
+                    <mat-error *ngIf="adminFormGroup1.get('username')?.invalid">Username is required</mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput formControlName="fullName" required />
+                    <mat-error *ngIf="adminFormGroup1.get('fullName')?.invalid">Full Name is required</mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" required />
+                    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dobPicker></mat-datepicker>
+                    <mat-error *ngIf="adminFormGroup1.get('dateOfBirth')?.invalid">Date of Birth is required</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+  
+              <div>
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+          <!-- Step 2: Contact Details -->
+          <mat-step [stepControl]="adminFormGroup2">
+            <form [formGroup]="adminFormGroup2">
+              <div class="step-fields">
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required type="email" />
+                    <mat-error *ngIf="adminFormGroup2.get('email')?.invalid">Valid Email is required</mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber" required />
+                    <mat-error *ngIf="adminFormGroup2.get('phoneNumber')?.invalid && adminFormGroup2.get('phoneNumber')?.touched">
+                      <ng-container *ngIf="adminFormGroup2.get('phoneNumber')?.errors?.['invalidPhoneNumber']">
+                        Enter a valid phone number.
+                      </ng-container>
+                      <ng-container *ngIf="adminFormGroup2.get('phoneNumber')?.errors?.['required']">
+                        Phone number is required.
+                      </ng-container>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address" required />
+                    <mat-error *ngIf="adminFormGroup2.get('address')?.invalid">Address is required</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+  
+              <div>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+          <!-- Step 3: Identification & Security -->
+          <mat-step [stepControl]="adminFormGroup3">
+            <form [formGroup]="adminFormGroup3">
+              <div class="step-fields">
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Aadhar Number</mat-label>
+                    <input matInput formControlName="aadharNumber" required />
+                    <mat-error *ngIf="adminFormGroup3.get('aadharNumber')?.invalid && adminFormGroup3.get('aadharNumber')?.touched">
+                      <ng-container *ngIf="adminFormGroup3.get('aadharNumber')?.errors?.['invalidAadhaar']">
+                        Enter a valid Aadhaar number.
+                      </ng-container>
+                      <ng-container *ngIf="adminFormGroup3.get('aadharNumber')?.errors?.['required']">
+                        Aadhaar number is required.
+                      </ng-container>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>PAN Number</mat-label>
+                    <input matInput formControlName="panNumber" required />
+                    <mat-error *ngIf="adminFormGroup3.get('panNumber')?.invalid">PAN Number is required</mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="field-container">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" required />
+                    <mat-error *ngIf="adminFormGroup3.get('password')?.hasError('required')">
+                      Password is required.
+                    </mat-error>
+                    <mat-error *ngIf="adminFormGroup3.get('password')?.hasError('weakPassword')">
+                      Password must be at least 8 characters long and include letters, numbers, and special characters.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+  
+              <div>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                <button mat-button color="primary" [disabled]="isLoading || adminFormGroup1.invalid || adminFormGroup2.invalid || adminFormGroup3.invalid" (click)="onAddAdmin()">Add Admin</button>
+              </div>
+            </form>
+          </mat-step>
+  
+        </mat-horizontal-stepper>
+      </mat-card>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 <mat-card class="admin-plans-card">
   <mat-card-title>Admin Plans Form</mat-card-title>
   <mat-card-content>
-    <form [formGroup]="adminPlansForm" (ngSubmit)="handleSubmit()" >
+    <form [formGroup]="adminPlansForm" (ngSubmit)="handleSubmit()">
       <!-- Vehicle Type -->
       <mat-form-field appearance="fill">
         <mat-label>Vehicle Type</mat-label>
@@ -27,11 +27,12 @@
       <!-- Plan Name -->
       <mat-form-field appearance="fill">
         <mat-label>Plan Name</mat-label>
-        <mat-select formControlName="planName" required>
-          <mat-option *ngFor="let name of planNames" [value]="name">{{ name }}</mat-option>
-        </mat-select>
+        <input matInput formControlName="planName" placeholder="Enter plan name" required maxlength="100">
         <mat-error *ngIf="adminPlansForm.get('planName')?.hasError('required')">
           Plan Name is required.
+        </mat-error>
+        <mat-error *ngIf="adminPlansForm.get('planName')?.hasError('maxlength')">
+          Plan Name cannot exceed 100 characters.
         </mat-error>
       </mat-form-field>
 

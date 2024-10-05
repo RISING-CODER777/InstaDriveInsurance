@@ -1,0 +1,48 @@
+<div class="admin_management">
+    <h2>Admin Management
+      <button mat-icon-button matTooltip="Add Admin" (click)="openAddAdminDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </h2>
+    <div class="admin-list-container">
+      <table mat-table [dataSource]="admins" class="table-container">
+        <!-- Admin S.NO -->
+        <ng-container matColumnDef="index">
+          <th mat-header-cell *matHeaderCellDef>S.NO</th>
+          <td mat-cell *matCellDef="let admin; let i = index">{{ i + 1 }}</td>
+        </ng-container>
+  
+        <!-- Admin Username -->
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>Admin Username</th>
+          <td mat-cell *matCellDef="let admin">{{ admin.username }}</td>
+        </ng-container>
+  
+        <!-- Admin Email -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let admin">{{ admin.email }}</td>
+        </ng-container>
+  
+        <!-- Admin Phone Number -->
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+          <td mat-cell *matCellDef="let admin">{{ admin.phoneNumber }}</td>
+        </ng-container>
+  
+        <!-- Actions -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let admin">
+            <button mat-raised-button class="action-button" (click)="selectHandler(admin); $event.stopPropagation()">Edit</button>
+            <button mat-raised-button class="action-button" (click)="deleteAdmin(admin); $event.stopPropagation()">Delete</button>
+          </td>
+        </ng-container>
+  
+        <!-- Define Header and Data Rows -->
+        <tr mat-header-row *matHeaderRowDef="['index', 'username', 'email', 'phoneNumber', 'actions']"></tr>
+        <tr mat-row *matRowDef="let admin; columns: ['index', 'username', 'email', 'phoneNumber', 'actions'];"
+            (click)="openAdminDetails(admin)" style="cursor: pointer;"></tr>
+      </table>
+    </div>
+  </div>

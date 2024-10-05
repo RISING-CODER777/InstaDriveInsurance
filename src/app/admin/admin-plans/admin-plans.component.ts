@@ -8,17 +8,16 @@ import { AdminPlans } from '../models/admin-plans.model';
   templateUrl: './admin-plans.component.html',
   styleUrls: ['./admin-plans.component.scss']
 })
-export class AdminPlansComponent implements OnInit { // Implementing OnInit
+export class AdminPlansComponent implements OnInit {
   adminPlansForm: FormGroup;
   vehicleTypes = ['Bike', 'Car', 'Truck'];
-  planTypes = ['ThirdParty', 'Comprehensive', 'OwnDamage'];
-  planNames = ['Premium plan', 'Basic plan'];
+  planTypes = ['Third Party', 'Basic', 'Comprehensive'];
 
-  constructor(private builder: FormBuilder, private adminService: AdminService) { // Injecting AdminService
+  constructor(private builder: FormBuilder, private adminService: AdminService) {
     this.adminPlansForm = this.builder.group({
       vehicleType: ['', Validators.required],
       planType: ['', Validators.required],
-      planName: ['', Validators.required],
+      planName: ['', [Validators.required, Validators.maxLength(100)]], // Set max length for the text box
       description: ['', [Validators.required, Validators.maxLength(255)]],
       basePremium: ['', [Validators.required, Validators.min(1)]],
     });

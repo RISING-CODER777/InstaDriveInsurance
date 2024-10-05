@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./access-denied.component.scss']
 })
 export class AccessDeniedComponent {
+  goBack() {
+    window.history.back();
+  }
 
 }

@@ -32,7 +32,7 @@ export const environment = {
     calculatePremiumEndpoint: 'https://localhost:7141/api/PremiumApproximation/calculate',
 
     claimApprovalStatusUpdateEndpoint: 'https://localhost:7141/api/Claims/update-details',
-    adminPlansEndpoint :'https://localhost:7246/api/InsurancePlan/add',
+    adminPlansEndpoint :'https://localhost:7141/api/InsurancePlan',
     adminOptionsEndpoint :'https://localhost:7141/api/Options',
 
     loginEndpoint:'https://localhost:7141/api/Auth/login',
@@ -40,10 +40,10 @@ export const environment = {
     forgotPwdEndpoint :'https://localhost:7141/api/Auth/forgot-password',
     resetPwdEndpoint :'https://localhost:7141/api/Auth/reset-password',
 
-    policiesIssuedEndpoint: 'https://localhost:7246/api/Policy/GetTotalPoliciesIssued',
-    totalPremiumAmountEndpoint: 'https://localhost:7246/api/Policy/TotalPremium',
-    vehicleSourcesEndpoint: 'https://localhost:7246/api/Policy/GetVehicleSources',
-    proposalStatusEndpoint: 'https://localhost:7246/api/Proposal/GetProposalStatusCounts',
+    policiesIssuedEndpoint: 'https://localhost:7141/api/Policy/GetTotalPoliciesIssued',
+    totalPremiumAmountEndpoint: 'https://localhost:7141/api/Policy/total-active-premium',
+    vehicleSourcesEndpoint: 'https://localhost:7141/api/Policy/vehicle-sources',
+    proposalStatusEndpoint: 'https://localhost:7141/api/Proposals/GetProposalStatusCounts',
 
     claimRequestEndpoint: 'https://localhost:7141/api/Claim',
 
@@ -69,4 +69,6 @@ export const environment = {
 
 
     userAvatarEndpoint:'https://localhost:7141/api/UserProfile/avatar',
+
+    adminEndpoint:'https://localhost:7141/api/Admin',
 };

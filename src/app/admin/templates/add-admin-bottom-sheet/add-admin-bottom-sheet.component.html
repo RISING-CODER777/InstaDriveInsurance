@@ -1,0 +1,63 @@
+<h2 mat-dialog-title class="admin-title" style="padding-left: 35px;">Admin Details</h2>
+<div class="admin-details-container">
+  <div class="detail-row">
+    <div class="detail-column">
+      <mat-icon>badge</mat-icon>
+      <span class="label">Admin ID:</span>
+      <span class="value">{{ data.userID }}</span>
+    </div>
+    <div class="detail-column">
+      <mat-icon>person</mat-icon>
+      <span class="label">Username:</span>
+      <span class="value">{{ data.username }}</span>
+    </div>
+    <div class="detail-column">
+      <mat-icon>face</mat-icon>
+      <span class="label">Full Name:</span>
+      <span class="value">{{ data.fullName }}</span>
+    </div>
+    <div class="detail-column">
+      <mat-icon>cake</mat-icon>
+      <span class="label">DOB:</span>
+      <span class="value">{{ data.dateOfBirth | date }}</span>
+    </div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-column address-column">
+      <mat-icon>home</mat-icon>
+      <span class="label">Address:</span>
+      <span class="value">{{ data.address }}</span>
+    </div>
+    <div class="detail-column email-column">
+      <mat-icon>email</mat-icon>
+      <span class="label">Email:</span>
+      <span class="value">{{ data.email }}</span>
+    </div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-column">
+      <mat-icon>fingerprint</mat-icon>
+      <span class="label">Aadhaar Number:</span>
+      <span class="value">{{ data.aadharNumber }}</span>
+    </div>
+    <div class="detail-column">
+      <mat-icon>credit_card</mat-icon>
+      <span class="label">PAN Number:</span>
+      <span class="value">{{ data.panNumber }}</span>
+    </div>
+  </div>
+
+  <div class="detail-row">
+    <div class="detail-column">
+      <mat-icon>phone</mat-icon>
+      <span class="label">Phone No:</span>
+      <span class="value">{{ data.phoneNumber }}</span>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="close()">DONE</button>
+</div>

@@ -1,0 +1,124 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+.admin-form-management {
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Align the title and the close button in one row
+    margin-bottom: 20px;
+
+    h2 {
+      text-align: center;
+      color: mat.get-color-from-palette($instadrive-insurance-primary, 500);
+      font-size: 24px;
+      font-weight: 570;
+    }
+
+    button.mat-icon-button {
+      background-color: #f0f0f0; // Button background to blend with the form
+      color: #3f51b5;
+      margin-left: 20px; // Spacing between title and close button
+    }
+
+    button.mat-icon-button:hover {
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+.admin-form-container {
+  max-width: 100%; // Increased the width to fit the fields
+  margin: 0 auto; // Center the form
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9; // Light background color
+  border-radius: 8px; // Rounded corners for better design
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+
+  .step-fields {
+    display: flex; // Use flexbox to arrange fields horizontally
+    justify-content: space-between; // Space between fields
+    margin-bottom: 10px; // Add space below each step
+  }
+
+  .field-container {
+    flex: 1;
+    min-width: 0; // Allow the fields to shrink when needed
+    padding-right: 5px;
+
+    &:last-child {
+      margin-right: 0; // Remove margin on the last field
+    }
+  }
+
+  mat-horizontal-stepper {
+    width: 100%; // Ensurce the stepper takes full width
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+
+    .mat-step-header {
+      flex: 1;
+      justify-content: space-around;
+    }
+  }
+
+  button {
+    width: 100%; // Full width for buttons
+    margin-top: 20px; // Space above buttons
+  }
+
+  mat-form-field {
+    width: 100%; // Full width for form fields
+    margin-bottom: 15px; // Space between fields
+
+    
+
+    mat-datepicker-toggle {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%); // Vertically center the calendar icon
+    }
+  }
+
+  .snackbar-success {
+    background-color: #4caf50; // Green for success
+    color: white; // White text for contrast
+  }
+
+  .snackbar-error {
+    background-color: #f44336; // Red for error
+    color: white; // White text for contrast
+  }
+
+  mat-error {
+    font-size: 0.8em; // Smaller font for error messages
+    color: #f44336; // Red color for error messages
+  }
+}
+
+button.mat-button {
+  font-size: 13px;
+  color: #3f51b5; // Same primary color as the form header
+}
+
+button.mat-button:hover {
+  background-color: rgba(63, 81, 181, 0.1); // Lighter blue on hover
+}
+
+button.mat-button:active {
+  background-color: rgba(63, 81, 181, 0.2); // Slightly darker blue when active
+}
+
+// Tooltip styling
+.mat-tooltip {
+  font-size: 12px;
+  position: relative;
+}

@@ -29,6 +29,14 @@ import { DateFilterPipe } from 'src/app/filter/date-filter.pipe'; // Adjust the 
 import { StatusFilterPipe } from 'src/app/filter/status-filter.pipe';
 import { MatNativeDateModule } from '@angular/material/core'; // Import the MatNativeDateModule
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AddAdminBottomSheetComponent } from './templates/add-admin-bottom-sheet/add-admin-bottom-sheet.component';
+import { AddAdminDialogComponent } from './templates/add-admin-dialog/add-admin-dialog.component';
+import { ConfirmDialogComponent } from './templates/confirm-dialog/confirm-dialog.component';
+import { EditAdminDialogComponent } from './templates/edit-admin-dialog/edit-admin-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddAdminComponent } from './add-admin/add-admin.component'; // Import MatDialogModule
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 
@@ -43,7 +51,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AdminOptionsComponent,
     AdminPlansComponent,
     DateFilterPipe,
-    StatusFilterPipe
+    StatusFilterPipe,
+    AddAdminBottomSheetComponent,
+    AddAdminDialogComponent,
+    ConfirmDialogComponent,
+    EditAdminDialogComponent,
+    AddAdminComponent
 
   ],
   imports: [
@@ -66,7 +79,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
 })
