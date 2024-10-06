@@ -10,8 +10,10 @@ const routes: Routes = [
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule), canActivate: [AuthGuard] }, 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard] },
   { path: 'error', loadChildren: () => import('./error/error.module').then(m => m.ErrorModule) },
-  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] }, 
-  { path: '**', redirectTo: 'error/page-not-found' }
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
+  { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+  { path: '**', redirectTo: 'error/page-not-found' },
+  
 ];
 
 @NgModule({

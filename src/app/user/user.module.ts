@@ -7,6 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     UserRoutingModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ]
 })
 export class UserModule { }

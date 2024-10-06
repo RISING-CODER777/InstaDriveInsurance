@@ -9,7 +9,8 @@ import { SharedDataService } from 'src/app/core/services/shared-data.service'; /
 })
 export class PlanFinderComponent {
   selectedVehicle: string = 'car'; // Default set to 'car'
-  vehicleNumber: string = ''; // Vehicle number variable remains for user input, but will not be used
+  vehicleNumber: string = ''; // Vehicle number variable for user input
+  errorMessage: string = ''; // Variable to hold validation error message
 
   constructor(private router: Router, private sharedDataService: SharedDataService) {} // Inject the shared data service
 
@@ -41,16 +42,38 @@ export class PlanFinderComponent {
     }
   }
 
+  // Function to validate the vehicle number input
+  validateInput(): boolean {
+    this.errorMessage = ''; // Reset error message
+
+    // Check if the vehicle number is empty
+    if (!this.vehicleNumber) {
+      this.errorMessage = 'Vehicle number is required.';
+      return false;
+    }
+
+    // Check if the vehicle number length is valid
+    const maxLength = this.getMaxLength();
+    if (this.vehicleNumber.length !== maxLength) {
+      this.errorMessage = `Vehicle number must be exactly ${maxLength} characters.`;
+      return false;
+    }
+
+    return true; // Input is valid
+  }
+
   // Navigate to policy list with selected vehicle type when button is clicked
   viewPrices() {
-    // Store the selected vehicle type in the shared data service
-    this.sharedDataService.setVehicleType(this.selectedVehicle);
-    this.sharedDataService.setVehicleNumber(this.vehicleNumber);
+    // Validate input before proceeding
+    if (this.validateInput()) {
+      // Store the selected vehicle type in the shared data service
+      this.sharedDataService.setVehicleType(this.selectedVehicle);
+      this.sharedDataService.setVehicleNumber(this.vehicleNumber);
 
-
-    // Navigate to the policy list 
-    this.router.navigate(['/policy/policy-list'], {
-      queryParams: { type: this.selectedVehicle }, 
-    });
+      // Navigate to the policy list 
+      this.router.navigate(['/policy/policy-list'], {
+        queryParams: { type: this.selectedVehicle }, 
+      });
+    }
   }
 }

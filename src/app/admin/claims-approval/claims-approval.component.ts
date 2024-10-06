@@ -6,6 +6,7 @@ import { Claim } from '../models/claim-approval.model';
 import { AdminService } from '../services/admin.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ClaimsApprovalBottomSheetComponent } from '../templates/claims-approval-bottom-sheet/claims-approval-bottom-sheet.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-claims-approval',
@@ -18,6 +19,7 @@ export class ClaimsApprovalComponent implements AfterViewInit {
   selectedClaim!: Claim;
   filterDate: Date | null = null;
   filterStatus: string = '';
+  subscription!: Subscription;
 
   displayedColumns: string[] = [
     'index',
@@ -36,14 +38,20 @@ export class ClaimsApprovalComponent implements AfterViewInit {
   constructor(
     private adminService: AdminService,
     private matBottomSheet: MatBottomSheet
-  ) {
-    this.adminService.getClaims().subscribe((data: Claim[]) => {
+  ) {}
+
+  ngOnInit() {
+    // Subscribe to the claims observable from the BehaviorSubject
+    this.subscription = this.adminService.getClaimsObservable().subscribe((data: Claim[]) => {
       this.claims = data.map(item => ({
         ...item,
         dateOfIncident: item.dateOfIncident ? new Date(item.dateOfIncident) : null, // Ensure dateOfIncident is a Date object
       }));
       this.dataSource.data = this.claims;
     });
+
+    // Trigger fetching claims from the server
+    this.adminService.getClaims();
   }
 
   ngAfterViewInit() {
@@ -76,5 +84,12 @@ export class ClaimsApprovalComponent implements AfterViewInit {
       backdropClass: 'bottom-sheet-backdrop-blur',
       panelClass: 'bottom-sheet-container',
     });
+  }
+
+  // Unsubscribe to avoid memory leaks
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

@@ -1,50 +1,49 @@
 <mat-toolbar class="top-nav" [ngClass]="{'scrolled': isScrolled}">
-    <a mat-button class="company-group" [href]="siteConfig.nav[0].href">
-      <!-- Company Logo -->
-      <mat-icon class="company-icon">eco</mat-icon>
-    </a>
-  
-    <span class="nav-spacer"></span>
-  
-    <nav class="nav-group" aria-label="TopNavItems">
-      <div *ngFor="let item of siteConfig.nav" class="nav-item">
-        <a [href]="item.href" style="position: relative;" class="nav-link">{{ item.name }}</a>
-      </div>
-    </nav>
-  
-    <span class="nav-spacer"></span>
-  
-    <!-- Show Sign In and Sign Up buttons only for non-admins -->
-    <ng-container *ngIf="!loggedIn || isAdmin">
-      <div class="nav-buttons-group">
-        <button mat-button class="nav-button" (click)="navigateToLogin()">
-          Sign in
-        </button>
-        <button mat-raised-button color="primary" class="nav-button" (click)="navigateToSignUp()">
-          Sign up
-        </button>
-      </div>
-    </ng-container>
-  
-    <!-- Show profile icon for logged in non-admin users only -->
-    <ng-container *ngIf="loggedIn && !isAdmin">
-      <div class="profile-group">
-        <button mat-icon-button [matMenuTriggerFor]="profileMenu" matToolTip="Profile" class="profile-button">
-          <img [src]="profile.avatar" alt="Profile" />
-        </button>
-        <mat-menu #profileMenu="matMenu" class="profile-menu">
-          <div class="title">{{ profile.username }}</div>
-          <div class="subtitle">{{ profile.email }}</div>
-          <div class="nav-divider"></div>
-          <button mat-menu-item class="profile-btn" (click)="navigateToProfile()">Profile</button>
-          <button mat-menu-item class="profile-btn" (click)="navigateToProposalStatus()">Proposal Status</button>
-          <div class="nav-divider"></div>
-          <button mat-menu-item class="profile-btn" (click)="logout()">Logout</button>
-        </mat-menu>
-      </div>
-    </ng-container>
-  </mat-toolbar>
-  
+  <a mat-button class="company-group" [href]="siteConfig.nav[0].href">
+    <!-- Company Logo -->
+    <mat-icon class="company-icon">eco</mat-icon>
+  </a>
+
+  <span class="nav-spacer"></span>
+
+  <nav class="nav-group" aria-label="TopNavItems">
+    <div *ngFor="let item of siteConfig.nav" class="nav-item">
+      <a [href]="item.href" style="position: relative;" class="nav-link">{{ item.name }}</a>
+    </div>
+  </nav>
+
+  <span class="nav-spacer"></span>
+
+  <!-- Show Sign In and Sign Up buttons only for non-admins -->
+  <ng-container *ngIf="!loggedIn || isAdmin">
+    <div class="nav-buttons-group">
+      <button mat-button class="nav-button" (click)="navigateToLogin()">
+        Sign in
+      </button>
+      <button mat-raised-button color="primary" class="nav-button" (click)="navigateToSignUp()">
+        Sign up
+      </button>
+    </div>
+  </ng-container>
+
+  <!-- Show profile icon for logged in non-admin users only -->
+  <ng-container *ngIf="loggedIn && !isAdmin">
+    <div class="profile-group">
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu" matToolTip="Profile" class="profile-button">
+        <img [src]="profile.avatar" alt="Profile" />  <!-- Updated line -->
+      </button>
+      <mat-menu #profileMenu="matMenu" class="profile-menu">
+        <div class="title">{{ profile.username }}</div>
+        <div class="subtitle">{{ profile.email }}</div>
+        <div class="nav-divider"></div>
+        <button mat-menu-item class="profile-btn" (click)="navigateToProfile()">Profile</button>
+        <button mat-menu-item class="profile-btn" (click)="navigateToProposalStatus()">Proposal Status</button>
+        <div class="nav-divider"></div>
+        <button mat-menu-item class="profile-btn" (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+  </ng-container>
+</mat-toolbar>
 
 
 <!-- <div style="height: 50px" aria-label="spacer">

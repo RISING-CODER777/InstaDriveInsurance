@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/authentication/services/auth.service';
 import { FileUpload } from 'src/app/core/models/file-upload.model';
 import { FileUploadService } from 'src/app/core/services/file-upload.service';
 import { UserAvatar } from '../models/user-avatar.model';
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 
 @Component({
   selector: 'app-user-profile',
@@ -46,7 +47,8 @@ export class UserProfileComponent implements OnInit {
     private userService: UserService,
     private claimRequestService: ClaimRequestService,
     private authService: AuthService,
-    private uploadService: FileUploadService
+    private uploadService: FileUploadService,
+    private snackBar: MatSnackBar // Inject MatSnackBar
   ) {
     this.userId = Number(this.authService.getUserId()) || 0; // Ensure userId is a number
   }
@@ -62,23 +64,38 @@ export class UserProfileComponent implements OnInit {
   }
 
   claimPolicy(policyId: number): void {
-    const policy = this.userPolicies.find((p) => p.policyID === policyId);
-    if (policy) {
-      if (policy.showDoneButton) {
-        policy.showDoneButton = false;
-        policy.isClaimed = true;
-        this.submitClaim(policy.policyID);
-      } else if (!policy.isClaimed) {
-        policy.showDoneButton = true;
+    this.userPolicies = this.userPolicies.map((policy) => {
+      if (policy.policyID === policyId) {
+        if (policy.showDoneButton) {
+          policy.showDoneButton = false;
+          policy.isClaimed = true;
+          this.submitClaim(policy.policyID);
+        } else if (!policy.isClaimed) {
+          policy.showDoneButton = true;
+        }
       }
-    } else {
-      console.error('Policy not found for claim:', policyId);
-    }
+      return policy;
+    });
   }
 
   submitClaim(policyId: number): void {
     if (!this.claimForm.DateOfIncident) {
       this.errorMessage = 'Date of incident is required.';
+      return;
+    }
+    
+    if (this.isDateInFuture(this.claimForm.DateOfIncident)) {
+      this.errorMessage = 'Date of incident cannot be in the future.';
+      return;
+    }
+
+    if (!this.claimForm.ClaimType) {
+      this.errorMessage = 'Claim type is required.';
+      return;
+    }
+
+    if (!this.claimForm.Description) {
+      this.errorMessage = 'Description is required.';
       return;
     }
 
@@ -90,16 +107,41 @@ export class UserProfileComponent implements OnInit {
       claimType: this.claimForm.ClaimType,
     };
 
+    console.log('Submitting claim for policy:', policyId);
+    console.log('User policies before submission:', this.userPolicies);
+
     this.claimRequestService.submitClaimRequest(claimData).subscribe({
       next: (response) => {
         console.log('Claim submitted successfully:', response);
         this.resetClaimForm(); // Reset form after successful submission
+        this.openSnackBar('Claim submitted successfully!'); // Open Snackbar
+        // Optionally refetch policies or update the state as needed
+        this.getUserPolicies(this.userId); // Uncomment if you need to refresh the policies
       },
       error: (error) => {
         console.error('Error submitting claim:', error);
         this.errorMessage =
           error.message || 'Error: Unable to submit the claim. Please try again.';
       },
+    });
+  }
+
+  // Function to check if a date is in the future
+isDateInFuture(dateString: string): boolean {
+  const selectedDate = new Date(dateString);
+  const today = new Date();
+  
+  // Clear the time part
+  today.setHours(0, 0, 0, 0); // Set time to 00:00:00 to compare only dates
+  selectedDate.setHours(0, 0, 0, 0); // Also clear the time part of the selected date
+  
+  return selectedDate > today; // This will return true if the selected date is in the future
+}
+
+  // Function to open Snackbar
+  openSnackBar(message: string, action: string = 'Close') {
+    this.snackBar.open(message, action, {
+      duration: 3000, // Duration in milliseconds
     });
   }
 
@@ -197,8 +239,22 @@ export class UserProfileComponent implements OnInit {
       if (file) {
         this.currentFileUpload = new FileUpload(file);
         this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-          (downloadURL: string) => {
-            this.updateUserAvatar(downloadURL);
+          (progressOrUrl) => {
+            if (typeof progressOrUrl === 'string') {
+              this.updateUserAvatar(progressOrUrl);
+              this.openSnackBar('Upload Successful'); // Show success message when upload is complete
+            } else {
+              // File upload progress tracking
+              if (progressOrUrl === 100) {
+                this.percentage = '100%'; // Full upload complete
+              } else if (progressOrUrl >= 90) {
+                this.percentage = '90%';
+              } else if (progressOrUrl >= 50) {
+                this.percentage = '50%';
+              } else if (progressOrUrl >= 10) {
+                this.percentage = '10%';
+              }
+            }
           },
           (error) => {
             console.log('Error uploading file:', error);
@@ -228,14 +284,19 @@ export class UserProfileComponent implements OnInit {
   getUserAvatar(): void {
     this.userService.getUserAvatar(this.userId).subscribe({
       next: (response: { url: string }) => {
-        this.avatarLink = response.url; // Access the URL from the response object
+        console.log('Avatar fetched:', response.url);
+        this.avatarLink = response.url;
       },
       error: (error) => {
-        console.log('Error fetching avatar:', error);
+        console.log('Error fetching user avatar:', error);
       },
     });
   }
 
+  // Clear percentage once upload completes successfully
+  clearUploadProgress(): void {
+    this.percentage = 0; // Reset progress
+  }
   onFileInputClick(): void {
     if (this.fileInput) {
       this.fileInput.nativeElement.click();

@@ -30,8 +30,8 @@ export class NewApprovalComponent implements AfterViewInit {
     private adminService: AdminService,
     private matBottomSheet: MatBottomSheet
   ) {
-    // Fetching new approvals from the service
-    this.adminService.getNewApproval().subscribe((data: NewApproval[]) => {
+    // Step 1: Subscribe to the observable from the BehaviorSubject
+    this.adminService.getNewApprovalObservable().subscribe((data: NewApproval[]) => {
       this.newApproval = data.map(item => ({
         ...item,
         requestDate: item.requestDate ? new Date(item.requestDate) : null // Convert requestDate to Date or null
@@ -39,6 +39,9 @@ export class NewApprovalComponent implements AfterViewInit {
       this.dataSource.data = this.newApproval;
       console.log(data);
     });
+
+    // Step 2: Fetch the initial data
+    this.adminService.getNewApproval(); // Fetch new approvals initially
   }
 
   ngAfterViewInit() {

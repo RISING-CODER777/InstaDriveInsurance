@@ -1,3 +1,5 @@
+<div style="height: 50px;"></div>
+
 <div class="signup-container">
   <div class="signup-form">
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
@@ -52,6 +54,9 @@
               <input matInput [matDatepicker]="picker" placeholder="Select your date of birth" formControlName="dob" required />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="signupForm.get('dob')?.hasError('underage') && signupForm.get('dob')?.touched">
+                You must be at least 18 years old.
+              </mat-error>
             </mat-form-field>
           </div>
 

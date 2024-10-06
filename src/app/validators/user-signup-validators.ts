@@ -48,4 +48,19 @@ export class UserSignupValidators {
       return null;
     };
   }
+
+  static ageValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const dob = new Date(control.value);
+      const age = new Date().getFullYear() - dob.getFullYear();
+      const monthDiff = new Date().getMonth() - dob.getMonth();
+      
+      // Adjust age if the birth date has not yet occurred this year
+      if (monthDiff < 0 || (monthDiff === 0 && new Date().getDate() < dob.getDate())) {
+        return age < 18 ? { underage: true } : null;
+      }
+
+      return age < 18 ? { underage: true } : null;
+    };
+  }
 }

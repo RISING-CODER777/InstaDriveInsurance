@@ -1,0 +1,60 @@
+@use 'src/styles' as *;
+@use '@angular/material' as mat;
+
+// Hero section container for About Us
+.hero.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: mat.get-color-from-palette($instadrive-primary-palette, 100); // Light background similar to the landing page
+  color: mat.get-color-from-palette($instadrive-primary-palette, 900); // Dark text color for readability
+  padding: 50px;
+  height: 100vh; // Full viewport height
+  position: relative;
+
+  // Main content container (text + image)
+  .about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; // Adjust width as needed for responsiveness
+    width: 100%;
+  }
+
+  // Text content on the left
+  .about-text-content {
+    max-width: 50%; // Adjust as needed to balance text and image
+    padding-right: 20px; // Space between text and image
+
+    .title {
+      font-size: 2.5rem; // Main title font size
+      margin: 0;
+      font-weight: bold;
+      color: mat.get-color-from-palette($instadrive-primary-palette, 800); // Primary color for the title
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 10px; // Space between title and subtitle
+      font-weight: bold;
+      color: mat.get-color-from-palette($instadrive-primary-palette, 800); // Primary color for the title
+    }
+
+    .description {
+      font-size: 1rem;
+      margin-top: 20px; // Space between paragraphs
+      line-height: 1.6; // Line spacing for better readability
+      color: mat.get-color-from-palette($instadrive-primary-palette, 700); // Slightly lighter text for description
+    }
+  }
+
+  // Image content on the right
+  .about-image {
+    max-width: 50%; // Adjust width to balance with text content
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px; // Add slight border-radius to match landing page style
+    }
+  }
+}

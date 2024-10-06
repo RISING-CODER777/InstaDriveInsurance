@@ -15,7 +15,6 @@ export class ClaimsApprovalBottomSheetComponent {
     { value: 'Approved', viewValue: 'Approved' },
     { value: 'Rejected', viewValue: 'Rejected' },
     { value: 'Under Review', viewValue: 'Under Review' },
-    { value: 'Submitted', viewValue: 'Submitted' }
   ];
   
   selectedValue!: string;
@@ -29,9 +28,9 @@ export class ClaimsApprovalBottomSheetComponent {
   ) {}
 
   ngOnInit() {
-    this.selectedValue = this.data.status; 
+    this.selectedValue = this.data.status; // Initialize selected status
     console.log('Incoming Approval Data:', this.data);
-    // Initialize selected status
+
   }
 
   updateClaimStatus() {

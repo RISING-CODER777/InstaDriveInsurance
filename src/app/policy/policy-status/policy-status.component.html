@@ -119,11 +119,13 @@
           <div class="payment-container" *ngIf="userProposal.status === 'Approved'">
             <button mat-raised-button 
                     color="primary" 
-                    class="payment-btn">
+                    class="payment-btn"
+                    (click)="navigateToPayment()">
               <span>Make Payment</span>
               <mat-icon class="payment-icon">payment</mat-icon>
             </button>
           </div>
+          
         </mat-card>
       </div>
     </mat-card-content>

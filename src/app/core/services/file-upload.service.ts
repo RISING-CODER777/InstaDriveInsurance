@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { finalize, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { FileUpload } from '../models/file-upload.model';
 
 @Injectable({
@@ -11,36 +11,38 @@ export class FileUploadService {
 
   constructor(private storage: AngularFireStorage) {}
 
-  // Push file to storage and return the download URL as an observable
-  pushFileToStorage(fileUpload: FileUpload): Observable<string> {
+  // Push file to storage and return an observable that emits the upload progress and the download URL
+  pushFileToStorage(fileUpload: FileUpload): Observable<number | string> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
     const uploadTask = this.storage.upload(filePath, fileUpload.file);
 
-    // Observable for upload progress
-    return new Observable<string>((observer) => {
-      // Track progress using the upload task's percentageChanges
-      uploadTask.percentageChanges().subscribe((percentage) => {
-        // Emit progress updates if needed
-        observer.next(`Upload is ${percentage}% done`);
-      });
+    return new Observable<number | string>((observer) => {
+      // Subscribe to both percentage and state changes of the upload task
+      uploadTask
+        .percentageChanges()
+        .subscribe((percentage) => {
+          if (percentage !== undefined) {
+            observer.next(percentage); // Emit the upload progress percentage
+          }
+        });
 
-      uploadTask.snapshotChanges()
-        .pipe(
-          finalize(() => {
-            storageRef.getDownloadURL().subscribe(
-              (downloadURL) => {
-                fileUpload.url = downloadURL;
-                fileUpload.name = fileUpload.file.name;
-                observer.next(downloadURL); // Emit the download URL
-                observer.complete(); // Complete the observable
-              },
-              (err) => {
-                observer.error(err); // Handle any errors
-              }
-            );
-          })
-        ).subscribe();
+      uploadTask.snapshotChanges().subscribe({
+        complete: () => {
+          // Once upload completes, get the download URL
+          storageRef.getDownloadURL().subscribe(
+            (downloadURL) => {
+              fileUpload.url = downloadURL; // Store the download URL in the FileUpload model
+              fileUpload.name = fileUpload.file.name;
+              observer.next(downloadURL); // Emit the download URL
+              observer.complete(); // Complete the observable
+            },
+            (error) => {
+              observer.error(error); // Handle any errors in getting the download URL
+            }
+          );
+        },
+      });
     });
   }
 
@@ -48,7 +50,6 @@ export class FileUploadService {
   deleteFile(fileUpload: FileUpload): void {
     this.deleteFileStorage(fileUpload.name);
     // TODO: Add logic to remove the URL from the database if required
-    // Ensure the old file is deleted when updating user profile
   }
 
   // Delete file by its name in storage

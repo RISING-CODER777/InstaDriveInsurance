@@ -26,7 +26,7 @@ export class PolicyListComponent implements AfterViewInit, OnInit, OnDestroy {
   // Dropdown options
   typeOptions = ['Show All', 'Bike', 'Car', 'Truck'];
   engineCCOptions = [0, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000];
-  seatingCapacityOptions = ['Show All', 2, 4, 8];
+  seatingCapacityOptions = ['Show All', 2, 3, 4, 5, 8];
   planTypeOptions = ['Show All', 'Basic', 'Comprehensive', 'Third Party'];
 
   isFocused: boolean = false;

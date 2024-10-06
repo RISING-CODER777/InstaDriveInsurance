@@ -29,7 +29,7 @@ export class AddAdminDialogComponent {
     this.adminFormGroup1 = this.fb.group({
       username: ['', Validators.required],
       fullName: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
+      dateOfBirth: ['', [Validators.required, UserSignupValidators.ageValidator()]], 
     });
 
     this.adminFormGroup2 = this.fb.group({

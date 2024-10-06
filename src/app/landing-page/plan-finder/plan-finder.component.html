@@ -11,6 +11,7 @@
     <mat-card class="plan-finder-card" appearance="outlined">
       <mat-card-content>
         <h3>Apply for Coverage in Just 2 Minutes*</h3>
+        
         <!-- Vehicle Type Selector -->
         <mat-button-toggle-group
           name="vehicleType"
@@ -31,7 +32,10 @@
               [placeholder]="getPlaceholder()"
               [(ngModel)]="vehicleNumber"
               [maxlength]="getMaxLength()"
+              (input)="validateInput()" 
             />
+            <!-- Display validation error message -->
+            <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
           </mat-form-field>
         </div>
 

@@ -34,7 +34,12 @@
                     <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" required />
                     <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                     <mat-datepicker #dobPicker></mat-datepicker>
-                    <mat-error *ngIf="adminFormGroup1.get('dateOfBirth')?.invalid">Date of Birth is required</mat-error>
+                    <mat-error *ngIf="adminFormGroup1.get('dateOfBirth')?.hasError('required')">
+                      Date of Birth is required
+                    </mat-error>
+                    <mat-error *ngIf="adminFormGroup1.get('dateOfBirth')?.hasError('underage')">
+                      Age should be at least 18 years old.
+                    </mat-error>
                   </mat-form-field>
                 </div>
               </div>

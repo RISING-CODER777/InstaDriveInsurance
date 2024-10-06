@@ -18,7 +18,8 @@ form {
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  margin: 30px 0;
+  margin: 30px 0; /* Margin for spacing */
+  margin-top: 80px; /* Add margin to push it down from the navbar */
 }
 
 /* Ensuring stepper header fully expands and the text is visible */

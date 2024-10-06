@@ -11,8 +11,9 @@
         <div class="title">{{ profile.username }}</div>
         <div class="subtitle">{{ profile.email }}</div>
         <div class="nav-divider"></div>
-        <button mat-menu-item class="profile-btn" (click)="navigateToProfile()">Profile</button>
-        <!-- Removed Logout from the profile menu -->
+        
+        <!-- Add Admin Button - Only visible to 'rajesh.123' -->
+        <button *ngIf="profile.username === 'rajesh.123'" mat-menu-item class="profile-btn" (click)="navigateToAddAdmin()">Add Admin</button>
       </mat-menu>
     </div>
   </div>

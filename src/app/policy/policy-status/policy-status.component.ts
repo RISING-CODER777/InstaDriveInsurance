@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserProposalStatus } from 'src/app/core/models/user-proposal-status.model';
 import { UserProposalStatusService } from 'src/app/core/services/user-proposal-status.service';
 import { SharedDataService } from 'src/app/core/services/shared-data.service';
+import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-policy-status',
@@ -18,7 +20,8 @@ export class PolicyStatusComponent implements OnInit {
 
   constructor(
     private userProposalService: UserProposalStatusService,
-    private sharedDataService: SharedDataService // Injecting SharedDataService
+    private sharedDataService: SharedDataService,
+    private router: Router 
   ) {}
 
   ngOnInit(): void {
@@ -28,10 +31,18 @@ export class PolicyStatusComponent implements OnInit {
     } else {
       console.error('Proposal ID not found in shared data service.');
     }
+
+    // Subscribe to user proposal updates
+    this.userProposalService.userProposal$.subscribe(proposal => {
+      if (proposal) {
+        this.userProposal = proposal; // Update the userProposal with fetched data
+        console.log(proposal);
+      }
+    });
   }
 
   getUserProposalDetails(id: number): void {
-    this.userProposalService.getUserProposalById(id).subscribe({
+    this.userProposalService.getUserProposalById(id).pipe(take(1)).subscribe({
       next: (proposal: UserProposalStatus) => {
         this.userProposal = proposal; // Update the userProposal with fetched data
         console.log(proposal);
@@ -56,5 +67,9 @@ export class PolicyStatusComponent implements OnInit {
 
   toggleAccessoryCover(): void {
     this.showAccessoryCover = !this.showAccessoryCover;
+  }
+
+  navigateToPayment(): void {
+    this.router.navigate(['/payment']);
   }
 }

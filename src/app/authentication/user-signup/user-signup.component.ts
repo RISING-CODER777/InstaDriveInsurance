@@ -20,7 +20,8 @@ export class UserSignupComponent {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, UserSignupValidators.phoneNumberValidator()]],
       fullName: ['', Validators.required],
-      dob: ['', Validators.required],
+      dob: ['', [Validators.required, UserSignupValidators.ageValidator()]], 
+
       aadhaar: ['', [Validators.required, UserSignupValidators.aadhaarValidator()]],
       pan: ['', Validators.required],
       pincode: ['', Validators.required],

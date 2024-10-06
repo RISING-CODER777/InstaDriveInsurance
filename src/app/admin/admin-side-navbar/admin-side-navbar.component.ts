@@ -61,7 +61,12 @@ export class AdminSideNavbarComponent implements OnInit {
 
   // Navigate to Admin Profile page
   navigateToProfile() {
-    this.router.navigate(['/admin/profile']); // Change the route to the admin profile page
+    this.router.navigate(['/admin/profile']); // Navigate to profile
+  }
+
+  // Navigate to Add Admin page
+  navigateToAddAdmin() {
+    this.router.navigate(['/admin/add-admin']); // Navigate to the 'Add Admin' page
   }
 
   // Logout user and clear token

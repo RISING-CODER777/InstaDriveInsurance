@@ -1,3 +1,4 @@
+
 <form [formGroup]="policyForm" (ngSubmit)="handleSubmit()">
   <mat-stepper [linear]="isLinear" #stepper>
     <!-- Step 1: Basic Information -->
@@ -21,6 +22,9 @@
             <mat-error *ngIf="basicInfoForm.get('make')?.hasError('required')">
               Make is required.
             </mat-error>
+            <mat-error *ngIf="basicInfoForm.get('make')?.hasError('pattern')">
+              Make must be alphanumeric.
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -28,6 +32,9 @@
             <input matInput formControlName="model" placeholder="Enter model" required maxlength="100">
             <mat-error *ngIf="basicInfoForm.get('model')?.hasError('required')">
               Model is required.
+            </mat-error>
+            <mat-error *ngIf="basicInfoForm.get('model')?.hasError('pattern')">
+              Model must be alphanumeric.
             </mat-error>
           </mat-form-field>
         </div>
@@ -49,6 +56,12 @@
             <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('required')">
               Model Year is required.
             </mat-error>
+            <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('minlength')">
+              Model Year must be at least 4 digits.
+            </mat-error>
+            <mat-error *ngIf="vehicleDetailsForm.get('modelYear')?.hasError('yearInvalid')">
+              {{ vehicleDetailsForm.get('modelYear')?.errors?.['yearInvalid'] }}
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -57,13 +70,22 @@
             <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('required')">
               Purchase Year is required.
             </mat-error>
+            <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('minlength')">
+              Purchase Year must be at least 4 digits.
+            </mat-error>
+            <mat-error *ngIf="vehicleDetailsForm.get('purchaseYear')?.hasError('yearInvalid')">
+              {{ vehicleDetailsForm.get('purchaseYear')?.errors?.['yearInvalid'] }}
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>Purchase Amount</mat-label>
-            <input matInput formControlName="purchaseAmount" type="number" placeholder="Enter purchase amount" required>
+            <input matInput formControlName="purchaseAmount" type="number" placeholder="Enter purchase amount (₹)" required>
             <mat-error *ngIf="vehicleDetailsForm.get('purchaseAmount')?.hasError('required')">
               Purchase Amount is required.
+            </mat-error>
+            <mat-error *ngIf="vehicleDetailsForm.get('purchaseAmount')?.hasError('purchaseAmountInvalid')">
+              Purchase Amount must be greater than 0.
             </mat-error>
           </mat-form-field>
         </div>
@@ -86,6 +108,9 @@
             <mat-error *ngIf="additionalDetailsForm.get('vin')?.hasError('required')">
               VIN is required.
             </mat-error>
+            <mat-error *ngIf="additionalDetailsForm.get('vin')?.hasError('vinInvalid')">
+              {{ additionalDetailsForm.get('vin')?.errors?.['vinInvalid'] }}
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
@@ -101,6 +126,9 @@
             <input matInput formControlName="color" placeholder="Enter color" required maxlength="60">
             <mat-error *ngIf="additionalDetailsForm.get('color')?.hasError('required')">
               Color is required.
+            </mat-error>
+            <mat-error *ngIf="additionalDetailsForm.get('color')?.hasError('pattern')">
+              Color must contain only letters.
             </mat-error>
           </mat-form-field>
         </div>
@@ -140,7 +168,7 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Mileage</mat-label>
-            <input matInput formControlName="mileage" type="number" placeholder="Enter mileage" required>
+            <input matInput formControlName="mileage" type="number" placeholder="Enter mileage (km/l)" required>
             <mat-error *ngIf="vehicleSpecsForm.get('mileage')?.hasError('required')">
               Mileage is required.
             </mat-error>
@@ -169,7 +197,7 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Gross Weight</mat-label>
-            <input matInput formControlName="grossWeight" type="number" placeholder="Enter gross weight" required>
+            <input matInput formControlName="grossWeight" type="number" placeholder="Enter gross weight (kg)" required>
             <mat-error *ngIf="engineWeightForm.get('grossWeight')?.hasError('required')">
               Gross Weight is required.
             </mat-error>

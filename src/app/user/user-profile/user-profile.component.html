@@ -11,7 +11,7 @@
     <div class="profile-card">
       <!-- Profile Image Upload -->
       <div class="profile-header">
-        <img [src]="avatarLink ? avatarLink : 'path/to/default-profile-image.jpg'" alt="Profile Image" class="profile-image" />
+        <img [src]="avatarLink ? avatarLink : '/assets/images/login-images/avatar.png'" alt="Profile Image" class="profile-image" />
         <div class="upload-wrapper">
           <input #fileInput hidden type="file" (change)="selectFile($event)" />
           <button type="button" mat-button class="upload-button" (click)="onFileInputClick()"
@@ -21,7 +21,7 @@
           <div *ngIf="currentFileUpload" class="progress-bar">
             <div attr.aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"
               [ngStyle]="{ width: percentage + '%' }">
-              {{ percentage }}%
+              {{ percentage }}
             </div>
           </div>
         </div>

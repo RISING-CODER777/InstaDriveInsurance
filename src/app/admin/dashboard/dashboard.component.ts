@@ -24,6 +24,10 @@ export class DashboardComponent implements OnInit {
   @Input() legendPositionR = LegendPosition.Right;
 
   lineChartData: any[] = [];
+  totalPoliciesCount: number = 0;
+  totalPremium: number = 0;
+  previousPremium: number = 0;
+  premiumChangePercentage: number = 0;
 
   constructor(private adminService: AdminService) {}
 
@@ -33,8 +37,6 @@ export class DashboardComponent implements OnInit {
     this.fetchVehicleSources();
     this.fetchProposalStatus();
   }
-
-  totalPoliciesCount: number = 0;
 
   fetchLineChartData(): void {
     this.adminService.getTotalPoliciesIssued().subscribe((data: PolicyData[]) => {
@@ -50,17 +52,12 @@ export class DashboardComponent implements OnInit {
           }
         ];
 
-        // Update totalPoliciesCount based on the fetched data
         this.totalPoliciesCount = data.reduce((acc, item) => acc + item.count, 0);
       } else {
         console.error('No data available or data structure is incorrect');
       }
     });
   }
-
-  totalPremium: number = 0;
-  previousPremium: number = 0;
-  premiumChangePercentage: number = 0;
 
   fetchTotalActivePremium(): void {
     this.adminService.getTotalActivePremium().pipe(
@@ -69,15 +66,13 @@ export class DashboardComponent implements OnInit {
         return of(0);
       })
     ).subscribe((premium: number) => {
-      this.previousPremium = this.totalPremium; // Store the previous premium
-      this.totalPremium = premium; // Update the current premium
+      this.previousPremium = this.totalPremium;
+      this.totalPremium = premium;
 
-      // Calculate the percentage change
-      if (this.previousPremium > 0) {
-        this.premiumChangePercentage = ((this.totalPremium - this.previousPremium) / this.previousPremium) * 100;
-      } else {
-        this.premiumChangePercentage = 0; // Handle case when previous premium is 0
-      }
+      // Calculate percentage change
+      this.premiumChangePercentage = this.previousPremium > 0 
+        ? ((this.totalPremium - this.previousPremium) / this.previousPremium) * 100 
+        : 0;
     });
   }
 
@@ -93,14 +88,16 @@ export class DashboardComponent implements OnInit {
   }
 
   fetchProposalStatus(): void {
-    this.adminService.getProposalStatusCounts().subscribe({
-      next: (statusCounts) => {
-        this.proposalStatus = statusCounts; // This should match the updated structure
+    this.adminService.getProposalStatusCountsObservable().subscribe({
+      next: (statusCounts: any[]) => {
+        this.proposalStatus = statusCounts;
       },
-      error: (error) => {
+      error: (error: any) => {
         console.error('Error fetching proposal status:', error);
       }
     });
-  }
 
+    // Initial fetch of proposal status
+    this.adminService.getProposalStatusCounts(); // Ensure we have data emitted to the BehaviorSubject
+  }
 }
